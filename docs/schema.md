@@ -1,21 +1,19 @@
 # Schema Information
 
 ## users
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-username    | string    | not null, indexed, unique
-password_digest| string | not null
-session_token| string   | not null
-anon        | boolean   | not null
-name        | string    |
+column name    | data type | details
+---------------|-----------|-----------------------
+id             | integer   | not null, primary key
+username       | string    | not null, indexed, unique
+password_digest| string    | not null
+session_token  | string    | not null
 
 
 ## surveys
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-user_id     | integer   | FK, not null, indexed
+author_id   | integer   | foreign key, not null, indexed
 survey_title| string    |
 
 NOTE: at least initially, survey_title will automatically be the same as the single question associated with the survey
@@ -25,7 +23,7 @@ NOTE: at least initially, survey_title will automatically be the same as the sin
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-survey_id   | integer   | FK, not null, indexed
+survey_id   | integer   | foreign key, not null, indexed
 question    | string    | not null
 
 
@@ -33,7 +31,7 @@ question    | string    | not null
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-question_id | integer   | FK, not null, indexed
+question_id | integer   | foreign key, not null, indexed
 option      | string    | not null
 
 
@@ -41,5 +39,5 @@ option      | string    | not null
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-option_id   | integer   | FK, not null,indexed
-user_id     | integer   | FK< not null, indexed
+option_id   | integer   | foreign key, not null,indexed
+user_id     | integer   | foreign key, not null, indexed
