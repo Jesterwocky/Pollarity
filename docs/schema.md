@@ -15,9 +15,7 @@ column name | data type | details
 id          | integer   | not null, primary key
 author_id   | integer   | foreign key, not null, indexed
 survey_title| string    |
-
-NOTE: at least initially, survey_title will automatically be the same as the single question associated with the survey
-
+response_url| string    | indexed
 
 ## questions
 column name | data type | details
@@ -36,8 +34,8 @@ option      | string    | not null
 
 
 ## Responses
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-option_id   | integer   | foreign key, not null,indexed
-user_id     | integer   | foreign key, not null, indexed
+column name       | data type | details
+------------------|-----------|-----------------------
+id                | integer   | not null, primary key
+selected_option_id| integer   | foreign key, not null,indexed
+responder_id      | integer   | foreign key, not null, indexed

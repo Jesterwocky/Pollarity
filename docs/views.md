@@ -3,6 +3,7 @@
 ## Home Page
 #### Not logged in
 ![home-not-logged-in]
+
 #### Logged In
 ![home-logged-in]
 

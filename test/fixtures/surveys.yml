@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  author_id: 1
+  survey_title: MyString
+  response_url: MyString
+  string: MyString
+
+two:
+  author_id: 1
+  survey_title: MyString
+  response_url: MyString
+  string: MyString
