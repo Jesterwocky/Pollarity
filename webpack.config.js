@@ -2,7 +2,7 @@ module.exports = {
   context: __dirname,
   entry: "./frontend/pollarity.jsx",
   output: {
-    path: "./assets/javascripts",
+    path: "./app/assets/javascripts",
     filename: "bundle.js"
   },
   module: {
