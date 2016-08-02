@@ -1,0 +1,15 @@
+# PHASE 2: Baseline CSS
+
+**CSS focus**
+
+## Rails
+#### Models
+#### Controllers
+#### Views
+
+## Flux
+#### Components (views)
+#### Stores
+#### Actions
+#### ApiUtil
+## Gems/Libraries
