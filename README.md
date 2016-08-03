@@ -1,7 +1,7 @@
 # Pollarity
 
 ## Heroku link
-[Heroku link goes here]
+https://pollarity-polls.herokuapp.com/
 
 ## Minimum Viable Product
 
