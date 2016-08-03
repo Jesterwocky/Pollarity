@@ -86,9 +86,15 @@ body {
   font-size: 50px;
 }
 
+.nav-bar {
+  width: 95%;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .nav-bar-button {
   font-size: 14px;
-  padding: 15px;
+  padding: 13px;
 }
 
 .login-button {
@@ -96,7 +102,8 @@ body {
 }
 
 .signup-button {
-
+  background: #1873A4;
+  border-radius: 5px
 }
 
 .logout-button{

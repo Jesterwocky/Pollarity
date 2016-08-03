@@ -9,7 +9,7 @@ const NavBar = React.createClass ({
 
   pollarityLogo() {
     return (
-      <p className="nav-bar-logo">Pollarity - nav bar</p>
+      <p className="nav-bar-logo">Pollarity</p>
     );
   },
 

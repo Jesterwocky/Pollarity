@@ -1,5 +1,7 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
+const hashHistory = require('react-router').hashHistory;
+
 
 const Login = React.createClass ({
 
