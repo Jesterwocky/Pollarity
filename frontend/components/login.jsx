@@ -9,8 +9,10 @@ const Login = React.createClass ({
   },
 
   render() {
+    let classnames = "nav-bar-button login-button";
+
     return (
-      <button onClick={this.goToLogin} className="login-button">Log in</button>
+      <button onClick={this.goToLogin} className={classnames}>Log in</button>
     );
   }
 });

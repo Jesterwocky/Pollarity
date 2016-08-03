@@ -3,10 +3,11 @@ const ReactDOM = require('react-dom');
 
 const Logout = React.createClass ({
 
-
   render() {
+    let classnames = "nav-bar-button logout";
     return (
-      <div className="logout">
+
+      <div className={classnames}>
         Logout Goes Here
       </div>
     );

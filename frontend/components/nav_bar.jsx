@@ -9,14 +9,14 @@ const NavBar = React.createClass ({
 
   pollarityLogo() {
     return (
-      <div className="logo">Pollarity - nav bar</div>
+      <p className="nav-bar-logo">Pollarity - nav bar</p>
     );
   },
 
   logInOrOut() {
     if (1 === 1) {
       return (
-        <div>
+        <div className="login-and-signup">
           <Login/>
           <Signup/>
         </div>
@@ -30,8 +30,10 @@ const NavBar = React.createClass ({
   },
 
   render() {
+    let classnames = "nav-bar group";
+
     return (
-      <div className="nav-bar">
+      <div className={classnames}>
         {this.pollarityLogo()}
         {this.logInOrOut()}
       </div>
