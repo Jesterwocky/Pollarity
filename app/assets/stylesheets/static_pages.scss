@@ -127,13 +127,6 @@ body {
 }
 
 //Login
-.user-auth-field {
-  background: white;
-  border: 1px solid gray;
-  border-radius: 3px;
-  height: 35px;
-  width: 100%
-}
 
 .login-box {
   width: 380px;
@@ -141,7 +134,9 @@ body {
   background: white;
   margin-left: auto;
   margin-right: auto;
-  border-radius: 5px
+  border-radius: 5px;
+
+  font-family: sans-serif;
 }
 
 .login-internal-box {
@@ -154,11 +149,20 @@ body {
   padding-top: 45px
 }
 
+.user-auth-field {
+  background: white;
+  border: 1px solid gray;
+  border-radius: 3px;
+  height: 35px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px
+}
+
 .login-form-button {
   background: #DE5C35;
   border-radius: 2px;
   width: 100%;
-  margin-top: 15px
 }
 
 
