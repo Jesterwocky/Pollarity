@@ -1,5 +1,6 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
+const hashHistory = require('react-router').hashHistory;
 
 const LoginButton = require('./user_auth/login/login_button.jsx');
 const Logout = require('./user_auth/logout.jsx');
@@ -7,9 +8,14 @@ const SignupButton = require('./user_auth/signup/signup_button.jsx');
 
 const NavBar = React.createClass ({
 
+  goToRoot(e) {
+    e.preventDefault();
+    hashHistory.push("");
+  },
+
   pollarityLogo() {
     return (
-      <p className="nav-bar-logo">Pollarity</p>
+      <button onClick={this.goToRoot} className="nav-bar-logo">Pollarity</button>
     );
   },
 

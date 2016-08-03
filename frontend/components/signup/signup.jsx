@@ -7,7 +7,7 @@ const Signup = React.createClass({
   render() {
     return (
       <div className="signup">
-        <h1>This is a test</h1>
+        <h1>This is a login test</h1>
       </div>
     );
   }
