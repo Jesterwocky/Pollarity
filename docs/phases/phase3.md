@@ -1,59 +1,34 @@
-# PHASE 3
+# PHASE 3: Answer Options
 
 ## Rails
-#### Models
-#### Controllers
-#### Views
+### Models
+### Controllers
+### Views
 
 ## Flux
-#### Components (views)
-* CreateSurvey
-* CreateQuestion
-* MySurveys
+### Components (views)
+* CreateOptions
+* CreateOption
 
-#### Stores
-* Survey store
-  * all
-  * reset
-  * remove
-  * find
-  * findByUser
-* Question store
-  * allBySurvey
-  * addQuestion
+### Stores
+* Options store
 
-#### Actions
-* SurveyActions
+### Actions
+* OptionActions
   * Client actions:
-    * fetchSurveys
-    * getSurvey
-    * createSurvey
-    * deleteSurvey
+    * fetchQuestionOptions
+    * createOption
+    * removeOption
   * Server actions:
     * receiveAll
-    * receiveSurvey
-    * deleteSurvey
+    * receiveOption
+    * deleteOption
 
-* QuestionActions
-  * Client actions:
-    * fetchSurveyQuestions
-    * createQuestion
-    * deleteQuestion
-  * Server actions:
-    * receiveAll
-    * receiveQuestion
-    * deleteQuestion
-
-#### ApiUtil
-* SurveysApiUtil
-  * fetchSurveys
-  * getSurvey
-  * createSurvey
-  * deleteSurvey
-
-* QuestionsApiUtil
-  * createQuestion
-  * fetchSurveyQuestions
-  * deleteQuestion
+### ApiUtil
+* OptionsApiUtil
+  * fetchQuestionOptions
+  * getOption
+  * createOption
+  * deleteOption
 
 ## Gems/Libraries

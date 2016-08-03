@@ -21,11 +21,12 @@
 ## Flux
 
 #### Components (views)
-- Signin
-- Signup
+* Signin
+* Signup
+* NavBar
 
 #### Stores
-- CurrentUserStore
+* CurrentUserStore
 
 #### Actions
 #### ApiUtil

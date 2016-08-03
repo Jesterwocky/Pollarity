@@ -4,6 +4,7 @@ module.exports = {
       url: "api/users",
       type: "POST",
       data: userdata,
+      dataType: "json",
       success,
       error
     });
@@ -14,9 +15,9 @@ module.exports = {
       url: "api/session",
       type: "POST",
       data: userdata,
-      success: function(response) {
-        console.log(response);
-      },
+      dataType: "json",
+      success,
+      error
     });
   },
 
@@ -24,6 +25,7 @@ module.exports = {
     $.ajax({
       url: "api/session",
       type: "DELETE",
+      dataType: "json",
       success,
       error
     });

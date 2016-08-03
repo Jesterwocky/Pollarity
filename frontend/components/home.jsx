@@ -6,7 +6,7 @@ const Home = React.createClass({
 
   render() {
     return(
-      <div>
+      <div className="home-page">
         <div className="dots-overlay"></div>
         <div className="home-content">
           <h1>Live Audience Participation</h1>

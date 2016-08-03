@@ -37,6 +37,15 @@ SessionStore.isUserLoggedIn = function() {
   }
 };
 
-SessionStore.__onDispatch = function() {
-
+SessionStore.__onDispatch = function(payload) {
+  switch (payload.actionType) {
+    case LoginConstants.LOGIN:
+      _login(payload.user);
+      this.__emitChange();
+      break;
+    case LoginConstants.LOGOUT:
+      _logout();
+      this.__emitChange();
+      break;
+  }
 };

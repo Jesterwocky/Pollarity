@@ -1,4 +1,4 @@
-# PHASE: Survey Responses
+# PHASE 5: Reporting
 
 ## Rails
 ### Models
@@ -7,35 +7,17 @@
 
 
 ## Flux
+
 ### Components (views)
-* ResponseForm
-* Response
+* MySurvey
+* SurveyResults
+* SurveyURL
+* SurveyReport
 
 ### Stores
-* Response store
-  * findByUserAndQuestion
-  * allByQuestion
-  * add
-  * remove
 
 ### Actions
-* ResponseActions
-  * Client actions:
-    * fetchQuestionResponses
-    * getResponse
-    * createResponse
-    * editResponse
-    * removeResponse
-  * Server actions:
-    * receiveAll
-    * receiveQuestion
 
 ### ApiUtil
-* ResponsesApiUtil
-  * fetchResponses
-  * getResponse
-  * createResponse
-  * updateResponse
-  * deleteResponse
 
 ## Gems/Libraries

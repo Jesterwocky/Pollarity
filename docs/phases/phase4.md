@@ -1,34 +1,41 @@
-# PHASE 4: Answer Options
+# PHASE 4: Survey Responses
 
 ## Rails
 ### Models
 ### Controllers
 ### Views
 
+
 ## Flux
 ### Components (views)
-* CreateOptions
-* CreateOption
+* ResponseForm
+* Response
 
 ### Stores
-* Options store
+* Response store
+  * findByUserAndQuestion
+  * allByQuestion
+  * add
+  * remove
 
 ### Actions
-* OptionActions
+* ResponseActions
   * Client actions:
-    * fetchQuestionOptions
-    * createOption
-    * removeOption
+    * fetchQuestionResponses
+    * getResponse
+    * createResponse
+    * editResponse
+    * removeResponse
   * Server actions:
     * receiveAll
-    * receiveOption
-    * deleteOption
+    * receiveQuestion
 
 ### ApiUtil
-* OptionsApiUtil
-  * fetchQuestionOptions
-  * getOption
-  * createOption
-  * deleteOption
+* ResponsesApiUtil
+  * fetchResponses
+  * getResponse
+  * createResponse
+  * updateResponse
+  * deleteResponse
 
 ## Gems/Libraries

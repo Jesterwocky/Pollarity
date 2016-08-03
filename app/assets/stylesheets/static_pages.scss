@@ -102,6 +102,7 @@ body {
 
 .signup-button {
   background: #1873A4;
+  background-size: cover;
   border-radius: 5px
 }
 
@@ -110,6 +111,10 @@ body {
 }
 
 //Home
+
+.home {
+  
+}
 
 .home-content {
   font-family: sans-serif;
@@ -133,6 +138,15 @@ body {
 
 .login-page {
   background: #2A4B73;
+  position:absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.login-header {
+  height: 140px;
 }
 
 .login-box {
@@ -156,6 +170,12 @@ body {
   padding-top: 45px
 }
 
+.login-internal-box h1 {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
 .user-auth-field {
   background: white;
   border: 1px solid gray;
@@ -175,6 +195,14 @@ body {
   text-align: center;
 }
 
+.no-account-box {
+  margin-top: 20px;
+
+  color: gray;
+  font-size: 10px;
+  text-align: center;
+  width: 100%;
+}
 
 //from stackoverflow
 // .dots-overlay {

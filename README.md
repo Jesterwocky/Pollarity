@@ -17,16 +17,17 @@ By the end of Week 9, this app will, at a minimum, satisfy the following criteri
     - [ ] Anonymous interaction permitted
   - [ ] **Survey Questions** - users can:
     - [ ] Create a single-question survey
+    - [ ] Create a multi-question survey
     - [ ] See a list of surveys they've created
   - [ ] **Options** - users can:
     - [ ] Add answer options to a survey question
   - [ ] **Participation** - users can:
     - [ ] See a list of open surveys
-    - [ ] Access a survey's response page
-    - [ ] Submit a response to a survey question
+    - [ ] Access a survey's response page at the custom URL
+    - [ ] Submit a response to survey questions
   - [ ] **Reporting** - poll creators can:
-    - [ ] See the URL to give participants
-    - [ ] See survey responses
+    - [ ] See a custom URL to give participants
+    - [ ] See survey responses in real time
 
 ## Design Docs
 * [View Wireframes][views]
@@ -42,9 +43,6 @@ By the end of Week 9, this app will, at a minimum, satisfy the following criteri
 [schema]: docs/schema.md
 
 ## Implementation Timeline
-
-Aug 2 - changes to discuss:
-- Need components
 
 
 ### PHASE 1: Backend and Auth
@@ -65,27 +63,18 @@ DBs, user accounts, anonymous users. **2 days**
 - [ ] Signup component
 - [ ] Login component
 - [ ] Current user store
+- [ ] NavBar component
+- [ ] username or "log in" and "sign up" buttons
+- [ ] My Polls link
+
 - **App state:**
   - [ ] Can log in and out
   - [ ] Cookies set for anonymous and logged-in users
   - [ ] Routes are set up
 
-### PHASE 2: Nav Bar and Baseline CSS
-**1 day**
-- [ ] NavBar component
-  - [ ] username or "log in" and "sign up" buttons
-  - [ ] My Polls link
-- [ ] Nav bar styled
-- [ ] Home page styled
-- [ ] Basic HTML classes with color/shape themes determined
-- **App state:**
-  - [ ] NavBar has
-  - [ ] Nav bar styled
-  - [ ] Home page looks presentable
-
-### PHASE 3: Surveys and Questions
+### PHASE 2: Surveys and Questions
 (All surveys are 1-question only for now.)
-**2 days**
+**3 days**
 
 - [ ] API util for surveys - create, fetch, get, delete
 - [ ] API util for questions - create, fetch
@@ -103,7 +92,7 @@ DBs, user accounts, anonymous users. **2 days**
   - [ ] See a list of surveys they've created
   - [ ] Delete a survey
 
-### PHASE 4: Answer Options
+### PHASE 3: Answer Options
 **1 day**
 
 - [ ] API util for options
@@ -114,7 +103,7 @@ DBs, user accounts, anonymous users. **2 days**
 - **App state** - user can:
   - [ ] Add options for a survey question
 
-### PHASE 5: Survey Responses
+### PHASE 4: Survey Responses
 **2 days**
 
 - [ ] API util for responses
@@ -130,7 +119,7 @@ DBs, user accounts, anonymous users. **2 days**
     - [ ] See their previous response after navigating away from the response form, even if not logged in.
   - Responses are logged in the Responses DB table.
 
-### PHASE 6: Reporting
+### PHASE 5: Reporting
 **2 days**
 
 - [ ] MySurvey component
@@ -145,15 +134,6 @@ DBs, user accounts, anonymous users. **2 days**
   - [ ] View the URL for their survey's response form
   - [ ] See a graph for survey results
   - [ ] See accurate, real-time survey results
-
-### PHASE 7: Anon Poll Transfer
-Modify new account creation so that anon surveys are transferred to non-anon accounts. Specifics TBD. **1 day**
-- [ ] At sign-in, app will check user's cookies for an anon ID and retrieve matching surveys from the DB.
-- [ ] For each survey created under the anon ID, make a patch request to the DB to replace the anon ID with the logged-in user ID and set the anon boolean to "false."
-- **App state** - user can:
-  - [ ] On sign-up/sign-in, have polls created as anon transferred automatically to the new user account.
-
-### PHASE 8: Styling and Polishing
 
 ### BONUS FEATURES
 - [ ] Make surveys editable
