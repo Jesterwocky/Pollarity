@@ -113,7 +113,7 @@ body {
 //Home
 
 .home {
-  
+
 }
 
 .home-content {
@@ -137,7 +137,7 @@ body {
 //Login
 
 .login-page {
-  background: #2A4B73;
+  background: #25364A;
   position:absolute;
   top: 0px;
   bottom: 0px;
@@ -147,21 +147,27 @@ body {
 
 .login-header {
   height: 140px;
+  width: 100%;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  font-family: sans-serif;
+  line-height: 10;
 }
 
 .login-box {
   width: 380px;
   height: 350px;
-  background: white;
+  background: #F4F4F4;
   margin-left: auto;
   margin-right: auto;
-  border-radius: 5px;
+  border-radius: 4px;
 
   font-family: sans-serif;
 }
 
 .login-internal-box {
-  background: white;
   border-radius: 5px;
   width: 300px;
   height: 260px;
@@ -178,7 +184,7 @@ body {
 
 .user-auth-field {
   background: white;
-  border: 1px solid gray;
+  border: 1px solid #B2B9C1;
   border-radius: 3px;
   height: 35px;
   width: 100%;

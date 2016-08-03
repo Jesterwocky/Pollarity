@@ -27,7 +27,7 @@ const Login = React.createClass({
     return(
       <div className={loginPageClasses}>
         <div className="login-header">
-
+          Pollarity
         </div>
 
         <div className="login-box">
