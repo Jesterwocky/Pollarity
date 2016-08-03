@@ -3,7 +3,6 @@ const ReactDOM = require('react-dom');
 
 const Signup = React.createClass ({
 
-
   goToSignup(e) {
     e.preventDefault();
     console.log("Signup Button was clicked!");
