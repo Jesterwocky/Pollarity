@@ -7,10 +7,10 @@
   * **HomePage**
   * **Signup**
   * **Login**
-  * **Surveys**
+  * **SurveyIndex**
   * **ResponseForm**
     * Response
-  * **UserSurveys**
+  * **UserSurveyIndex**
     * **CreateSurvey**
       * CreateQuestion
       * CreateOptions

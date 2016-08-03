@@ -1,10 +1,21 @@
 body {
-  background: image-url("polling_at_the_poles.jpeg");
+  background: image-url("handsup.jpeg");
   background-size: cover;
 }
 
 h1 {
   font-family: sans-serif;
-  font-size: 120px;
-  text-align: center;
+  font-size: 25px;
+  text-align: left;
+  color: white
+}
+
+//from stackoverflow
+.dots-overlay {
+  background: image-url("subtle-dots.png");
+  position:absolute;
+  width:100%;
+  height:100%;
+  top: 0;
+  left: 0;
 }
