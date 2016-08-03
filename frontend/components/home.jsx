@@ -10,6 +10,7 @@ const Home = React.createClass({
         <div className="dots-overlay"></div>
         <div className="home-content">
           <h1>Live Audience Participation</h1>
+          <h2>Pollarity lets you engage your audience or class in real time</h2>
         </div>
       </div>
     );

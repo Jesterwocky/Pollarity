@@ -1,10 +1,10 @@
 class Api::UsersController < ApplicationController
   def new
-    @user = user.new
+    @user = User.new
   end
 
   def create
-    @user = user.new(user_params)
+    @user = User.new(user_params)
 
     if @user.save
       log_in(@user)

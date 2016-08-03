@@ -19,6 +19,12 @@ const NavBar = React.createClass ({
     );
   },
 
+  seeClonedSite() {
+    return(
+      <a href="https://www.polleverywhere.com/" className="inspiration">Inspired by Poll Everywhere</a>
+    );
+  },
+
   logInOrOut() {
     if (1 === 1) {
       return (
