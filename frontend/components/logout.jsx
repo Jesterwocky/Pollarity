@@ -6,7 +6,9 @@ const Logout = React.createClass ({
 
   render() {
     return (
-      <div className="logout">Logout Goes Here</div>
+      <div className="logout">
+        Logout Goes Here
+      </div>
     );
   }
 });
