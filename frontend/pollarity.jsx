@@ -3,12 +3,14 @@ const ReactDOM = require('react-dom');
 import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router';
 
 const Home = require('./components/home.jsx');
+const NavBar = require('./components/nav_bar.jsx');
 
 const App = React.createClass({
   render() {
     return (
       <div>
-        <h1>Pollarity</h1>
+        <NavBar/>
+        {this.props.children}
       </div>
     );
   }

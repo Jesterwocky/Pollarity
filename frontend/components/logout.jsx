@@ -1,14 +1,15 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 
-const Signup = React.createClass ({
+const Logout = React.createClass ({
 
 
   render() {
     return (
-      <div className="signup">Signup Goes Here</div>
+      <div className="logout">Logout Goes Here</div>
     );
   }
 });
 
-module.exports = Signup;
+
+module.exports = Logout;

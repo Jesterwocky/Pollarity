@@ -6,7 +6,12 @@ const Home = React.createClass({
 
   render() {
     return(
-      <h1>This is a test</h1>
+      <div>
+        <div className="home"></div>
+        <div className="dots-overlay"></div>
+        <div className="home-content"></div>
+        <h5>Home Test</h5>
+      </div>
     );
   }
 });
