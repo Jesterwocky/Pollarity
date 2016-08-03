@@ -58,6 +58,8 @@ body {
   background-size: unset, cover;
 }
 
+//Nav bar
+
 .nav-bar {
   font-family: sans-serif;
   text-align: left;
@@ -75,28 +77,9 @@ body {
   float: right;
 }
 
-.home-content {
-  font-family: sans-serif;
-  text-align: center;
-  color: white;
-  font-weight: bold
-}
-
-.home-content h1 {
-  font-size: 48px;
-  line-height: 1.4;
-}
-
-.home-content h2 {
-  font-size: 20px;
-  line-height: 1.4;
-}
-
 .nav-bar {
   width: 930px;
   margin-top: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -123,6 +106,61 @@ body {
 .logout-button{
 
 }
+
+//Home
+
+.home-content {
+  font-family: sans-serif;
+  text-align: center;
+  color: white;
+  font-weight: bold
+}
+
+.home-content h1 {
+  font-size: 48px;
+  line-height: 1.4;
+}
+
+.home-content h2 {
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+//Login
+.user-auth-field {
+  background: white;
+  border: 1px solid gray;
+  border-radius: 3px;
+  height: 35px;
+  width: 100%
+}
+
+.login-box {
+  width: 380px;
+  height: 350px;
+  background: white;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px
+}
+
+.login-internal-box {
+  background: white;
+  border-radius: 5px;
+  width: 300px;
+  height: 260px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 45px
+}
+
+.login-form-button {
+  background: #DE5C35;
+  border-radius: 2px;
+  width: 100%;
+  margin-top: 15px
+}
+
 
 //from stackoverflow
 // .dots-overlay {
