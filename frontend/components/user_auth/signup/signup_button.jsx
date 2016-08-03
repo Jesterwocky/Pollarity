@@ -1,11 +1,14 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
+const hashHistory = require('react-router').hashHistory;
 
-const Signup = React.createClass ({
+
+const SignupButton = React.createClass ({
 
   goToSignup(e) {
     e.preventDefault();
     console.log("Signup Button was clicked!");
+    hashHistory.push("users/new");
   },
 
   render() {
@@ -17,4 +20,4 @@ const Signup = React.createClass ({
   }
 });
 
-module.exports = Signup;
+module.exports = SignupButton;

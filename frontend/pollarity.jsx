@@ -4,7 +4,7 @@ import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router';
 
 const Home = require('./components/home.jsx');
 const NavBar = require('./components/nav_bar.jsx');
-const Signup = require('./components/signup.jsx');
+const Signup = require('./components/user_auth/signup/signup.jsx');
 
 const App = React.createClass({
   render() {

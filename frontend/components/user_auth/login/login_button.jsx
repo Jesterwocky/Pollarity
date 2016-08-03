@@ -3,7 +3,7 @@ const ReactDOM = require('react-dom');
 const hashHistory = require('react-router').hashHistory;
 
 
-const Login = React.createClass ({
+const LoginButton = React.createClass ({
 
   goToLogin(e) {
     e.preventDefault();
@@ -19,4 +19,4 @@ const Login = React.createClass ({
   }
 });
 
-module.exports = Login;
+module.exports = LoginButton;

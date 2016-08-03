@@ -1,9 +1,9 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 
-const Login = require('./login.jsx');
-const Logout = require('./logout.jsx');
-const Signup = require('./signup.jsx');
+const LoginButton = require('./user_auth/login/login_button.jsx');
+const Logout = require('./user_auth/logout.jsx');
+const SignupButton = require('./user_auth/signup/signup_button.jsx');
 
 const NavBar = React.createClass ({
 
@@ -17,8 +17,8 @@ const NavBar = React.createClass ({
     if (1 === 1) {
       return (
         <div className="login-and-signup">
-          <Login/>
-          <Signup/>
+          <LoginButton/>
+          <SignupButton/>
         </div>
       );
     }
