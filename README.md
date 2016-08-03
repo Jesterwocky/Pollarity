@@ -43,6 +43,10 @@ By the end of Week 9, this app will, at a minimum, satisfy the following criteri
 
 ## Implementation Timeline
 
+Aug 2 - changes to discuss:
+- Need components
+
+
 ### PHASE 1: Backend and Auth
 DBs, user accounts, anonymous users. **2 days**
 

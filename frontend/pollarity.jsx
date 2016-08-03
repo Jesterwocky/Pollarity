@@ -2,6 +2,8 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router';
 
+const Home = require('./components/home.jsx');
+
 const App = React.createClass({
   render() {
     return (
@@ -12,11 +14,17 @@ const App = React.createClass({
   }
 });
 
-// const routes = (
-//   <Route path="/" component={App}>
-//   </Route>
-// );
+const routes = (
+  <Route path="/" component={App}>
+    <IndexRoute component={Home}/>
+  </Route>
+);
 
 document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(<App/>, document.getElementById("root"));
+  ReactDOM.render((
+    <Router history={hashHistory}>
+      {routes}
+    </Router>
+    ), document.getElementById("root")
+  );
 });
