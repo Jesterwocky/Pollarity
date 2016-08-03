@@ -7,6 +7,9 @@ const NavBar = require('./components/nav_bar.jsx');
 const Signup = require('./components/user_auth/signup/signup.jsx');
 const Login = require('./components/user_auth/login/login.jsx');
 
+const SessionApiUtil = require('./util/session_api_util.js');
+window.SessionApiUtil = SessionApiUtil;
+
 const App = React.createClass({
   render() {
     return (

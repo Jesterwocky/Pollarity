@@ -21,8 +21,11 @@ const Login = React.createClass({
   },
 
   render() {
+    let loginPageClasses = "login-page group";
+
     return(
-      <div className="login-box">
+      <div className={loginPageClasses}>
+        <div className="login-box">
           <form className="login-internal-box" onSubmit={this.logIn}>
 
             <label>Username</label>
@@ -33,7 +36,8 @@ const Login = React.createClass({
 
             <input type="submit" className="login-form-button" value="Sign in with my Pollarity account"/>
 
-        </form>
+          </form>
+        </div>
       </div>
     );
   }

@@ -2,16 +2,41 @@ const Store = require('flux/utils').Store;
 const Dispatcher = require('../dispatcher/dispatcher.js');
 const LoginConstants = require('../constants/login_constants.js');
 
-const UserStore = new Store(Dispatcher);
+const SessionStore = new Store(Dispatcher);
 
-let _current_user = {};
+let _currentUser = {};
 
-reset = function(user) {
-  _current_user = user;
+_login = function(user) {
+  _currentUser = user;
 };
 
-get = function() {
-  let copy = _current_user;
+_logout = function() {
+  _currentUser = {};
 
-  
+};
+
+SessionStore.reset = function(user) {
+  _currentUser = user;
+};
+
+SessionStore.currentUser = function() {
+  let userCopy = _currentUser;
+
+  Object.keys(_currentUser).forEach((key) => {
+    copy[key] = _currentUser[key];
+  });
+
+  return userCopy;
+};
+
+SessionStore.isUserLoggedIn = function() {
+  if (_currentUser.id !== undefined) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+SessionStore.__onDispatch = function() {
+
 };
