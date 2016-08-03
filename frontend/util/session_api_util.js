@@ -1,20 +1,20 @@
 module.exports = {
-  signup: function(userdata, success, error) {
+  signup: function(user, success, error) {
     $.ajax({
       url: "api/users",
       type: "POST",
-      data: userdata,
+      data: user,
       dataType: "json",
       success,
       error
     });
   },
 
-  login: function(userdata, success, error) {
+  login: function(user, success, error) {
     $.ajax({
       url: "api/session",
       type: "POST",
-      data: userdata,
+      data: user,
       dataType: "json",
       success,
       error

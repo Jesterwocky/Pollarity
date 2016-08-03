@@ -2,15 +2,16 @@ const Store = require('flux/utils').Store;
 const Dispatcher = require('../dispatcher/dispatcher.js');
 const LoginConstants = require('../constants/login_constants.js');
 
+
 const SessionStore = new Store(Dispatcher);
 
 let _currentUser = {};
 
-_login = function(user) {
+const _login = function(user) {
   _currentUser = user;
 };
 
-_logout = function() {
+const _logout = function() {
   _currentUser = {};
 
 };
@@ -49,3 +50,5 @@ SessionStore.__onDispatch = function(payload) {
       break;
   }
 };
+
+module.exports = SessionStore;
