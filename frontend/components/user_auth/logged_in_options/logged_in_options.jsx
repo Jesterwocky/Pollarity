@@ -6,6 +6,21 @@ const SessionActions = require('../../../actions/session_actions.js');
 
 
 const LoggedInOptions = React.createClass({
+  getInitialState() {
+    return({
+      username: SessionStore.currentUser().username
+    });
+  },
+
+  componentDidMount() {
+    this.listener = SessionStore.addListener(this._handleSessionChange);
+  },
+
+  _handleSessionChange() {
+    this.setState({
+      username: SessionStore.currentUser().username
+    });
+  },
 
   logOut(e) {
     e.preventDefault();
@@ -18,19 +33,22 @@ const LoggedInOptions = React.createClass({
   },
 
   render() {
+    let optionClasses = "hidden user-option";
+
     return (
-      <div id="logged-in-options">
-        <a href="">This should be this.props.currentUser!</a>
-        <ul className="hidden">
+        <ul id="user-options">
           <li>
-            <a href="" className="user-option" onClick={this.logOut}>Logout</a>
+            <a href="">{this.state.username}</a>
           </li>
 
           <li>
-            <a href="" className="user-option" onClick={this.goToSettings}>Settings</a>
+            <a href="" className={optionClasses} onClick={this.logOut}>Logout</a>
+          </li>
+
+          <li>
+            <a href="" className={optionClasses} onClick={this.goToSettings}>Settings</a>
           </li>
         </ul>
-      </div>
     );
   }
 });

@@ -47,7 +47,7 @@ const NavBar = React.createClass ({
   logInOrOut() {
     if (this.state.loggedIn) {
       return (
-        <LoggedInOptions currentUser={this.state.currentUsername}/>
+        <LoggedInOptions/>
       );
     }
     else {
