@@ -7,7 +7,6 @@ const LoginButton = React.createClass ({
 
   goToLogin(e) {
     e.preventDefault();
-    console.log("Login Button was clicked!");
     hashHistory.push("login");
   },
 

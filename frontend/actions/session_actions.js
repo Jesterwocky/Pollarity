@@ -3,27 +3,27 @@ const LoginConstants = require('../constants/login_constants.js');
 const Dispatcher = require('../dispatcher/dispatcher.js');
 
 module.exports = {
-  logInUser(user) {
-    SessionAPIUtil.login(user, this.receiveCurrentUser);
+  logInUser(userData) {
+    SessionAPIUtil.login(userData, this.receiveCurrentUser);
   },
 
-  signUpUser(user) {
-    SessionAPIUtil.signup(user, this.receiveCurrentUser);
+  signUpUser(userData) {
+    SessionAPIUtil.signup(userData, this.receiveCurrentUser);
   },
 
   logOut() {
-    SessionAPIUtil.logout(this.removeCurrenUser);
+    SessionAPIUtil.logOut(this.removeCurrentUser);
   },
 
 
-  receiveCurrentUser(user) {
+  receiveCurrentUser(userData) {
     Dispatcher.dispatch({
       actionType: LoginConstants.LOGIN,
-      user: user
+      userData: userData
     });
   },
 
-  removeCurrenUser() {
+  removeCurrentUser() {
     Dispatcher.dispatch({
       actionType: LoginConstants.LOGOUT
     });

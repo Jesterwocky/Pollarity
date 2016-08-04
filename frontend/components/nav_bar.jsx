@@ -4,17 +4,15 @@ const hashHistory = require('react-router').hashHistory;
 const SessionStore = require('../stores/session_store.js');
 
 const LoginButton = require('./user_auth/login/login_button.jsx');
-const Logout = require('./user_auth/logout.jsx');
 const SignupButton = require('./user_auth/signup/signup_button.jsx');
+const LoggedInOptions = require('./user_auth/logged_in_options/logged_in_options.jsx');
 
 const NavBar = React.createClass ({
 
   getInitialState() {
-    console.log("Getting initial navbar state");
-    console.log(`Current user is ... ${SessionStore.currentUser().username}`);
     return({
       loggedIn: SessionStore.isUserLoggedIn(),
-      loggedInUser: SessionStore.currentUser().username
+      currentUsername: SessionStore.currentUser()
     });
   },
 
@@ -25,7 +23,7 @@ const NavBar = React.createClass ({
   _setLoggedIn() {
     this.setState({
       loggedIn: SessionStore.isUserLoggedIn(),
-      loggedInUser: SessionStore.currentUser().username
+      currentUsername: SessionStore.currentUser().username
     });
   },
 
@@ -49,24 +47,14 @@ const NavBar = React.createClass ({
   logInOrOut() {
     if (this.state.loggedIn) {
       return (
-        <ul className="logout-and-username">
-          <li>
-            <Logout/>
-          </li>
-
-          <li className="nav-bar-username">
-            {this.state.loggedInUser}
-          </li>
-        </ul>
+        <LoggedInOptions currentUser={this.state.currentUsername}/>
       );
-
     }
     else {
       return (
         <div className="login-and-signup">
           <LoginButton/>
           <SignupButton/>
-          <div>{undefined}</div>
         </div>
       );
     }
