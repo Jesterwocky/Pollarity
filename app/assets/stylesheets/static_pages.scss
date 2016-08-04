@@ -53,10 +53,13 @@ input[type="submit"] {
 
 //This should be on the home page only
 body {
-  background:
-    image-url("subtle-dots.png"),
-    image-url("handsup.jpeg");
-  background-size: unset, cover;
+  // background:
+  //   image-url("subtle-dots.png"),
+  //   image-url("handsup.jpeg");
+  background-image: image-url("subtle-dots.png"), image-url("handsup.jpeg");
+  background-repeat: repeat, no-repeat;
+  background-position: 0 0;
+  background-size: 45px 45px, cover;
 }
 
 //Nav bar

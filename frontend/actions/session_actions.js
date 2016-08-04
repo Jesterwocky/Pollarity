@@ -1,18 +1,18 @@
-const SessionAPIUtil = require('../actions/session_actions.js');
+const SessionAPIUtil = require('../util/session_api_util.js');
 const LoginConstants = require('../constants/login_constants.js');
 const Dispatcher = require('../dispatcher/dispatcher.js');
 
 module.exports = {
   logInUser(user) {
-    SessionAPIUtil.login(user, receiveCurrentUser);
+    SessionAPIUtil.login(user, this.receiveCurrentUser);
   },
 
   signUpUser(user) {
-    SessionAPIUtil.signup(user, receiveCurrentUser);
+    SessionAPIUtil.signup(user, this.receiveCurrentUser);
   },
 
   logOut() {
-    SessionAPIUtil.logout(removeCurrenUser);
+    SessionAPIUtil.logout(this.removeCurrenUser);
   },
 
 
