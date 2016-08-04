@@ -38,7 +38,7 @@ const LoggedInOptions = React.createClass({
     return (
         <ul id="user-options">
           <li>
-            <a href="">{this.state.username}</a>
+            <a href="" id="nav-bar-username">{this.state.username}</a>
           </li>
 
           <li>

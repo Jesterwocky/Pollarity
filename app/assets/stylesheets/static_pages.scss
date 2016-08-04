@@ -333,9 +333,18 @@ body {
 }
 
 //USER SETTINGS
+#nav-bar-username {
+}
 
 #user-options {
   display:inline;
+  float:right;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+#user-options li {
+  padding: 2px;
 }
 
 //from stackoverflow
