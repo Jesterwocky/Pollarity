@@ -40,10 +40,8 @@ const Login = React.createClass({
   logIn(e) {
     e.preventDefault();
     SessionActions.logInUser({
-      user: {
-        username: this.state.username,
-        password: this.state.password
-      }
+      username: this.state.username,
+      password: this.state.password
     });
   },
 

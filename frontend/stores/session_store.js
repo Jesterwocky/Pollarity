@@ -7,29 +7,16 @@ const SessionStore = new Store(Dispatcher);
 
 let _currentUser = {};
 
-const _login = function(userData) {
-  _currentUser = {};
-
-  debugger
-  Object.keys(userData.user).forEach((key) => {
-    _currentUser[key] = userData.user[key];
-    console.log(`User is being logged in with this property: ${key}`);
-
-  });
-
+const _login = function(user) {
+  _currentUser = user;
 };
 
 const _logout = function() {
   _currentUser = {};
 };
 
-SessionStore.reset = function(user) {
-  _currentUser = user;
-};
-
 SessionStore.currentUser = function() {
-  if (_currentUser === undefined) return {};
-
+  // if (_currentUser === undefined) return {};
   let userCopy = _currentUser;
 
   Object.keys(_currentUser).forEach((key) => {
@@ -40,7 +27,8 @@ SessionStore.currentUser = function() {
 };
 
 SessionStore.isUserLoggedIn = function() {
-  if (_currentUser !== undefined && _currentUser.id !== undefined) {
+  // if (_currentUser !== undefined && _currentUser.id !== undefined) {
+  if (_currentUser.id !== undefined) {
     return true;
   } else {
     return false;
@@ -50,7 +38,7 @@ SessionStore.isUserLoggedIn = function() {
 SessionStore.__onDispatch = function(payload) {
   switch (payload.actionType) {
     case LoginConstants.LOGIN:
-      _login(payload.userData);
+      _login(payload.user);
       this.__emitChange();
       break;
     case LoginConstants.LOGOUT:
