@@ -10,18 +10,12 @@ class Api::SessionsController < ApplicationController
 
     if @user
       log_in(@user)
-      render json: @user
     else
       render json: ["Signup failed"], status: 401
     end
   end
 
   def destroy
-    if @current_user
-      log_out
-      render json: {}
-    else
-      render ["Logout Error"], status: 404
-    end
+    log_out
   end
 end

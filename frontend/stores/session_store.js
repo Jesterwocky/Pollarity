@@ -24,7 +24,7 @@ SessionStore.currentUser = function() {
   let userCopy = _currentUser;
 
   Object.keys(_currentUser).forEach((key) => {
-    copy[key] = _currentUser[key];
+    userCopy[key] = _currentUser[key];
   });
 
   return userCopy;

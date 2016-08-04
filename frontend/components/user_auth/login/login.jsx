@@ -14,6 +14,17 @@ const Login = React.createClass({
     });
   },
 
+  componentDidMount() {
+    this.listener = SessionStore.addListener(this._onSessionChange);
+  },
+
+  _onSessionChange() {
+    if (SessionStore.isUserLoggedIn) {
+      hashHistory.push("");
+      console.log(`Logged in ${SessionStore.currentUser().username}`);
+    }
+  },
+
   grabUsername(e) {
     this.setState({
       username: e.currentTarget.value
@@ -28,14 +39,12 @@ const Login = React.createClass({
 
   logIn(e) {
     e.preventDefault();
-    console.log("Login will happen!");
     SessionActions.logInUser({
       user: {
         username: this.state.username,
         password: this.state.password
       }
     });
-    hashHistory.push("");
   },
 
   render() {
