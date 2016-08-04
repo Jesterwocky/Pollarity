@@ -21,7 +21,6 @@ const Login = React.createClass({
   _onSessionChange() {
     if (SessionStore.isUserLoggedIn) {
       hashHistory.push("");
-      console.log(`Logged in ${SessionStore.currentUser().username}`);
     }
   },
 
