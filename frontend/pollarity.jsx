@@ -38,7 +38,6 @@ const routes = (
 );
 
 const retrieveUser = function() {
-  debugger
   if (window.currentUser !== undefined) {
     SessionActions.receiveCurrentUser(window.currentUser["user"]);
   }

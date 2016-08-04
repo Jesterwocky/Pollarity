@@ -61,12 +61,14 @@ const NavBar = React.createClass ({
   },
 
   render() {
-    let classnames = "nav-bar group";
+    let classnames = "nav-bar";
 
     return (
-      <div className={classnames}>
-        {this.pollarityLogo()}
-        {this.logInOrOut()}
+      <div className={classnames} id="nav-bar">
+        <div className="nav-bar-content">
+          {this.pollarityLogo()}
+          {this.logInOrOut()}
+        </div>
       </div>
     );
   }
