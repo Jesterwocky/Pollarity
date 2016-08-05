@@ -57,7 +57,7 @@ const NavBar = React.createClass ({
     else {
       return (
         <div>
-          <button onClick={this.goToRoot} className="nav-bar-logo">Pollarity</button>
+          <button onClick={this.goToRoot} className="nav-bar-logo-not-logged-in">Pollarity</button>
           <a href="https://www.polleverywhere.com/" className="inspiration">Inspired by Poll Everywhere</a>
 
           <ul className="login-and-signup">
@@ -70,11 +70,11 @@ const NavBar = React.createClass ({
   },
 
   render() {
-    let classnames = "nav-bar";
+    let classnames = "nav-bar-content group";
 
     return (
-      <div className={classnames} id="nav-bar">
-        <div className="nav-bar-content">
+      <div className="nav-bar" id="nav-bar">
+        <div className={classnames}>
           {this.loginBasedContent()}
         </div>
       </div>

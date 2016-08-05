@@ -9,13 +9,16 @@ const Login = require('./components/user_auth/login/login.jsx');
 const UserSettings = require('./components/user_auth/logged_in_options/logged_in_options.jsx');
 const SessionActions = require('./actions/session_actions.js');
 const CreateAccount = require('./components/user_auth/signup/create_account.jsx');
-const ResponseForm = require('./components/responses/response_form.jsx');
 const UserSurveysIndex = require('./components/user_surveys/user_surveys_index.jsx');
 
+//For testing, but verify before deleting
 const SessionApiUtil = require('./util/session_api_util.js');
 window.SessionApiUtil = SessionApiUtil;
 const SessionStore = require('./stores/session_store.js');
 window.SessionStore = SessionStore;
+const SurveyApiUtil = require('./util/survey_api_util.js');
+window.SurveyApiUtil = SurveyApiUtil;
+
 
 const App = React.createClass({
   render() {
@@ -33,10 +36,9 @@ const routes = (
     <IndexRoute component={Home}/>
     <Route path="users/new" component={Signup}/>
     <Route path="users/new/create-account" component={CreateAccount}/>
+    <Route path="users/:userId/surveys" component={UserSurveysIndex}/>
     <Route path="login" component={Login}/>
     <Route path="settings" component={UserSettings}/>
-    <Route path=":userId/surveys" component={UserSurveysIndex}/>
-    <Route path="take-my-poll/:surveyId" component={ResponseForm}/>
   </Route>
 );
 

@@ -86,35 +86,33 @@ body {
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
-  display: flex-inline;
-}
-
-.nav-bar-content ul {
-  width: 100%;
 }
 
 .nav-bar-content li {
   display: inline-flex;
 }
 
-//TEMPORARY
-.logged-in-user-menu li {
-  padding-right: 20px;
+// Eventually should be image, not text
+.nav-bar-logo-not-logged-in {
+  line-height: 1.5;
+  font-size: 25px;
+  float: left;
 }
-//TEMPORARY.... And not working
-ul #user-options li{
-  list-style-type: disc;
+
+.inspiration {
+  font-size: 11px;
+  font-weight: 100;
+  margin-left: 280px;
+  line-height: 4.2;
+
 }
 
 #nav-bar-username {
   text-transform: uppercase;
 }
 
-// Eventually should be image, not text
-.nav-bar-logo {
-  line-height: 1.5;
-  float: left;
-  font-size: 25px;
+.login-and-signup {
+  float: right;
 }
 
 .logout-and-username {
@@ -122,9 +120,6 @@ ul #user-options li{
   float: right;
 }
 
-.login-and-signup {
-  float: right;
-}
 
 .nav-bar-username {
   font-size: 12px;
@@ -132,11 +127,6 @@ ul #user-options li{
   padding: 13px;
 }
 
-.inspiration {
-  font-size: 11px;
-  font-weight: 100;
-  margin-left: 25px;
-}
 
 .nav-bar-button {
   font-size: 14px;

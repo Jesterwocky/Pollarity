@@ -3,7 +3,6 @@ const ReactDOM = require("react-dom");
 
 const Home = React.createClass({
 
-
   render() {
     let classnames = "home-page group";
 

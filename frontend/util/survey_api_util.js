@@ -1,5 +1,5 @@
 module.exports = {
-  fetchAllSurveys: function(success, error) {
+  allSurveys: function(success, error) {
     $.ajax({
       url: "api/surveys",
       type: "GET",
@@ -8,7 +8,7 @@ module.exports = {
     });
   },
 
-  fetchUserSurveys: function(userId, success, error) {
+  userSurveys: function(userId, success, error) {
     $.ajax({
       url: `api/users/${userId}/surveys`,
       type: "GET",
@@ -22,6 +22,16 @@ module.exports = {
       url: "api/surveys",
       type: "POST",
       data: surveyData,
+      success,
+      error
+    });
+  },
+
+  deleteSurvey: function(surveyId, success, error) {
+    $.ajax({
+      url: `api/surveys/${surveyId}`,
+      type: "DELETE",
+      data: surveyId,
       success,
       error
     });
