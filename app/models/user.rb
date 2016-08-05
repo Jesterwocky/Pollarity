@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
 
   has_many :surveys
+  has_and_belongs_to_many :responses
+
 
   attr_reader :password
 

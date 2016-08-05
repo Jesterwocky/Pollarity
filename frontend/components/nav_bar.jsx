@@ -56,15 +56,15 @@ const NavBar = React.createClass ({
     }
     else {
       return (
-        <ul className="login-and-signup">
-          <li>{this.pollarityLogo()}</li>
+        <div>
+          <button onClick={this.goToRoot} className="nav-bar-logo">Pollarity</button>
+          <a href="https://www.polleverywhere.com/" className="inspiration">Inspired by Poll Everywhere</a>
 
-          <li>{this.clonedSiteLink()}</li>
-
-          <li><LoginButton/></li>
-
-          <li><SignupButton/></li>
-        </ul>
+          <ul className="login-and-signup">
+            <li><LoginButton/></li>
+            <li><SignupButton/></li>
+          </ul>
+        </div>
       );
     }
   },

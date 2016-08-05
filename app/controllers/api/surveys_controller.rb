@@ -5,8 +5,9 @@ class Api::SurveysController < ApplicationController
 
   def create
     @survey = Survey.new(survey_params)
-    # Confirm this is the right way
     @survey[author_id] = params[:userId]
+
+    ensure_survey_title(@survey)
 
     if @survey.save
       render json: @survey
@@ -31,6 +32,15 @@ class Api::SurveysController < ApplicationController
   end
 
   def survey_params
-    params.permit(:survey_title, :question_attributes)
+    params.permit(:survey_title, :questions_attributes)
+  end
+
+  # Would like this to go on the model, but it doesn't work... Questions
+  def ensure_survey_title(survey)
+    first_question_exists = survey[questions_attributes] && survey[questions_attributes][0] && survey[questions_attributes][0][question]
+
+    if survey[survey_title].nil? && first_question_exists
+      survey[survey_title] = survey[questions_attributes][0][question]
+    end
   end
 end
