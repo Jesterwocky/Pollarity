@@ -1,0 +1,4 @@
+module.exports = {
+  CREATE_SURVEY: "CREATE_SURVEY",
+  DELETE_SURVEY: "DELETE_SURVEY"
+};
