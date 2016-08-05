@@ -2,7 +2,11 @@ class User < ActiveRecord::Base
   validates :username, :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
-  has_many :surveys
+  has_many :surveys,
+    class_name: :Survey,
+    foreign_key: :author_id,
+    inverse_of: :author
+
   has_and_belongs_to_many :responses
 
 

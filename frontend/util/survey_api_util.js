@@ -3,6 +3,7 @@ module.exports = {
     $.ajax({
       url: "api/surveys",
       type: "GET",
+      dataType: "json",
       success,
       error
     });
@@ -12,6 +13,7 @@ module.exports = {
     $.ajax({
       url: `api/users/${userId}/surveys`,
       type: "GET",
+      dataType: "json",
       success,
       error
     });
@@ -22,6 +24,7 @@ module.exports = {
       url: "api/surveys",
       type: "POST",
       data: surveyData,
+      dataType: "json",
       success,
       error
     });
@@ -32,6 +35,7 @@ module.exports = {
       url: `api/surveys/${surveyId}`,
       type: "DELETE",
       data: surveyId,
+      dataType: "json",
       success,
       error
     });

@@ -12,12 +12,22 @@ class Api::SurveysController < ApplicationController
     if @survey.save
       render json: @survey
     else
-      render json: @survey.errors.full_messages, status 401
+      render json: @survey.errors.full_messages, status: 401
     end
   end
 
   def index
-    @surveys = Survey.all
+    debugger
+
+    @surveys = if params[:user_id]
+      User.find(params[:user_id].to_i).surveys
+    else
+      Survey.all
+    end
+
+    debugger
+
+    render json: @surveys
   end
 
   def destroy
@@ -26,7 +36,7 @@ class Api::SurveysController < ApplicationController
     if @survey.delete
       render json: {}
     else
-      render json: @survey.errors.full_messages, status 401
+      render json: @survey.errors.full_messages, status: 401
     end
 
   end

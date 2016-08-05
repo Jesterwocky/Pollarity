@@ -1,7 +1,8 @@
 class Survey < ActiveRecord::Base
   belongs_to :author,
-    class_name: :user,
-    foreign_key: :author_id
+    class_name: :User,
+    foreign_key: :author_id,
+    inverse_of: :surveys
 
   has_many :questions,
     dependent: :destroy

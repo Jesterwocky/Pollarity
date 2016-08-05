@@ -11,7 +11,7 @@ const CreateSurveyButton = React.createClass({
 
   render() {
     return (
-      <a href="" onClick={this.goToCreateSurvey} className="add-poll-link">+</a>
+      <a href="" onClick={this.goToCreateSurvey} id="add-poll-link">+</a>
     );
   }
 });

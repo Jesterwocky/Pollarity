@@ -35,12 +35,6 @@ const LoggedInOptions = React.createClass({
     hashHistory.push("settings");
   },
 
-  pollarityLogo() {
-    return (
-      <button onClick={this.goToRoot} className="nav-bar-logo">Pollarity</button>
-    );
-  },
-
   userOptions() {
     let hiddenOptionClasses = "hidden user-option";
 
@@ -63,23 +57,21 @@ const LoggedInOptions = React.createClass({
 
   render() {
     return (
-      <ul className="logged-in-user-menu">
-        <li>
-          <CreateSurveyButton/>
-        </li>
+      <div className="logged-in-user-menu">
+        <ul className="nav-bar-survey-options">
+          <li>
+            <CreateSurveyButton/>
+          </li>
 
-        <li>
-          <UserSurveysButton/>
-        </li>
+          <li>
+            <UserSurveysButton/>
+          </li>
+        </ul>
 
-        <li>
-          {this.pollarityLogo()}
-        </li>
+        <button onClick={this.goToRoot} className="nav-bar-logo-logged-in">Pollarity</button>
 
-        <li>
-          {this.userOptions()}
-        </li>
-      </ul>
+        {this.userOptions()}
+      </div>
     );
   }
 });
