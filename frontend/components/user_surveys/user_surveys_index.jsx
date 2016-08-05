@@ -2,11 +2,11 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 const hashHistory = require('react-router').hashHistory;
 
-const ResponseForm = React.createClass ({
+const UserSurveysIndex = React.createClass({
 
-  render() {
-    return (
-      <p>This will be a response form</p>
+  render () {
+    return(
+      <div>This will be a user surveys index</div>
     );
   }
 });

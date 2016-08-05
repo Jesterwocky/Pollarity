@@ -89,8 +89,30 @@ body {
   display: flex-inline;
 }
 
+.nav-bar-content ul {
+  width: 100%;
+}
+
+.nav-bar-content li {
+  display: inline-flex;
+}
+
+//TEMPORARY
+.logged-in-user-menu li {
+  padding-right: 20px;
+}
+//TEMPORARY.... And not working
+ul #user-options li{
+  list-style-type: disc;
+}
+
+#nav-bar-username {
+  text-transform: uppercase;
+}
+
 // Eventually should be image, not text
 .nav-bar-logo {
+  line-height: 1.5;
   float: left;
   font-size: 25px;
 }
@@ -111,8 +133,9 @@ body {
 }
 
 .inspiration {
-  font-size: 12px;
-  font-weight: lighter;
+  font-size: 11px;
+  font-weight: 100;
+  margin-left: 25px;
 }
 
 .nav-bar-button {

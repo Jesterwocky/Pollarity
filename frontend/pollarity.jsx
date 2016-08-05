@@ -9,7 +9,8 @@ const Login = require('./components/user_auth/login/login.jsx');
 const UserSettings = require('./components/user_auth/logged_in_options/logged_in_options.jsx');
 const SessionActions = require('./actions/session_actions.js');
 const CreateAccount = require('./components/user_auth/signup/create_account.jsx');
-
+const ResponseForm = require('./components/responses/response_form.jsx');
+const UserSurveysIndex = require('./components/user_surveys/user_surveys_index.jsx');
 
 const SessionApiUtil = require('./util/session_api_util.js');
 window.SessionApiUtil = SessionApiUtil;
@@ -34,6 +35,8 @@ const routes = (
     <Route path="users/new/create-account" component={CreateAccount}/>
     <Route path="login" component={Login}/>
     <Route path="settings" component={UserSettings}/>
+    <Route path=":userId/surveys" component={UserSurveysIndex}/>
+    <Route path="take-my-poll/:surveyId" component={ResponseForm}/>
   </Route>
 );
 

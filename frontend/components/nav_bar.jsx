@@ -1,3 +1,7 @@
+
+// THIS FILE IS BEING REPLACED
+
+
 const React = require('react');
 const ReactDOM = require('react-dom');
 const hashHistory = require('react-router').hashHistory;
@@ -38,13 +42,13 @@ const NavBar = React.createClass ({
     );
   },
 
-  seeClonedSite() {
+  clonedSiteLink() {
     return(
       <a href="https://www.polleverywhere.com/" className="inspiration">Inspired by Poll Everywhere</a>
     );
   },
 
-  logInOrOut() {
+  loginBasedContent() {
     if (this.state.loggedIn) {
       return (
         <LoggedInOptions/>
@@ -52,10 +56,15 @@ const NavBar = React.createClass ({
     }
     else {
       return (
-        <div className="login-and-signup">
-          <LoginButton/>
-          <SignupButton/>
-        </div>
+        <ul className="login-and-signup">
+          <li>{this.pollarityLogo()}</li>
+
+          <li>{this.clonedSiteLink()}</li>
+
+          <li><LoginButton/></li>
+
+          <li><SignupButton/></li>
+        </ul>
       );
     }
   },
@@ -66,8 +75,7 @@ const NavBar = React.createClass ({
     return (
       <div className={classnames} id="nav-bar">
         <div className="nav-bar-content">
-          {this.pollarityLogo()}
-          {this.logInOrOut()}
+          {this.loginBasedContent()}
         </div>
       </div>
     );
