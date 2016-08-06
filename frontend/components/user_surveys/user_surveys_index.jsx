@@ -60,7 +60,9 @@ const UserSurveysIndex = React.createClass({
           </div>
         </aside>
 
-        {this.userSurveyIndexItems()}
+        <div id="user-surveys-list">
+          {this.userSurveyIndexItems()}
+        </div>
       </div>
     );
   }
