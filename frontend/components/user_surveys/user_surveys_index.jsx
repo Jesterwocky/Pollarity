@@ -4,6 +4,7 @@ const hashHistory = require('react-router').hashHistory;
 const SurveyStore = require('../../stores/survey_store.js');
 const SurveyActions = require('../../actions/survey_actions.js');
 const UserSurveysIndexItem = require('./user_surveys_index_item.jsx');
+const CreateSurvey = require('../create_surveys/create_survey.jsx');
 
 const UserSurveysIndex = React.createClass({
   getInitialState() {
@@ -33,7 +34,7 @@ const UserSurveysIndex = React.createClass({
 
   newPoll (e) {
     e.preventDefault();
-    console.log("New post will be created!");
+    console.log("New poll will be created!");
   },
 
   userSurveyIndexItems () {
@@ -44,6 +45,7 @@ const UserSurveysIndex = React.createClass({
 
   render () {
     let buttonClasses = "index-side-button group";
+    let userSurveysClasses = "user-surveys-list group";
 
     return(
       <div id="user-surveys" className="group">
@@ -65,9 +67,11 @@ const UserSurveysIndex = React.createClass({
           </div>
         </aside>
 
-        <div id="user-surveys-list" className="group">
+        <div className={userSurveysClasses}>
           {this.userSurveyIndexItems()}
         </div>
+
+        <CreateSurvey/>
       </div>
     );
   }

@@ -1,6 +1,6 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
-const Link = require('react-router').Link;
+const CreateOption = require('./create_option.jsx');
 
 
 const CreateQuestion = React.createClass({
@@ -63,3 +63,5 @@ const CreateQuestion = React.createClass({
     );
   }
 });
+
+module.exports = CreateQuestion;

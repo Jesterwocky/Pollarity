@@ -388,7 +388,6 @@ body {
   bottom: 0px;
   left: 0px;
   right: 0px;
-  white-space: nowrap;
 }
 
 .left-menu {
@@ -437,7 +436,7 @@ body {
   margin-right: 10px;
 }
 
-#user-surveys-list {
+.user-surveys-list {
   width: 750px;
   float: left;
   display: inline-block;
@@ -455,4 +454,44 @@ body {
   font-size: 16px;
   font-weight: bold;
   margin-top: 15px;
+}
+
+// CREATE SURVEYS
+.create-survey-box {
+  position: absolute;
+  top: 90px;
+  left: 240px;
+  width: 700px;
+}
+
+.question-type-tab-selected {
+  background: white;
+  width: 130px;
+  height: 50px;
+  float: left;
+  line-height: 4;
+  text-align: center;
+  font-weight: bold;
+  color: #1873A4;
+}
+
+.question-type-tab {
+  background: white;
+  width: 130px;
+  height: 50px;
+  float: left;
+  line-height: 4;
+  text-align: center;
+  background: #F4F4F4;
+}
+
+.question-box-body {
+  float: left;
+  background: white;
+  padding: 20px;
+  width: 700px;
+}
+
+.multi-q-text {
+  font-size: 14px;
 }
