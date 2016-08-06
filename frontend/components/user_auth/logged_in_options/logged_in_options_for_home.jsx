@@ -25,42 +25,27 @@ const LoggedInOptions = React.createClass({
     });
   },
 
-  componentWillUnmount() {
-    this.listener.remove();
-  },
-
-  goToRoot(e) {
-    e.preventDefault();
-    hashHistory.push("/");
-  },
-
   logOut(e) {
     e.preventDefault();
     SessionActions.logOut();
-    hashHistory.push("/");
   },
 
-  goToSettings(e) {
+  goToUserPolls(e) {
     e.preventDefault();
-    hashHistory.push("settings");
+    hashHistory.push(`users/${SessionStore.currentUser().id}/surveys`);
   },
 
   userOptions() {
-    let hiddenOptionClasses = "hidden user-option";
-
     return (
-      <ul id="user-options">
+      <ul id="home-user-options">
         <li>
-          <a href="" id="nav-bar-username">{this.state.username}</a>
+          <a href="" onClick={this.goToUserPolls}>My Polls</a>
         </li>
 
         <li>
-          <a href="" className={hiddenOptionClasses} onClick={this.logOut}>Logout</a>
+          <a href="" onClick={this.logOut}>Logout</a>
         </li>
 
-        <li>
-          <a href="" className={hiddenOptionClasses} onClick={this.goToSettings}>Settings</a>
-        </li>
       </ul>
     );
   },
@@ -68,18 +53,6 @@ const LoggedInOptions = React.createClass({
   render() {
     return (
       <div className="logged-in-user-menu">
-        <ul className="nav-bar-survey-options">
-          <li>
-            <CreateSurveyButton/>
-          </li>
-
-          <li>
-            <UserSurveysButton/>
-          </li>
-        </ul>
-
-        <button onClick={this.goToRoot} className="nav-bar-logo-logged-in">Pollarity</button>
-
         {this.userOptions()}
       </div>
     );

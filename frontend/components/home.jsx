@@ -1,5 +1,6 @@
 const React = require("react");
 const ReactDOM = require("react-dom");
+const NavBarForHome = require("./nav_bar_for_home.jsx");
 
 const Home = React.createClass({
 
@@ -9,6 +10,7 @@ const Home = React.createClass({
     return(
       <div className={classnames}>
         <div className="home-content">
+          <NavBarForHome/>
           <h1>Live Audience Participation</h1>
           <h2>Pollarity lets you engage your audience or class in real time</h2>
           <section></section>

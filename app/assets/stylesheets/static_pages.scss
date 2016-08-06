@@ -62,7 +62,7 @@ body {
   text-align: left;
   color: white;
   font-weight: bold;
-  height: 70px;
+  height: 50px;
   width: 100%;
   background: #25364A;
   // to make menu bar stay on top when you scroll down
@@ -71,7 +71,6 @@ body {
 
 .nav-bar-content {
   width: 930px;
-  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -163,7 +162,7 @@ body {
 
   background: white;
   position:absolute;
-  top: 70px;
+  top: 50px;
   bottom: 0px;
   left: 0px;
   right: 0px;
@@ -250,6 +249,9 @@ body {
 
 
 //Home
+#nav-bar-for-home {
+  background: transparent;
+}
 
 .home-page {
   background-image: image-url("subtle-dots.png"), image-url("handsup.jpeg");
@@ -258,7 +260,7 @@ body {
   background-size: 45px 45px, cover;
 
   position:absolute;
-  top: 70px;
+  top: 0px;
   bottom: 0px;
   left: 0px;
   right: 0px;
@@ -382,7 +384,7 @@ body {
   font-family: sans-serif;
   background: white;
   position:absolute;
-  top: 70px;
+  top: 50px;
   bottom: 0px;
   left: 0px;
   right: 0px;
