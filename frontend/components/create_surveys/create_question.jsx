@@ -31,7 +31,7 @@ const CreateQuestion = React.createClass({
     let options = this.state.answerOptions.slice();
 
     options.push(
-      <CreateOption key={optionNum}/>
+      <CreateOption key={this.state.optionNum}/>
     );
 
     this.setState({
@@ -40,26 +40,35 @@ const CreateQuestion = React.createClass({
     });
   },
 
+  deleteQuestion(e) {
+    e.preventDefault();
+    console.log("Question will be deleted!");
+  },
+
   render() {
     let questionContentClassnames = "question-content-box group";
 
     return (
-      <div >
+      <div className="external-question-box">
+        <a onClick={this.deleteQuestion} className="delete-question">X</a>
 
         <div className={questionContentClassnames}>
-          <label>Question:</label>
-          <input type="text" onChange={this.updateQuestion} value={this.props.questionText}/>
-        </div>
+            <label>Question:</label>
+            <input type="text"
+              ref={(input) => input.focus()}
+              onChange={this.updateQuestion}
+              value={this.props.questionText}/>
 
-        <div className="answer-options-list">
-          {this.state.answerOptions}
-        </div>
+            <p className="audience-response-text">How will my audience respond?</p>
 
-        <button
-          onClick={this.addOption}
-          value="Add Answer"
-          className="add-option-button"
-        />
+            <div className="answer-options-list">
+              {this.state.answerOptions}
+              <button onClick={this.addOption} className="add-option-button">
+                Add an answer
+              </button>
+            </div>
+
+        </div>
 
       </div>
     );

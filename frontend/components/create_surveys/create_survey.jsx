@@ -37,6 +37,8 @@ const CreateSurvey = React.createClass({
       />
     );
 
+    e.currentTarget.value = "";
+
     this.setState({
       questionNum: this.state.questionNum + 1,
       questionElements: questionElements,
