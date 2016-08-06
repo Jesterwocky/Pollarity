@@ -18,6 +18,10 @@ const SessionStore = require('./stores/session_store.js');
 window.SessionStore = SessionStore;
 const SurveyApiUtil = require('./util/survey_api_util.js');
 window.SurveyApiUtil = SurveyApiUtil;
+const SurveyActions = require('./actions/survey_actions.js');
+window.SurveyActions = SurveyActions;
+const SurveyStore = require('./stores/survey_store.js');
+window.SurveyStore = SurveyStore;
 
 
 const App = React.createClass({

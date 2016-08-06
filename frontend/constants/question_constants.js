@@ -1,0 +1,4 @@
+module.exports = {
+  ADD_QUESTION: "ADD_QUESTION",
+  REMOVE_QUESTION: "REMOVE_QUESTION"
+};

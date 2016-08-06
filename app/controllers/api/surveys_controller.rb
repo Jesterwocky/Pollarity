@@ -1,11 +1,15 @@
 class Api::SurveysController < ApplicationController
-  # def new
-  #   @survey = Survey.new
-  # end
+  def show
+    @survey = Survey.find(params[:id].to_i)
+
+    if @survey
+      render json: @survey.to_json(include: {questions: {include: :options}})
+    else
+      render json: ["No such survey"], status: 401
+    end
+  end
 
   def create
-    debugger
-
     @survey = Survey.new(survey_params)
     # ensure_survey_title(@survey)
 

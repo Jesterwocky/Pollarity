@@ -7,6 +7,9 @@ class Survey < ActiveRecord::Base
   has_many :questions,
     dependent: :destroy
 
+  has_many :options,
+    through: :questions
+
   has_many :responses,
     through: :questions
 
