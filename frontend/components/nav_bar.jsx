@@ -12,7 +12,6 @@ const NavBar = React.createClass ({
   getInitialState() {
     return({
       loggedIn: SessionStore.isUserLoggedIn(),
-      currentUsername: SessionStore.currentUser()
     });
   },
 
@@ -20,10 +19,13 @@ const NavBar = React.createClass ({
     this.listener = SessionStore.addListener(this._setLoggedIn);
   },
 
+  componentWillUnmount() {
+    this.listener.remove();
+  },
+
   _setLoggedIn() {
     this.setState({
       loggedIn: SessionStore.isUserLoggedIn(),
-      currentUsername: SessionStore.currentUser().username
     });
   },
 

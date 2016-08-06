@@ -10,11 +10,11 @@ const UserSettings = require('./components/user_auth/logged_in_options/logged_in
 const SessionActions = require('./actions/session_actions.js');
 const CreateAccount = require('./components/user_auth/signup/create_account.jsx');
 const UserSurveysIndex = require('./components/user_surveys/user_surveys_index.jsx');
+const SessionStore = require('./stores/session_store.js');
 
 //For testing, but verify before deleting
 const SessionApiUtil = require('./util/session_api_util.js');
 window.SessionApiUtil = SessionApiUtil;
-const SessionStore = require('./stores/session_store.js');
 window.SessionStore = SessionStore;
 const SurveyApiUtil = require('./util/survey_api_util.js');
 window.SurveyApiUtil = SurveyApiUtil;
@@ -23,6 +23,11 @@ window.SurveyActions = SurveyActions;
 const SurveyStore = require('./stores/survey_store.js');
 window.SurveyStore = SurveyStore;
 
+const _ensureLoggedIn = function(nextState, replace) {
+  if (!SessionStore.isUserLoggedIn()) {
+    replace("/");
+  }
+};
 
 const App = React.createClass({
   render() {
@@ -40,9 +45,9 @@ const routes = (
     <IndexRoute component={Home}/>
     <Route path="users/new" component={Signup}/>
     <Route path="users/new/create-account" component={CreateAccount}/>
-    <Route path="users/:userId/surveys" component={UserSurveysIndex}/>
+    <Route path="users/:userId/surveys" component={UserSurveysIndex} onEnter={_ensureLoggedIn}/>
     <Route path="login" component={Login}/>
-    <Route path="settings" component={UserSettings}/>
+    <Route path="settings" component={UserSettings} onEnter={_ensureLoggedIn}/>
   </Route>
 );
 

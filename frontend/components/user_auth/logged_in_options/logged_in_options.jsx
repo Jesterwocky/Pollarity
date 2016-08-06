@@ -31,13 +31,12 @@ const LoggedInOptions = React.createClass({
 
   goToRoot(e) {
     e.preventDefault();
-    hashHistory.push("/");
+    hashHistory.push("");
   },
 
   logOut(e) {
     e.preventDefault();
     SessionActions.logOut();
-    hashHistory.push("/");
   },
 
   goToSettings(e) {

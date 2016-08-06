@@ -15,9 +15,14 @@ const UserSurveysIndex = React.createClass({
     });
   },
 
-  componentWillMount () {
+  //ComponentWillMount?
+  componentDidMount () {
     this.listener = SurveyStore.addListener(this._handleSurveyChange);
     SurveyActions.userSurveys(this.state.userId);
+  },
+
+  componentWillUnmount() {
+    this.listener.remove();
   },
 
   _handleSurveyChange () {
