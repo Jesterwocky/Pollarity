@@ -27,7 +27,6 @@ SessionStore.currentUser = function() {
 };
 
 SessionStore.isUserLoggedIn = function() {
-  // if (_currentUser !== undefined && _currentUser.id !== undefined) {
   if (_currentUser.id !== undefined) {
     return true;
   } else {

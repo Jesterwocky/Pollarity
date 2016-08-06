@@ -33,6 +33,7 @@ SurveyStore.all = function() {
     });
   }
 
+  debugger
   return surveys;
 };
 
@@ -40,7 +41,7 @@ SurveyStore.allForUser = function(userId) {
   let userSurveys = [];
 
   Object.keys(_surveys).forEach((key) => {
-    if (parseInt(key) === userId) {
+    if (_surveys[key].author_id === userId) {
       userSurveys.push(_surveys[key]);
     }
   });

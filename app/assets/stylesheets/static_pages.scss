@@ -388,10 +388,12 @@ body {
   bottom: 0px;
   left: 0px;
   right: 0px;
+  white-space: nowrap;
 }
 
 .left-menu {
   float: left;
+  display: inline-block;
 }
 
 #user-surveys-left-menu {
@@ -405,7 +407,9 @@ body {
   height: 30px;
   width: 150px;
   border-radius: 3px;
-  margin-left: 15px;
+  margin-left: 14px;
+  margin-right: 14px;
+  margin-top: 14px;
 }
 
 #create-polls-from-index-button {
@@ -413,15 +417,12 @@ body {
   line-height: 2.8;
   color: white;
   background: #DA5229;
-  margin-top: 15px;
-  margin-bottom: 7px;
 }
 
 #my-polls-linklike {
   text-align: left;
   color: #25364A;
   background: #C2D5E4;
-  margin-top: 7px;
 }
 
 .my-polls-text {
@@ -437,5 +438,21 @@ body {
 }
 
 #user-surveys-list {
-  margin-top: 10px;
+  width: 750px;
+  float: left;
+  display: inline-block;
+}
+
+.user-surveys div {
+  background: #D7E4EE;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 1px;
+}
+
+.user-surveys .user-survey-title {
+  background: #C2D5E4;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 15px;
 }
