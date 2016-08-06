@@ -456,7 +456,7 @@ body {
   margin-top: 15px;
 }
 
-// CREATE SURVEYS
+// CREATE NEW SURVEYS
 .create-survey-box {
   position: absolute;
   top: 90px;
@@ -494,4 +494,38 @@ body {
 
 .multi-q-text {
   font-size: 14px;
+}
+
+.question-content-box {
+  background: #D7E4EE;
+  padding: 18px;
+  border-radius: 3px;
+}
+
+.question-content-box input {
+  background: white;
+  border: 2px solid #F4F4F4;
+  height: 50px;
+  font-size: 18px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.survey-build-controls {
+  font-size: 12px;
+  margin-top: 10px;
+  float: right;
+}
+
+.cancel-link {
+  color: gray;
+  padding: 10px;
+}
+
+.build-survey-button {
+  font-size: 12px;
+  color: white;
+  background: #1873A4;
+  border-radius: 3px;
+  padding: 10px;
 }

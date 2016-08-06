@@ -41,10 +41,12 @@ const CreateQuestion = React.createClass({
   },
 
   render() {
+    let questionContentClassnames = "question-content-box group";
+
     return (
       <div >
 
-        <div className="question-content-box">
+        <div className={questionContentClassnames}>
           <label>Question:</label>
           <input type="text" onChange={this.updateQuestion} value={this.props.questionText}/>
         </div>

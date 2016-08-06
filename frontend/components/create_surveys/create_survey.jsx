@@ -16,7 +16,8 @@ const CreateSurvey = React.createClass({
     });
   },
 
-  toggleFormType() {
+  toggleFormType(e) {
+    e.preventDefault();
     console.log("Toggling form type!");
   },
 
@@ -42,8 +43,19 @@ const CreateSurvey = React.createClass({
     });
   },
 
+  closeModal(e) {
+    e.preventDefault();
+    console.log("Modal will close!");
+  },
+
+  buildSurvey(e) {
+    e.preventDefault();
+    console.log("Survey will be built!");
+  },
+
   render() {
     let fullBoxClassnames = "create-survey-box group";
+    let questionContentClassnames = "question-content-box group";
 
     return (
       <div className={fullBoxClassnames}>
@@ -69,12 +81,17 @@ const CreateSurvey = React.createClass({
           <section className="question-creation-section">
             {this.state.questionElements}
 
-            <div className="new-question-placeholder">
+            <div id="question-placeholder" className={questionContentClassnames}>
               <label>Add a Question:</label>
               <input type="text" onChange={this.addQuestionBox}/>
             </div>
 
           </section>
+
+          <div className="survey-build-controls">
+            <a href="" onClick={this.closeModal} className="cancel-link">Cancel</a>
+            <button onClick={this.buildSurvey} className="build-survey-button">Create -></button>
+          </div>
         </div>
 
       </div>
