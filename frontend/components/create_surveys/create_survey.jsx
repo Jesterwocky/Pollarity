@@ -11,7 +11,6 @@ const CreateSurvey = React.createClass({
     return ({
       questionType: "single",
       surveyTitle: "",
-      questionList: [],
       questionNum: 0,
       questionElements: []
     });
@@ -27,11 +26,14 @@ const CreateSurvey = React.createClass({
     // change form display
   },
 
+  packageQuestions() {
+    //on submit of form, need to package up the questions and options in children
+  },
+
   addQuestionBox(e) {
     e.preventDefault();
 
     let questionElements = this.state.questionElements.slice();
-    let questions = {};
     Object.assign(questions, this.state.questionList);
 
     questionElements.push (
@@ -40,19 +42,11 @@ const CreateSurvey = React.createClass({
         questionText={e.currentTarget.value}/>
     );
 
-    questions[this.state.questionNum] = e.currentTarget.value;
-
-    let questionNum = this.state.questionNum + 1;
-
     this.setState({
-      questionNum: questionNum,
+      questionNum: this.state.questionNum + 1,
       questionElements: questionElements,
       questions: questions
     });
-  },
-
-  recordQuestion(question) {
-
   },
 
   render() {

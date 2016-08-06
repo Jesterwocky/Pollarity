@@ -20,7 +20,8 @@ const Login = React.createClass({
 
   _onSessionChange() {
     if (SessionStore.isUserLoggedIn) {
-      hashHistory.push("");
+      let userId = SessionStore.currentUser().id;
+      hashHistory.push(`users/${userId}/surveys`);
     }
   },
 

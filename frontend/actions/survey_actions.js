@@ -1,6 +1,7 @@
 const SurveyAPIUtil = require('../util/survey_api_util.js');
 const LoginConstants = require('../constants/login_constants.js');
 const Dispatcher = require('../dispatcher/dispatcher.js');
+const SurveyConstants = require('../constants/survey_constants.js');
 
 module.exports = {
   allSurveys() {
@@ -8,7 +9,7 @@ module.exports = {
   },
 
   userSurveys(userId) {
-    SurveyApiUtil.userSurveys(userId, this.receiveSurvey);
+    SurveyApiUtil.userSurveys(userId, this.receiveSurveys);
   },
 
   createSurvey(surveyData) {
@@ -28,7 +29,7 @@ module.exports = {
 
   receiveSurvey(survey) {
     Dispatcher.dispatch({
-      actionType: SurveyConstants.SURVEYS_RECEIVED,
+      actionType: SurveyConstants.SURVEY_RECEIVED,
       survey: survey
     });
   },

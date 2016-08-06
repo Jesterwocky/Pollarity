@@ -1,6 +1,6 @@
 const Store = require('flux/utils').Store;
 const Dispatcher = require('../dispatcher/dispatcher.js');
-const SurveyConstants = require('../constants/login_constants.js');
+const SurveyConstants = require('../constants/survey_constants.js');
 
 const SurveyStore = new Store(Dispatcher);
 
@@ -13,6 +13,7 @@ const _resetSurveys = function(surveys) {
   surveys.forEach((survey) => {
     _surveys[survey.id] = survey;
   });
+
 };
 
 const _addSurvey = function(survey) {
@@ -33,6 +34,18 @@ SurveyStore.all = function() {
   }
 
   return surveys;
+};
+
+SurveyStore.allForUser = function(userId) {
+  let userSurveys = [];
+
+  Object.keys(_surveys).forEach((key) => {
+    if (parseInt(key) === userId) {
+      userSurveys.push(_surveys[key]);
+    }
+  });
+
+  return userSurveys;
 };
 
 // SurveyStore.surveyQuestions = function(surveyId) {

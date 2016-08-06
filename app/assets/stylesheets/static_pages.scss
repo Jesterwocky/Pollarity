@@ -53,22 +53,10 @@ input[type="submit"] {
 
 //This should be on the home page only
 body {
-  background: #25364A;
-  // position: absolute;
-  // top: 0px;
-  // bottom: 0px;
-  // left: 0px;
-  // right: 0px;
-
-  // background-image: image-url("subtle-dots.png"), image-url("handsup.jpeg");
-  // background-repeat: repeat, no-repeat;
-  // background-position: 0 0;
-  // background-size: 45px 45px, cover;
+  background: white;
 }
 
 //Nav bar
-
-
 #nav-bar {
   font-family: sans-serif;
   text-align: left;
@@ -76,7 +64,7 @@ body {
   font-weight: bold;
   height: 70px;
   width: 100%;
-  top: 0;
+  background: #25364A;
   // to make menu bar stay on top when you scroll down
   background-attachment: fixed;
 }
@@ -386,12 +374,16 @@ body {
   padding: 2px;
 }
 
-//from stackoverflow
-// .dots-overlay {
-//   background: image-url("subtle-dots.png");
-//   position:absolute;
-//   width:100%;
-//   height:100%;
-//   top: 0;
-//   left: 0;
-// }
+
+// INDEX PAGES
+
+//USER SURVEYS
+#user-surveys {
+  font-family: sans-serif;
+  background: white;
+  position:absolute;
+  top: 70px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
