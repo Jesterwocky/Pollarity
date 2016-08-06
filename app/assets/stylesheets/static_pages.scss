@@ -387,3 +387,49 @@ body {
   left: 0px;
   right: 0px;
 }
+
+.left-menu {
+  float: left;
+}
+
+#user-surveys-left-menu {
+  width: 180px;
+  height: 100%;
+  font-size: 12px;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+#user-surveys-left-menu .index-side-button {
+  height: 30px;
+  width: 140px;
+  border-radius: 3px;
+}
+
+#create-polls-from-index-button {
+  text-align: center;
+  color: white;
+  background: #DA5229;
+  margin: 15px;
+  margin-bottom: 7.5px;
+}
+
+#my-polls-linklike {
+  text-align: left;
+  color: #25364A;
+  background: #C2D5E4;
+  margin: 15px;
+  margin-top: 7.5px;
+}
+
+.my-polls-text {
+  float: left;
+  margin-left: 10px;
+  margin-top: 8px;
+}
+
+.content-indicator-icon {
+  float: right;
+  margin-top: 8px;
+  margin-right: 10px;
+}

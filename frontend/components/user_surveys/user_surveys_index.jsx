@@ -38,10 +38,28 @@ const UserSurveysIndex = React.createClass({
   },
 
   render () {
+    let buttonClasses = "index-side-button group";
+
     return(
       <div id="user-surveys" className="group">
-        <button onClick={this.newPoll} className="create-polls-from-index-button"/>
-        <aside>My Polls</aside>
+        <aside id="user-surveys-left-menu" className="left-menu">
+          <button
+            onClick={this.newPoll}
+            id="create-polls-from-index-button"
+            className={buttonClasses}>
+            Create
+          </button>
+
+          <div id="my-polls-linklike" className={buttonClasses}>
+            <p className="my-polls-text">
+              My Polls
+            </p>
+            <p className="content-indicator-icon">
+              >
+            </p>
+          </div>
+        </aside>
+
         {this.userSurveyIndexItems()}
       </div>
     );
