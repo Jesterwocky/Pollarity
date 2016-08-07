@@ -32,9 +32,14 @@ const UserSurveysIndex = React.createClass({
     });
   },
 
-  newPoll (e) {
+  openModal (e) {
     e.preventDefault();
-    console.log("New poll will be created!");
+    $(".modal").show();
+  },
+
+  closeModal(e) {
+    e.preventDefault();
+    $(".modal").hide();
   },
 
   userSurveyIndexItems () {
@@ -51,7 +56,7 @@ const UserSurveysIndex = React.createClass({
       <div id="user-surveys" className="group">
         <aside id="user-surveys-left-menu" className="left-menu">
           <button
-            onClick={this.newPoll}
+            onClick={this.openModal}
             id="create-polls-from-index-button"
             className={buttonClasses}>
             Create
@@ -71,7 +76,11 @@ const UserSurveysIndex = React.createClass({
           {this.userSurveyIndexItems()}
         </div>
 
-        <CreateSurvey/>
+        <div className="modal">
+          <div onClick={this.closeModal} className={"dark-overlay group"}></div>
+          <CreateSurvey/>
+        </div>
+
       </div>
     );
   }

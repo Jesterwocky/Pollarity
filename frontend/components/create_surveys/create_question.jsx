@@ -6,7 +6,6 @@ const CreateOption = require('./create_option.jsx');
 const CreateQuestion = React.createClass({
 
   getInitialState() {
-    debugger
     let answerOptions = [
       <CreateOption key={0}/>,
       <CreateOption key={1}/>

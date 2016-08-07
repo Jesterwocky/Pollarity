@@ -58,6 +58,7 @@ const CreateSurvey = React.createClass({
   render() {
     let fullBoxClassnames = "create-survey-box group";
     let questionContentClassnames = "question-content-box group";
+    let overlayClasses = "dark-overlay group";
 
     return (
       <div className={fullBoxClassnames}>
