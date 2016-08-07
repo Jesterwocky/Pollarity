@@ -17,15 +17,16 @@ const CreateOption = React.createClass({
     });
   },
 
-  removeOption() {
-    console.log("Option will be removed!");
+  deleteThisOption(e) {
+    e.preventDefault();
+    this.props.deleteOption(this.props.optionNum);
   },
 
   render() {
     return (
       <div>
         <input type="text" onChange={this.updateOption} value={this.state.option}/>
-        <button onClick={this.RemoveOption} className="delete-option">X</button>
+        <button onClick={this.deleteThisOption} className="delete-option">X</button>
       </div>
     );
   }

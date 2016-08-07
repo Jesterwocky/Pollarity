@@ -7,8 +7,16 @@ const CreateQuestion = React.createClass({
 
   getInitialState() {
     let answerOptions = [
-      <CreateOption key={0}/>,
-      <CreateOption key={1}/>
+      <CreateOption
+        key={0}
+        optionNum={0}
+        deleteOption={this.deleteOption}
+      />,
+      <CreateOption
+        key={1}
+        optionNum={1}
+        deleteOption={this.deleteOption}
+      />
     ];
 
     return ({
@@ -25,13 +33,18 @@ const CreateQuestion = React.createClass({
     });
   },
 
+
   addOption(e) {
     e.preventDefault();
 
     let options = this.state.answerOptions.slice();
 
     options.push(
-      <CreateOption key={this.state.optionNum}/>
+      <CreateOption
+        key={this.state.optionNum}
+        optionNum={this.state.optionNum}
+        deleteOption={this.deleteOption}
+      />
     );
 
     this.setState({
@@ -40,14 +53,29 @@ const CreateQuestion = React.createClass({
     });
   },
 
-  deleteQuestion(e) {
+  deleteOption(num) {
+    let answerOptions = this.state.answerOptions;
+
+    answerOptions.forEach((el, i) => {
+      if (el.props.optionNum === num) {
+        answerOptions.splice(i, 1);
+      }
+    });
+
+    this.setState({
+      answerOptions: answerOptions
+    });
+  },
+
+  deleteThisQuestion(e) {
     e.preventDefault();
-    console.log("Question will be deleted!");
     this.props.deleteQuestion(this.props.questionNum);
   },
 
   focusOn (input) {
-    input.focus();
+    if (input !== null){
+      input.focus();
+    }
   },
 
   render() {
@@ -55,7 +83,7 @@ const CreateQuestion = React.createClass({
 
     return (
       <div className="external-question-box">
-        <a onClick={this.deleteQuestion} className="delete-question">X</a>
+        <a onClick={this.deleteThisQuestion} className="delete-question">X</a>
 
         <div className={questionContentClassnames}>
             <label>Question:</label>
