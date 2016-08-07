@@ -6,13 +6,14 @@ const CreateOption = require('./create_option.jsx');
 const CreateQuestion = React.createClass({
 
   getInitialState() {
+    debugger
     let answerOptions = [
       <CreateOption key={0}/>,
       <CreateOption key={1}/>
     ];
 
     return ({
-      question: "",
+      question: this.props.questionText,
       answerOptions: answerOptions,
       optionNum: 2
     });
@@ -45,6 +46,10 @@ const CreateQuestion = React.createClass({
     console.log("Question will be deleted!");
   },
 
+  focusThing (input) {
+    input.focus();
+  },
+
   render() {
     let questionContentClassnames = "question-content-box group";
 
@@ -55,9 +60,9 @@ const CreateQuestion = React.createClass({
         <div className={questionContentClassnames}>
             <label>Question:</label>
             <input type="text"
-              ref={(input) => input.focus()}
+              ref={this.focusThing}
               onChange={this.updateQuestion}
-              value={this.props.questionText}/>
+              value={this.state.question}/>
 
             <p className="audience-response-text">How will my audience respond?</p>
 
