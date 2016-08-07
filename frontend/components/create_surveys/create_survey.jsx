@@ -47,7 +47,7 @@ const CreateSurvey = React.createClass({
 
   closeModal(e) {
     e.preventDefault();
-    console.log("Modal will close!");
+    $(".modal").hide();
   },
 
   buildSurvey(e) {
