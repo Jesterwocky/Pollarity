@@ -32,18 +32,6 @@ const NavBar = React.createClass ({
     hashHistory.push("");
   },
 
-  // pollarityLogo() {
-  //   return (
-  //     <button onClick={this.goToRoot} className="nav-bar-logo">Pollarity</button>
-  //   );
-  // },
-  //
-  // clonedSiteLink() {
-  //   return(
-  //     <a href="https://www.polleverywhere.com/" className="inspiration">Inspired by Poll Everywhere</a>
-  //   );
-  // },
-
   loginBasedContent() {
     if (this.state.loggedIn) {
       return (
@@ -67,7 +55,7 @@ const NavBar = React.createClass ({
     let classnames = "nav-bar-content group";
 
     return (
-      <div className="nav-bar" id="nav-bar-for-home">
+      <div className="nav-bar-for-home">
         <div className={classnames}>
 
           <div>

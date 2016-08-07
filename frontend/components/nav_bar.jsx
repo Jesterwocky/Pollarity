@@ -71,7 +71,7 @@ const NavBar = React.createClass ({
     let classnames = "nav-bar-content group";
 
     return (
-      <div className="nav-bar" id="nav-bar">
+      <div className="nav-bar">
         <div className={classnames}>
           {this.loginBasedContent()}
         </div>

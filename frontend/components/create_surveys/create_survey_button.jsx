@@ -4,14 +4,14 @@ const hashHistory = require('react-router').hashHistory;
 
 const CreateSurveyButton = React.createClass({
 
-  goToCreateSurvey(e) {
+  openModal (e) {
     e.preventDefault();
-    console.log("This will open a new survey modal");
+    $(".modal").show();
   },
 
   render() {
     return (
-      <a href="" onClick={this.goToCreateSurvey} id="add-poll-link">+</a>
+      <a href="" onClick={this.openModal} id="add-poll-link">+</a>
     );
   }
 });

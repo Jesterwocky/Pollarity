@@ -58,7 +58,7 @@ body {
 }
 
 //Nav bar
-#nav-bar {
+.nav-bar {
   font-family: sans-serif;
   text-align: left;
   color: white;
@@ -67,7 +67,7 @@ body {
   width: 100%;
   background: #25364A;
   // to make menu bar stay on top when you scroll down
-  background-attachment: fixed;
+  position: fixed;
 }
 
 .nav-bar-content {
@@ -76,8 +76,21 @@ body {
   margin-right: auto;
 }
 
+.nav-bar-content ul {
+  float: right;
+}
+
+.home-user-options {
+  font-size: 15px;
+  line-height: 2.7;
+}
+
+.home-user-options li {
+  margin-left: 25px;
+}
+
 .nav-bar-content li {
-  display: inline-flex;
+  display: inline-block;
 }
 
 // Eventually should be image, not text
@@ -98,17 +111,13 @@ body {
 .inspiration {
   font-size: 11px;
   font-weight: 100;
-  margin-left: 280px;
   line-height: 4.2;
-
+  float: left;
+  width: 70%;
 }
 
 #nav-bar-username {
   text-transform: uppercase;
-}
-
-.login-and-signup {
-  float: right;
 }
 
 .logout-and-username {
@@ -250,9 +259,6 @@ body {
 
 
 //Home
-#nav-bar-for-home {
-  background: transparent;
-}
 
 .home-page {
   background-image: image-url("subtle-dots.png"), image-url("handsup.jpeg");
@@ -265,7 +271,6 @@ body {
   bottom: 0px;
   left: 0px;
   right: 0px;
-
 }
 
 .home-content {
@@ -278,12 +283,14 @@ body {
 
 .home-content h1 {
   font-size: 48px;
-  line-height: 1.4;
+  margin-top: 50px;
+  margin-right: 20px;
 }
 
 .home-content h2 {
   font-size: 20px;
   line-height: 1.4;
+  margin-right: 20px;
 }
 
 //Login

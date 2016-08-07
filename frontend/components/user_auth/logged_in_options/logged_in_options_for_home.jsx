@@ -37,7 +37,7 @@ const LoggedInOptions = React.createClass({
 
   userOptions() {
     return (
-      <ul id="home-user-options">
+      <ul className="home-user-options">
         <li>
           <a href="" onClick={this.goToUserPolls}>My Polls</a>
         </li>
