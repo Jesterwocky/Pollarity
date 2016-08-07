@@ -50,7 +50,7 @@ const UserSurveysIndex = React.createClass({
 
   render () {
     let buttonClasses = "index-side-button group";
-    let userSurveysClasses = "user-surveys-list group";
+    // let userSurveysClasses = "user-surveys-list group";
 
     return(
       <div id="user-surveys" className="group">
@@ -72,7 +72,7 @@ const UserSurveysIndex = React.createClass({
           </div>
         </aside>
 
-        <div className={userSurveysClasses}>
+        <div className={"user-surveys-list group"}>
           {this.userSurveyIndexItems()}
         </div>
 

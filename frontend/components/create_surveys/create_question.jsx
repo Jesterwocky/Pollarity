@@ -11,28 +11,36 @@ const CreateQuestion = React.createClass({
         key={0}
         optionNum={0}
         deleteOption={this.deleteOption}
+        updateOpt={this.updateOpt}
       />,
       <CreateOption
         key={1}
         optionNum={1}
         deleteOption={this.deleteOption}
+        updateOpt={this.updateOpt}
       />
     ];
 
     return ({
-      question: this.props.questionText,
+      question: this.props.initialQuestionText,
       answerOptions: answerOptions,
-      optionNum: 2
+      optionNum: 2,
+      options: {}
     });
   },
 
   updateQuestion(e) {
     e.preventDefault();
+
     this.setState({
       question: e.currentTarget.value
     });
-  },
 
+    this.props.updateQuestion(
+      this.props.questionNum,
+      {question: this.state.question, options: this.state.options}
+    );
+  },
 
   addOption(e) {
     e.preventDefault();
@@ -43,6 +51,7 @@ const CreateQuestion = React.createClass({
       <CreateOption
         key={this.state.optionNum}
         optionNum={this.state.optionNum}
+        updateOpt={this.updateOpt}
         deleteOption={this.deleteOption}
       />
     );
@@ -51,6 +60,10 @@ const CreateQuestion = React.createClass({
       answerOptions: options,
       optionNum: this.state.optionNum + 1
     });
+  },
+
+  updateOpt(optionNum, optionData) {
+    this.state.options[optionNum] = optionData;
   },
 
   deleteOption(num) {

@@ -503,20 +503,36 @@ button.nav-bar-logo-logged-in {
   display: inline-block;
 }
 
-.user-surveys div {
-  background: #D7E4EE;
-  padding: 10px;
-  width: 100%;
-  margin-bottom: 1px;
-}
-
-.user-surveys .user-survey-title {
+.user-survey .user-survey-title {
   background: #C2D5E4;
   font-size: 16px;
   font-weight: bold;
   margin-top: 15px;
+  padding: 10px;
 }
 
+div.user-question {
+  padding: 10px;
+  margin-bottom: 1px;
+  background: #D7E4EE;
+}
+
+.user-question .survey-edit-checkbox, .user-question .survey-question-text {
+  float: left;
+  margin-right: 20px;
+}
+
+.user-survey .survey-controls {
+  float: right;
+}
+
+.user-survey .survey-controls button{
+  font-size: 12px;
+  color: #5D92C0;
+  margin-left: 15px;
+  padding: 5px;
+  border-radius: 3px;
+}
 // CREATE NEW SURVEYS
 
 .dark-overlay {
@@ -561,6 +577,19 @@ button.nav-bar-logo-logged-in {
   background: white;
   padding: 20px;
   width: 700px;
+}
+
+section.survey-title-section {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.survey-title-input {
+  border: 2px solid #F4F4F4;
+  border-radius: 3px;
+  height: 30px;
+  width: 100%;
+  margin-top: 5px;
 }
 
 .multi-q-text {

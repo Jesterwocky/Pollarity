@@ -7,16 +7,30 @@ const UserSurveysIndexItem = React.createClass({
 
   listQuestions() {
 
-    return (
-      <div className="user-question">This will be one of many questions</div>
-    );
+    return this.props.survey.questions.map((question, i) => {
+      return(
+        <div key={i} className={"user-question group"}>
+          <input type="checkbox" className="survey-edit-checkbox"/>
+          <div className="survey-question-text">{question.question}</div>
+        </div>
+      );
+    });
   },
 
   render() {
+    let questions = this.listQuestions();
+
     return (
-      <div className="user-surveys">
-        <div className="user-survey-title">{this.props.survey.survey_title}</div>
-        {this.listQuestions()}
+      <div className={"user-survey group"}>
+        <div className="user-survey-title">
+          {this.props.survey.survey_title}
+          <div className="survey-controls">
+            <button className="edit-survey-in-modal">Edit Survey</button>
+            <button className="delete-selected-questions">Delete Selected Questions</button>
+          </div>
+        </div>
+
+        {questions}
       </div>
     );
   }

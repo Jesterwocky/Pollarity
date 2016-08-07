@@ -13,8 +13,9 @@ class Api::SurveysController < ApplicationController
     @survey = Survey.new(survey_params)
     # ensure_survey_title(@survey)
 
+    debugger
     if @survey.save
-      render json: @survey
+      render json: @survey.to_json(include: {questions: {include: :options}})
     else
       render json: @survey.errors.full_messages, status: 401
     end
@@ -27,7 +28,7 @@ class Api::SurveysController < ApplicationController
       Survey.all
     end
 
-    render json: @surveys
+    render json: @surveys.to_json(include: {questions: {include: :options}})
   end
 
   def destroy
@@ -42,15 +43,6 @@ class Api::SurveysController < ApplicationController
   end
 
   def survey_params
-    params.permit(:survey_title, :questions_attributes, :author_id)
+    params.permit(:survey_title, :author_id, questions_attributes: [:id, :question, :options])
   end
-
-  # Would like this to go on the model, but it doesn't work... Questions
-  # def ensure_survey_title(survey)
-  #   first_question_exists = survey[questions_attributes] && survey[questions_attributes][0] && survey[questions_attributes][0][question]
-  #
-  #   if survey[survey_title].nil? && first_question_exists
-  #     survey[survey_title] = survey[questions_attributes][0][question]
-  #   end
-  # end
 end

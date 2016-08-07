@@ -33,7 +33,6 @@ SurveyStore.all = function() {
     });
   }
 
-  debugger
   return surveys;
 };
 

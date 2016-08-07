@@ -4,17 +4,23 @@ const ReactDOM = require('react-dom');
 const CreateOption = React.createClass({
 
   getInitialState() {
+
     return({
       option: ""
     });
   },
 
-  updateOption(e) {
+  updateThisOption(e) {
     e.preventDefault();
 
     this.setState({
       option: e.currentTarget.value
     });
+
+    this.props.updateOpt(
+      this.props.optionNum,
+      {option: this.state.option}
+    );
   },
 
   deleteThisOption(e) {
@@ -25,7 +31,7 @@ const CreateOption = React.createClass({
   render() {
     return (
       <div>
-        <input type="text" onChange={this.updateOption} value={this.state.option}/>
+        <input type="text" onChange={this.updateThisOption} value={this.state.option}/>
         <button onClick={this.deleteThisOption} className="delete-option">X</button>
       </div>
     );

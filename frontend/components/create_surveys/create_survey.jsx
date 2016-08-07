@@ -12,17 +12,23 @@ const CreateSurvey = React.createClass({
       questionType: "multi",
       surveyTitle: "",
       questionNum: 0,
-      questionElements: []
+      questionElements: [],
+
+      questions: {}
+    });
+  },
+
+  updateTitle(e) {
+    e.preventDefault();
+
+    this.setState({
+      surveyTitle: e.currentTarget.value
     });
   },
 
   toggleFormType(e) {
     e.preventDefault();
     console.log("Toggling form type!");
-  },
-
-  packageQuestions() {
-    //on submit of form, need to package up the questions and options in children
   },
 
   addQuestionBox(e) {
@@ -34,8 +40,9 @@ const CreateSurvey = React.createClass({
       <CreateQuestion
         key={this.state.questionNum}
         questionNum={this.state.questionNum}
-        questionText={e.currentTarget.value}
+        initialQuestionText={e.currentTarget.value}
         deleteQuestion={this.deleteQuestion}
+        updateQuestion={this.updateQuestion}
       />
     );
 
@@ -66,9 +73,23 @@ const CreateSurvey = React.createClass({
     $(".modal").hide();
   },
 
-  buildSurvey(e) {
+  updateQuestion(questionNum, questionData) {
+    // Updating state directly... Not good
+    this.state.questions[questionNum] = questionData;
+  },
+
+  saveSurvey(e) {
     e.preventDefault();
-    console.log("Survey will be built!");
+
+    $(".modal").hide();
+
+    let surveyData = {
+      author_id: SessionStore.currentUser().id,
+      survey_title: this.state.surveyTitle,
+      questions_attributes: this.state.questions,
+    };
+
+    SurveyActions.createSurvey(surveyData);
   },
 
   render() {
@@ -78,6 +99,7 @@ const CreateSurvey = React.createClass({
 
     return (
       <div className={fullBoxClassnames}>
+
         <div className="question-type-tabs">
           <div onClick={this.toggleFormType} className="question-type-tab">
             QUESTION
@@ -90,11 +112,18 @@ const CreateSurvey = React.createClass({
         </div>
 
         <div className="question-box-body">
+
           <section className="multi-q-survey-section">
+
             <p className="multi-q-text">
               Combine multiple questions into a survey and send the link to participants. Participants can answer at their own pace.
             </p>
-            <input type="text" value={this.state.surveyTitle}/>
+
+            <section className="survey-title-section">
+              <label>Title:</label>
+              <input type="text" onChange={this.updateTitle} className="survey-title-input"/>
+            </section>
+
           </section>
 
           <section className="question-creation-section">
@@ -109,7 +138,7 @@ const CreateSurvey = React.createClass({
 
           <div className="survey-build-controls">
             <a href="" onClick={this.closeModal} className="cancel-link">Cancel</a>
-            <button onClick={this.buildSurvey} className="build-survey-button">Create -></button>
+            <button onClick={this.saveSurvey} className="build-survey-button">Create -></button>
           </div>
         </div>
 
