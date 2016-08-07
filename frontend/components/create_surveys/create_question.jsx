@@ -43,9 +43,10 @@ const CreateQuestion = React.createClass({
   deleteQuestion(e) {
     e.preventDefault();
     console.log("Question will be deleted!");
+    this.props.deleteQuestion(this.props.questionNum);
   },
 
-  focusThing (input) {
+  focusOn (input) {
     input.focus();
   },
 
@@ -59,7 +60,7 @@ const CreateQuestion = React.createClass({
         <div className={questionContentClassnames}>
             <label>Question:</label>
             <input type="text"
-              ref={this.focusThing}
+              ref={this.focusOn}
               onChange={this.updateQuestion}
               value={this.state.question}/>
 

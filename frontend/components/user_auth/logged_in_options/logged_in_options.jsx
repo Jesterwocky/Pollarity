@@ -34,31 +34,42 @@ const LoggedInOptions = React.createClass({
     hashHistory.push("");
   },
 
+  openMenu(e) {
+    e.preventDefault();
+    $(".user-option").toggle();
+  },
+
   logOut(e) {
     e.preventDefault();
+    $(".user-option").toggle();
     SessionActions.logOut();
   },
 
   goToSettings(e) {
     e.preventDefault();
+    $(".user-option").toggle();
     hashHistory.push("settings");
   },
 
   userOptions() {
-    let hiddenOptionClasses = "hidden user-option";
-
     return (
-      <ul id="user-options">
+      <ul className="user-options">
         <li>
-          <a href="" className="nav-bar-username">{this.state.username}</a>
+          <div className="nav-bar-username" onClick={this.openMenu}>
+            {this.state.username}
+          </div>
         </li>
 
         <li>
-          <a href="" className={hiddenOptionClasses} onClick={this.logOut}>Logout</a>
+          <div className="user-option" onClick={this.logOut}>
+            Logout
+          </div>
         </li>
 
         <li>
-          <a href="" className={hiddenOptionClasses} onClick={this.goToSettings}>Settings</a>
+          <div className="user-option" onClick={this.goToSettings}>
+            Settings
+          </div>
         </li>
       </ul>
     );

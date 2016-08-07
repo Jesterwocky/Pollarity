@@ -1,17 +1,20 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 const hashHistory = require('react-router').hashHistory;
+const SessionStore = require('../../stores/session_store.js');
 
 const UserSurveysButton = React.createClass({
 
   goToUserSurveys(e) {
     e.preventDefault();
-    console.log("This will go to the user's survey page");
+    hashHistory.push(`users/${SessionStore.currentUser().id}/surveys`);
   },
 
   render() {
     return (
-      <a href="" onClick={this.goToUserSurveys} id="user-surveys-link">Polls</a>
+      <div onClick={this.goToUserSurveys} className="user-surveys-link">
+        Polls
+      </div>
     );
   }
 });

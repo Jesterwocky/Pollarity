@@ -33,7 +33,9 @@ const CreateSurvey = React.createClass({
     questionElements.push (
       <CreateQuestion
         key={this.state.questionNum}
+        questionNum={this.state.questionNum}
         questionText={e.currentTarget.value}
+        deleteQuestion={this.deleteQuestion}
       />
     );
 
@@ -42,6 +44,20 @@ const CreateSurvey = React.createClass({
     this.setState({
       questionNum: this.state.questionNum + 1,
       questionElements: questionElements,
+    });
+  },
+
+  deleteQuestion(num) {
+    let questionElements = this.state.questionElements;
+
+    questionElements.forEach((el, i) => {
+      if (el.props.questionNum === num) {
+        questionElements.splice(i, 1);
+      }
+    });
+
+    this.setState({
+      questionElements: questionElements
     });
   },
 

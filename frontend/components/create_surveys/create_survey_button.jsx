@@ -12,7 +12,9 @@ const CreateSurveyButton = React.createClass({
 
   render() {
     return (
-      <a href="" onClick={this.openModal} className="create-survey-button">+</a>
+      <div onClick={this.openModal} className="create-survey-button">
+        +
+      </div>
     );
   }
 });

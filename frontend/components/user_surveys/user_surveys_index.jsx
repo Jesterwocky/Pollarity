@@ -43,8 +43,8 @@ const UserSurveysIndex = React.createClass({
   },
 
   userSurveyIndexItems () {
-    return this.state.surveys.map((survey) => {
-      return <UserSurveysIndexItem survey={survey}/>;
+    return this.state.surveys.map((survey, i) => {
+      return <UserSurveysIndexItem key={i} survey={survey}/>;
     });
   },
 

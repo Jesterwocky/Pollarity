@@ -66,8 +66,8 @@ body {
   height: 55px;
   width: 100%;
   background: #25364A;
-  // to make menu bar stay on top when you scroll down
-  position: fixed;
+  position: relative;
+  z-index: 100;
 }
 
 .nav-bar-content {
@@ -114,7 +114,7 @@ body {
   line-height: 4.2;
   float: left;
   width: 65%;
-  padding-left: 30px;
+  padding-left: 40px;
 }
 
 #nav-bar-username {
@@ -126,30 +126,41 @@ body {
   float: right;
 }
 
-.nav-bar-survey-options li {
-  padding: 10px;
-  float:left;
-}
-
 .nav-bar-username {
-  font-size: 14px;
-  font-weight: normal;
+  font-size: 16px;
+  font-weight: bold;
 }
 
-#user-options li{
+ul.user-options {
+  float: right;
+  padding: 0px;
+  width: 120px;
+}
+
+.user-options li{
   float: left;
   clear: left;
-  font-size: 12px;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: left;
+  line-height: 3.5;
 }
 
-.logged-in-user-menu {
-  margin-left: 15px;
-  margin-right: 20px;
-  margin-top: 8px;
+.user-options div {
+  height: 55px;
+  width: 120px;
+  padding-left: 12px;
 }
 
-.logged-in-user-menu li {
-  height: 100%;
+div.user-option {
+  line-height: 2.4;
+  height: 40px;
+  color: #25364A;
+  border: 1px solid #D7E4EE;
+  border-top: 0px;
+  background: white;
+  box-sizing: border-box;
+  display: none;
 }
 
 button.nav-bar-logo-logged-in {
@@ -157,11 +168,29 @@ button.nav-bar-logo-logged-in {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 20px;
+  line-height: 4;
 }
 
 .nav-bar-survey-options li {
+  float:left;
+  line-height: 3.5;
+}
+
+.create-survey-button {
+  padding: 0px;
+  background: #5D92C0;
+  text-align: center;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+}
+
+.user-surveys-link {
+  text-align: center;
+  padding-left: 20px;
   padding-right: 20px;
+  height: 55px;
+  cursor: pointer;
 }
 
 .nav-bar-button {
@@ -276,6 +305,11 @@ button.nav-bar-logo-logged-in {
 
 
 //Home
+
+.home-page, .nav-bar-for-home {
+  position: relative;
+  z-index: 200;
+}
 
 .home-page {
   background-image: image-url("subtle-dots.png"), image-url("handsup.jpeg");
@@ -462,7 +496,7 @@ button.nav-bar-logo-logged-in {
 }
 
 .user-surveys-list {
-  width: 750px;
+  width: 800px;
   float: left;
   display: inline-block;
 }

@@ -56,7 +56,7 @@ const NavBar = React.createClass ({
       return (
         <div>
           <button onClick={this.goToRoot} className="nav-bar-logo-not-logged-in">Pollarity</button>
-          <a href="https://www.polleverywhere.com/" className="inspiration">Inspired by Poll Everywhere</a>
+          <a href="https://www.polleverywhere.com/" className="inspiration">An homage to Poll Everywhere</a>
 
           <ul className="login-and-signup">
             <li><LoginButton/></li>
