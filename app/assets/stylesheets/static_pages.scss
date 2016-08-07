@@ -222,6 +222,7 @@ button.nav-bar-logo-logged-in {
   bottom: 0px;
   left: 0px;
   right: 0px;
+
 }
 
 .signup-page h1 {
@@ -308,7 +309,7 @@ button.nav-bar-logo-logged-in {
 
 .home-page, .nav-bar-for-home {
   position: relative;
-  z-index: 200;
+  z-index: 150;
 }
 
 .home-page {
@@ -349,6 +350,7 @@ button.nav-bar-logo-logged-in {
 .login-page {
   background: #25364A;
   position:absolute;
+  z-index: 200;
   top: 0px;
   bottom: 0px;
   left: 0px;
@@ -577,6 +579,7 @@ button.nav-bar-logo-logged-in {
   color:white;
   background: black;
   border: 2px solid white;
+  cursor: pointer;
 }
 
 .question-content-box {
