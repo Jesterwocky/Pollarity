@@ -2,6 +2,7 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 const hashHistory = require('react-router').hashHistory;
 const SessionStore = require('../stores/session_store.js');
+const SessionActions = require('../actions/session_actions.js');
 
 const LoginButton = require('./user_auth/login/login_button.jsx');
 const SignupButton = require('./user_auth/signup/signup_button.jsx');
@@ -46,6 +47,13 @@ const NavBar = React.createClass ({
     );
   },
 
+  signInAsGuest() {
+    SessionActions.logInUser({
+      username: "GUEST",
+      password: "password"
+    });
+  },
+
   loginBasedContent() {
     if (this.state.loggedIn) {
       return (
@@ -59,6 +67,11 @@ const NavBar = React.createClass ({
           <a href="https://www.polleverywhere.com/" className="inspiration">An homage to Poll Everywhere</a>
 
           <ul className="login-and-signup">
+            <li>
+              <button className="guest-signin-button" onClick={this.signInAsGuest}>
+                Try it now! Log in as guest
+              </button>
+            </li>
             <li><LoginButton/></li>
             <li><SignupButton/></li>
           </ul>

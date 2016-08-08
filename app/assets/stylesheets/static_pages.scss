@@ -113,8 +113,8 @@ body {
   font-weight: 100;
   line-height: 4.2;
   float: left;
-  width: 65%;
-  padding-left: 40px;
+  width: 50%;
+  padding-left: 70px;
 }
 
 #nav-bar-username {
@@ -209,6 +209,13 @@ button.nav-bar-logo-logged-in {
 }
 
 .logout-button{
+
+}
+
+.guest-signin-button {
+  background: #DA5229;
+  padding: 10px;
+  font-size: 12px;
 
 }
 

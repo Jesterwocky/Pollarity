@@ -2,6 +2,7 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 const hashHistory = require('react-router').hashHistory;
 const SessionStore = require('../stores/session_store.js');
+const SessionActions = require('../actions/session_actions.js');
 
 const LoginButton = require('./user_auth/login/login_button.jsx');
 const SignupButton = require('./user_auth/signup/signup_button.jsx');
@@ -43,12 +44,24 @@ const NavBar = React.createClass ({
         <div>
 
           <ul className="login-and-signup">
+            <li>
+              <button className="guest-signin-button" onClick={this.signInAsGuest}>
+                Be our guest
+              </button>
+            </li>
             <li><LoginButton/></li>
             <li><SignupButton/></li>
           </ul>
         </div>
       );
     }
+  },
+
+  signInAsGuest() {
+    SessionActions.logInUser({
+      username: "GUEST",
+      password: "password"
+    });
   },
 
   render() {
