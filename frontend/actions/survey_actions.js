@@ -16,10 +16,16 @@ module.exports = {
     SurveyApiUtil.createSurvey(surveyData, this.receiveSurvey);
   },
 
+  getSurvey(surveyId) {
+    SurveyApiUtil.getSurvey(surveyId, this.receiveSurvey);
+  },
+
   deleteSurvey(surveyId) {
     SurveyApiUtil.deleteSurvey(surveyId, this.receiveSurvey);
   },
 
+
+  // The callbacks
   receiveSurveys(surveys) {
     Dispatcher.dispatch({
       actionType: SurveyConstants.SURVEYS_RECEIVED,

@@ -36,6 +36,10 @@ SurveyStore.all = function() {
   return surveys;
 };
 
+SurveyStore.find = function(surveyId) {
+  return _surveys[surveyId];
+};
+
 SurveyStore.allForUser = function(userId) {
   let userSurveys = [];
 

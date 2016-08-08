@@ -25,11 +25,13 @@ const UserSurveysIndexItem = React.createClass({
         <div className="user-survey-title">
           {this.props.survey.survey_title}
           <div className="survey-controls">
+            <small className="survey-url">
+              <a href="">Vote here:</a> {this.props.survey.response_url}
+            </small>
             <button className="edit-survey-in-modal">Edit Survey</button>
             <button className="delete-selected-questions">Delete Selected Questions</button>
           </div>
         </div>
-
         {questions}
       </div>
     );

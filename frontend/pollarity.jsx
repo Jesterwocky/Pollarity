@@ -11,6 +11,7 @@ const SessionActions = require('./actions/session_actions.js');
 const CreateAccount = require('./components/user_auth/signup/create_account.jsx');
 const UserSurveysIndex = require('./components/user_surveys/user_surveys_index.jsx');
 const SessionStore = require('./stores/session_store.js');
+const ResponseForm = require('./components/responses/response_form.jsx');
 
 //For testing, but verify before deleting
 const SessionApiUtil = require('./util/session_api_util.js');
@@ -29,6 +30,12 @@ const _ensureLoggedIn = function(nextState, replace) {
   }
 };
 
+const _ensureNotLoggedIn = function(nextState, replace) {
+  if (SessionStore.isUserLoggedIn()) {
+    replace("/");
+  }
+};
+
 const App = React.createClass({
   render() {
     return (
@@ -43,11 +50,12 @@ const App = React.createClass({
 const routes = (
   <Route path="/" component={App}>
     <IndexRoute component={Home}/>
-    <Route path="users/new" component={Signup}/>
-    <Route path="users/new/create-account" component={CreateAccount}/>
-    <Route path="users/:userId/surveys" component={UserSurveysIndex} onEnter={_ensureLoggedIn}/>
     <Route path="login" component={Login}/>
     <Route path="settings" component={UserSettings} onEnter={_ensureLoggedIn}/>
+    <Route path="users/new" component={Signup} onEnter={_ensureNotLoggedIn}/>
+    <Route path="users/new/create-account" component={CreateAccount} onEnter={_ensureLoggedIn}/>
+    <Route path="users/:userId/surveys" component={UserSurveysIndex} onEnter={_ensureLoggedIn}/>
+    <Route path="surveys/:surveyId" component={ResponseForm}/>
   </Route>
 );
 

@@ -1,5 +1,6 @@
 class Api::SurveysController < ApplicationController
   def show
+    # params may be incorrect here...
     @survey = Survey.find(params[:id].to_i)
 
     if @survey

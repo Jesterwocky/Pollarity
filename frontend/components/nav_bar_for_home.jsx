@@ -65,11 +65,10 @@ const NavBar = React.createClass ({
   },
 
   render() {
-    let classnames = "nav-bar-content group";
 
     return (
       <div className="nav-bar-for-home">
-        <div className={classnames}>
+        <div className={"nav-bar-content group"}>
 
           <div>
             <button onClick={this.goToRoot} className="nav-bar-logo-not-logged-in">Pollarity</button>

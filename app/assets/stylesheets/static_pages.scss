@@ -14,6 +14,7 @@ span, article, footer, time, small {
   vertical-align: inherit;
   box-sizing: inherit;
   background: transparent;
+  font-family: sans-serif;
 }
 
 ul {
@@ -59,7 +60,6 @@ body {
 
 //Nav bar
 .nav-bar {
-  font-family: sans-serif;
   text-align: left;
   color: white;
   font-weight: bold;
@@ -74,6 +74,18 @@ body {
   width: 930px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.nav-bar-content-non-home {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav-bar-content-non-home ul {
+  float: right;
+  margin-top: 5px;
+  margin-right: 20px;
 }
 
 .nav-bar-content ul {
@@ -93,11 +105,23 @@ body {
   display: inline-block;
 }
 
+.nav-bar-content-non-home li {
+  display: inline-block;
+}
+
 // Eventually should be image, not text
 .nav-bar-logo-not-logged-in {
   line-height: 1.5;
   font-size: 25px;
   float: left;
+}
+
+.nav-bar-logo-not-logged-in-non-home {
+  line-height: 1.5;
+  font-size: 25px;
+  float: left;
+  padding-left: 20px;
+  padding-top: 8px;
 }
 
 .nav-bar-logo-logged-in {
@@ -171,6 +195,7 @@ button.nav-bar-logo-logged-in {
   line-height: 4;
 }
 
+
 .nav-bar-survey-options li {
   float:left;
   line-height: 3.5;
@@ -221,11 +246,10 @@ button.nav-bar-logo-logged-in {
 
 .signup-page {
   text-align: center;
-  font-family: sans-serif;
 
   background: white;
-  position:absolute;
-  top: 55px;
+  position:relative;
+  top: 0px;
   bottom: 0px;
   left: 0px;
   right: 0px;
@@ -286,7 +310,6 @@ button.nav-bar-logo-logged-in {
   left: 0px;
   right: 0px;
 
-  font-family: sans-serif;
   font-weight: bold;
 }
 
@@ -333,7 +356,6 @@ button.nav-bar-logo-logged-in {
 }
 
 .home-content {
-  font-family: sans-serif;
   text-align: center;
   color: white;
   font-weight: bold;
@@ -371,7 +393,6 @@ button.nav-bar-logo-logged-in {
   font-size: 20px;
   font-weight: bold;
   text-align: center;
-  font-family: sans-serif;
   line-height: 10;
 }
 
@@ -383,7 +404,6 @@ button.nav-bar-logo-logged-in {
   margin-right: auto;
   border-radius: 4px;
 
-  font-family: sans-serif;
 }
 
 .login-internal-box {
@@ -449,7 +469,6 @@ button.nav-bar-logo-logged-in {
 
 //USER SURVEYS
 #user-surveys {
-  font-family: sans-serif;
   background: white;
   position:absolute;
   top: 55px;
@@ -518,6 +537,22 @@ button.nav-bar-logo-logged-in {
   padding: 10px;
 }
 
+small.survey-url {
+  margin-left: 20px;
+  font-size: 10px;
+}
+
+small.survey-url {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 12px;
+  color: #DA5229
+}
+
+.survey-url a {
+  text-decoration: underline;
+}
+
 div.user-question {
   padding: 10px;
   margin-bottom: 1px;
@@ -570,13 +605,12 @@ div.user-question {
 }
 
 .question-type-tab {
-  background: white;
+  background: #F4F4F4;
   width: 130px;
   height: 50px;
   float: left;
   line-height: 4;
   text-align: center;
-  background: #F4F4F4;
 }
 
 .question-box-body {
@@ -587,8 +621,12 @@ div.user-question {
 }
 
 section.survey-title-section {
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.survey-title-section label {
+  font-weight: bold;
 }
 
 .survey-title-input {
@@ -597,6 +635,9 @@ section.survey-title-section {
   height: 30px;
   width: 100%;
   margin-top: 5px;
+  font-size: 12px;
+  padding: 5px;
+
 }
 
 .multi-q-text {
@@ -632,6 +673,7 @@ section.survey-title-section {
   font-size: 18px;
   width: 100%;
   margin-top: 10px;
+  padding: 5px;
 }
 
 .survey-build-controls {
@@ -663,7 +705,7 @@ section.survey-title-section {
 }
 
 .answer-options-list input {
-  font-size:10px;
+  font-size:12px;
   height: 30px;
   width: 390px;
   margin-top: 0px;
@@ -695,4 +737,40 @@ section.survey-title-section {
 
 .modal {
   display: none;
+}
+
+.survey-response-page {
+  background: #25364A;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  position: absolute;
+  z-index: 300;
+  color: white;
+}
+
+.response-page-header {
+  height: 50px;
+  width: 100%;
+  background: black;
+}
+
+.survey-response-form {
+  width: 60%;
+  min-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.response-option {
+  width: 100%;
+  background: #D7E4EE;
+  color: black;
+  box-sizing: border-box;
+  padding: 20px;
+  border-radius: 5px;
+  min-height: 50px;
+  margin-bottom: 10px;
+  display: inline-block;
 }

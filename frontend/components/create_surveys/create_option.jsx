@@ -31,7 +31,11 @@ const CreateOption = React.createClass({
   render() {
     return (
       <div>
-        <input type="text" onChange={this.updateThisOption} value={this.state.option}/>
+        <input type="text"
+          onChange={this.updateThisOption}
+          value={this.state.option}
+          placeholder="Answer goes here"
+        />
         <button onClick={this.deleteThisOption} className="delete-option">X</button>
       </div>
     );

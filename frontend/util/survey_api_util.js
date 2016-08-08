@@ -30,6 +30,16 @@ module.exports = {
     });
   },
 
+  getSurvey: function(surveyId, success, error) {
+    $.ajax({
+      url: `api/surveys/${surveyId}`,
+      type: "GET",
+      dataType: "json",
+      success,
+      error
+    });
+  },
+
   deleteSurvey: function(surveyId, success, error) {
     $.ajax({
       url: `api/surveys/${surveyId}`,

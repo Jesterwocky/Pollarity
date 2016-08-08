@@ -121,7 +121,7 @@ const CreateSurvey = React.createClass({
 
             <section className="survey-title-section">
               <label>Title:</label>
-              <input type="text" onChange={this.updateTitle} className="survey-title-input"/>
+              <input type="text" onChange={this.updateTitle} className="survey-title-input" placeholder="Survey Title"/>
             </section>
 
           </section>
@@ -131,7 +131,7 @@ const CreateSurvey = React.createClass({
 
             <div id="question-placeholder" className={questionContentClassnames}>
               <label>Add a Question:</label>
-              <input type="text" onChange={this.addQuestionBox}/>
+              <input type="text" onChange={this.addQuestionBox} placeholder="Your question goes here"/>
             </div>
 
           </section>

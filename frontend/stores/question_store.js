@@ -1,3 +1,5 @@
+//THIS FILE MAY BE USED FOR EDITING of QUESTIONS
+
 const Store = require('flux/utils').Store;
 const Dispatcher = require('../dispatcher/dispatcher.js');
 const QuestionConstants = require('../constants/Question_constants.js');
@@ -19,7 +21,7 @@ const _removeQuestion = function(questionId) {
 const QuestionStore = new Store(Dispatcher);
 
 QuestionStore.surveyQuestions = function(surveyId) {
-  
+
 };
 
 QuestionStore.__onDispatch = function(payload) {

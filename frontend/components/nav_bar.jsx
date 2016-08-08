@@ -65,13 +65,12 @@ const NavBar = React.createClass ({
     else {
       return (
         <div>
-          <button onClick={this.goToRoot} className="nav-bar-logo-not-logged-in">Pollarity</button>
-          <a href="https://www.polleverywhere.com/" className="inspiration">An homage to Poll Everywhere</a>
+          <button onClick={this.goToRoot} className="nav-bar-logo-not-logged-in-non-home">Pollarity</button>
 
           <ul className="login-and-signup">
             <li>
               <button className="guest-signin-button" onClick={this.signInAsGuest}>
-                Try it now! Log in as guest
+                Be our guest
               </button>
             </li>
             <li><LoginButton/></li>
@@ -85,7 +84,9 @@ const NavBar = React.createClass ({
   render() {
     return (
       <div className="nav-bar">
+        <div className={"nav-bar-content-non-home group"}>
           {this.loginBasedContent()}
+        </div>
       </div>
     );
   }
