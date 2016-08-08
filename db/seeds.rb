@@ -59,7 +59,6 @@ Survey.create!(
   ]
 )
 
-
 Survey.create!(
   author_id: 1,
   survey_title: "American Politics",
