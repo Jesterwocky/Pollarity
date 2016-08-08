@@ -13,7 +13,6 @@ module.exports = {
   },
 
   createSurvey(surveyData) {
-    debugger
     SurveyApiUtil.createSurvey(surveyData, this.receiveSurvey);
   },
 
@@ -22,7 +21,6 @@ module.exports = {
   },
 
   receiveSurveys(surveys) {
-    debugger
     Dispatcher.dispatch({
       actionType: SurveyConstants.SURVEYS_RECEIVED,
       surveys: surveys

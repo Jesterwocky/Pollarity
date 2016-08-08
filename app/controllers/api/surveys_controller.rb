@@ -13,7 +13,6 @@ class Api::SurveysController < ApplicationController
     @survey = Survey.new(survey_params)
     # ensure_survey_title(@survey)
 
-    debugger
     if @survey.save
       render json: @survey.to_json(include: {questions: {include: :options}})
     else

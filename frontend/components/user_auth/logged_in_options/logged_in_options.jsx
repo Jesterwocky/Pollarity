@@ -43,6 +43,7 @@ const LoggedInOptions = React.createClass({
     e.preventDefault();
     $(".user-option").toggle();
     SessionActions.logOut();
+    hashHistory.push("");
   },
 
   goToSettings(e) {
