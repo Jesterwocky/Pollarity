@@ -34,11 +34,7 @@ const QuestionAndAnswers = React.createClass({
       this.props.question.id
     );
 
-    console.log(`User responses to question: ${responses}`);
-
     let mostRecentResponse = responses[responses.length - 1];
-
-    console.log(`Most recent response: ${mostRecentResponse}`);
 
     this.setState({
       selectedOptionId: parseInt(mostRecentResponse)
@@ -50,7 +46,6 @@ const QuestionAndAnswers = React.createClass({
 
     this.props.question.options.forEach((option, i) => {
       let isSelected = (option.id === this.state.selectedOptionId);
-      console.log(`Option id: ${option.id}; selected option id: ${this.state.selectedOptionId}; isSelected = ${isSelected}`);
 
       responseElements.push(
         <li>

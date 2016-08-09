@@ -17,7 +17,6 @@ const ResponseOption = React.createClass({
   selectOption(e) {
     e.preventDefault();
     let optionId = this.props.option.id;
-    console.log(`selected option-${this.props.option.id}`);
 
     ResponseActions.createSurveyResponse({
       responder_id: SessionStore.currentUser().id,
@@ -34,8 +33,8 @@ const ResponseOption = React.createClass({
     }
 
     return(
-      <div className={classnames} id={identifier}>
-        <p onClick={this.selectOption} className="participant-option-text">
+      <div className={classnames} id={identifier} onClick={this.selectOption}>
+        <p className="participant-option-text">
           {this.props.option.option}
         </p>
       </div>
