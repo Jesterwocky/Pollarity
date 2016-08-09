@@ -8,13 +8,13 @@ class User < ActiveRecord::Base
     foreign_key: :author_id,
     inverse_of: :author
 
-  has_and_belongs_to_many :responses,
-    class_name: :Option,
-    join_table: :responses
+  has_many :votes,
+    class_name: :Response,
+    foreign_key: :responder_id
 
-  # has_many :responses,
-  #   class_name: :Response,
-  #   foreign_key: :responder_id
+  has_many :selected_options,
+    through: :votes,
+    source: :option
 
 
   attr_reader :password
