@@ -5,8 +5,8 @@ class Api::ResponsesController < ApplicationController
       @responses = Survey.find(params[:survey_id].to_i).responses
       render json: @responses
     elsif params[:user_id]
-      User.find(params[:user_id].to_i).responses
-      render json: @responses.to_json(include: {:survey})
+      @responses = User.find(params[:user_id].to_i).votes
+      render json: @responses.to_json(include: :survey)
     else
       # Shouldn't need this; route doesn't exist
       Survey.all
