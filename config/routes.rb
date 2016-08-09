@@ -5,11 +5,15 @@ Rails.application.routes.draw do
 
     resources :users, only:[:new, :create] do
       resources :surveys, only:[:index]
+      resources :responses, only:[:index]
     end
 
     resource :session, only:[:new, :create, :destroy]
 
-    resources :surveys
+    resources :surveys do
+      resources :responses, only:[:index]
+    end
+
     resources :responses, except:[:index, :new]
   end
 end

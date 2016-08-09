@@ -31,9 +31,11 @@ const _ensureLoggedIn = function(nextState, replace) {
 };
 
 const _ensureNotLoggedIn = function(nextState, replace) {
-  if (SessionStore.isUserLoggedIn()) {
-    replace("/");
-  }
+  // if (SessionStore.isUserLoggedIn()) {
+  //   replace("/");
+  // }
+
+  console.log("Entry file is having issues");
 };
 
 const App = React.createClass({

@@ -15,9 +15,6 @@ class Survey < ActiveRecord::Base
   has_many :responses,
     through: :questions
 
-  has_many :responders,
-    through: :questions
-
   accepts_nested_attributes_for :questions
 
   def create_url

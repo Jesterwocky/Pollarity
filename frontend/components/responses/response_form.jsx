@@ -2,6 +2,9 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 const hashHistory = require('react-router').hashHistory;
 const SurveyStore = require('../../stores/survey_store.js');
+const ResponseStore = require('../../stores/response_store.js');
+const SessionStore = require('../../stores/session_store.js');
+const ResponseActions = require('../../actions/response_actions.js');
 const QuestionAndAnswers = require('./question_and_answers.jsx');
 
 const ResponseForm = React.createClass ({
@@ -18,16 +21,32 @@ const ResponseForm = React.createClass ({
   },
 
   componentDidMount() {
-    this.listener = SurveyStore.addListener(this._handleSurveyChange);
+    this.surveyListener = SurveyStore.addListener(this._handleSurveyChange);
+    this.responseListener = ResponseStore.addListener(this.handleResponseChange);
+
     SurveyActions.getSurvey(this.state.surveyId);
+    ResponseActions.getResponsesByUser(SessionStore.currentUser().id);
   },
 
   _handleSurveyChange() {
-    console.log("Survey store changed!");
     let survey = SurveyStore.find(this.props.params.surveyId);
 
     this.setState({
       survey: survey,
+    });
+  },
+
+  _handleResponseChange() {
+    let responses = ResponseStore.userResponses(SessionStore.currentUser().id);
+    let responsesToSurvey = {};
+
+    // Confirm format of response received here
+    response.forEach((response) => {
+      // need to filter somehow...
+    });
+
+    this.setState({
+      responses
     });
   },
 

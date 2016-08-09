@@ -1,4 +1,4 @@
-const SurveyAPIUtil = require('../util/survey_api_util.js');
+const SurveyApiUtil = require('../util/survey_api_util.js');
 const LoginConstants = require('../constants/login_constants.js');
 const Dispatcher = require('../dispatcher/dispatcher.js');
 const SurveyConstants = require('../constants/survey_constants.js');
