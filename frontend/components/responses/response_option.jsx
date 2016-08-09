@@ -10,16 +10,14 @@ const ResponseOption = React.createClass({
   // componentDidMount() {
   //
   //   if (this.props.selected) {
-  //     `$(#option-${this.props.option.id})`.addClass("currently-selected-option");
+  //     $(`#option-${this.props.option.id}`).addClass("currently-selected-option");
   //   }
   // },
 
   selectOption(e) {
     e.preventDefault();
     let optionId = this.props.option.id;
-    console.log(`option-${this.props.option.id}`);
-
-    $(`#option-${this.props.option.id}`).toggleClass("currently-selected-option");
+    console.log(`selected option-${this.props.option.id}`);
 
     ResponseActions.createSurveyResponse({
       responder_id: SessionStore.currentUser().id,
@@ -29,9 +27,14 @@ const ResponseOption = React.createClass({
 
   render() {
     let identifier = `option-${this.props.option.id}`;
+    let classnames = "response-option";
+
+    if (this.props.selected) {
+      classnames = "response-option currently-selected-option";
+    }
 
     return(
-      <div className="response-option" id={identifier}>
+      <div className={classnames} id={identifier}>
         <p onClick={this.selectOption} className="participant-option-text">
           {this.props.option.option}
         </p>

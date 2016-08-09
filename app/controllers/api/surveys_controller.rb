@@ -4,7 +4,7 @@ class Api::SurveysController < ApplicationController
     @survey = Survey.find(params[:id].to_i)
 
     if @survey
-      render json: @survey.to_json(include: {questions: {include: :options}})
+      render json: @survey.to_json(include: {questions: {include: {options: {include: :votes}}}})
     else
       render json: ["No such survey"], status: 401
     end

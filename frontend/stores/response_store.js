@@ -7,14 +7,11 @@ const ResponseStore = new Store(Dispatcher);
 let _responses = {};
 
 const _resetResponses = function(responses) {
-  _responses = responses;
-  //Responses are coming through as objects with keys
+  _responses = {};
 
-  // _responses = {};
-  //
-  // Object.keys(responses).forEach((key) => {
-  //   _responses[response.id] = response;
-  // });
+  responses.forEach((response) => {
+      _responses[response.id] = response;
+  });
 };
 
 const _addResponse = function(response) {
@@ -46,6 +43,19 @@ ResponseStore.userResponses = function(userId) {
   });
 
   return userResponses;
+};
+
+ResponseStore.userResponsesToQuestion = function(userId, questionId) {
+  let responses = [];
+
+  Object.keys(_responses).forEach((key) => {
+
+    if (parseInt(_responses[key].question.id) === questionId) {
+      responses.push(_responses[key].selected_option_id);
+    }
+  });
+
+  return responses;
 };
 
 ResponseStore.__onDispatch = function(payload) {

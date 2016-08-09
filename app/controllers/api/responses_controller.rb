@@ -6,7 +6,7 @@ class Api::ResponsesController < ApplicationController
       render json: @responses
     elsif params[:user_id]
       @responses = User.find(params[:user_id].to_i).votes
-      render json: @responses.to_json(include: :survey)
+      render json: @responses.to_json(include: :question)
     else
       # Shouldn't need this; route doesn't exist
       Survey.all
@@ -17,9 +17,9 @@ class Api::ResponsesController < ApplicationController
     @response = Response.new(response_params)
 
     if @response.save
-      render json: @response
+      render json: @response.to_json(include: :question)
     else
-      render json: @responses.errors.full_messages, status: 401
+      render json: @response.errors.full_messages, status: 401
     end
   end
 
