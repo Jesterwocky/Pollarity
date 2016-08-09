@@ -7,11 +7,14 @@ const ResponseStore = new Store(Dispatcher);
 let _responses = {};
 
 const _resetResponses = function(responses) {
-  _responses = {};
+  _responses = responses;
+  //Responses are coming through as objects with keys
 
-  responses.forEach((response) => {
-    _responses[response.id] = response;
-  });
+  // _responses = {};
+  //
+  // Object.keys(responses).forEach((key) => {
+  //   _responses[response.id] = response;
+  // });
 };
 
 const _addResponse = function(response) {

@@ -29,6 +29,11 @@ const ResponseForm = React.createClass ({
     // ResponseActions.getResponsesByUser(SessionStore.currentUser().id);
   },
 
+  componentWillUnmount() {
+    this.surveyListener.remove();
+    // this.responseListener.remove();
+  },
+
   _handleSurveyChange() {
     let survey = SurveyStore.find(this.props.params.surveyId);
 
@@ -38,17 +43,19 @@ const ResponseForm = React.createClass ({
   },
 
   _handleResponseChange() {
-    let responses = ResponseStore.userResponses(SessionStore.currentUser().id);
-    let responsesToSurvey = {};
+    console.log(ResponseStore.userResponses(SessionStore.currentUser().id));
 
-    // Confirm format of response received here
-    response.forEach((response) => {
-      // need to filter somehow...
-    });
+    // let responses = ResponseStore.userResponses(SessionStore.currentUser().id);
+    // let responsesToSurvey = {};
 
-    this.setState({
-      responses
-    });
+    // // Confirm format of response received here
+    // response.forEach((response) => {
+    //   // need to filter somehow...
+    // });
+
+    // this.setState({
+    //   responses
+    // });
   },
 
   questionsAndAnswers () {
@@ -63,7 +70,8 @@ const ResponseForm = React.createClass ({
         questionElements.push(
           <QuestionAndAnswers
             key={i}
-            question={question}/>
+            question={question}
+          />
         );
       });
 

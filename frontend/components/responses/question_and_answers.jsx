@@ -6,16 +6,27 @@ const ResponseOption = require('./response_option.jsx');
 
 const QuestionAndAnswers = React.createClass({
 
+  getInitialState() {
+    // This should eventually be able to look up the user and question
+    // and determine if they've voted before
+    return({
+      selectedOptionId: undefined
+    });
+  },
+
   responses () {
     let responseElements = [];
 
     this.props.question.options.forEach((option, i) => {
+      let isSelected = (option.id === this.state.selectedOptionId);
+
       responseElements.push(
         <li>
           <ResponseOption
             key={i}
             surveyId={this.props.question.id}
             option={option}
+            selected={isSelected}
           />
         </li>
       );
@@ -24,11 +35,11 @@ const QuestionAndAnswers = React.createClass({
     return responseElements;
   },
 
-  // updateAnswer(optionId) {
-  //   this.setState({
-  //     seledtedOptionId: optionId
-  //   });
-  // },
+  updateAnswer(optionId) {
+    this.setState({
+      selectedOptionId: optionId
+    });
+  },
 
   render() {
     return (

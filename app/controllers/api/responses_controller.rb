@@ -11,7 +11,6 @@ class Api::ResponsesController < ApplicationController
       # Shouldn't need this; route doesn't exist
       Survey.all
     end
-
   end
 
   def create
