@@ -2,6 +2,7 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 const hashHistory = require('react-router').hashHistory;
 const SurveyStore = require('../../stores/survey_store.js');
+
 const ResponseStore = require('../../stores/response_store.js');
 const SessionStore = require('../../stores/session_store.js');
 const ResponseActions = require('../../actions/response_actions.js');
@@ -22,10 +23,10 @@ const ResponseForm = React.createClass ({
 
   componentDidMount() {
     this.surveyListener = SurveyStore.addListener(this._handleSurveyChange);
-    this.responseListener = ResponseStore.addListener(this.handleResponseChange);
+    // this.responseListener = ResponseStore.addListener(this.handleResponseChange);
 
     SurveyActions.getSurvey(this.state.surveyId);
-    ResponseActions.getResponsesByUser(SessionStore.currentUser().id);
+    // ResponseActions.getResponsesByUser(SessionStore.currentUser().id);
   },
 
   _handleSurveyChange() {

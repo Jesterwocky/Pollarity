@@ -74,8 +74,18 @@ const CreateSurvey = React.createClass({
   },
 
   updateQuestion(questionNum, questionData) {
-    // Updating state directly... Not good
-    this.state.questions[questionNum] = questionData;
+    let questions = {};
+
+
+    Object.keys(this.state.questions).forEach((key) => {
+      questions[key] = this.state.questions[key];
+    });
+
+    questions[questionNum] = questionData;
+
+    this.setState({
+      questions: questions
+    });
   },
 
   saveSurvey(e) {

@@ -35,25 +35,29 @@ Survey.create!(
 
 Survey.create!(
   author_id: 1,
-  survey_title: "2016 Olympics",
+  survey_title: "Tech",
 
   questions_attributes: [
     {
-      question: "Who are you rooting for?",
+      question: "What kind of phone do you have?",
       options_attributes: [
-        {option: "USA"},
-        {option: "China"},
-        {option: "Italy"},
-        {option: "Brazil"},
-        {option: "Other"}
+        {option: "iPhone"},
+        {option: "Samsung"},
+        {option: "Other Android phone"},
+        {option: "Other phone not listed"},
+        {option: "None"},
       ]
     },
     {
-      question: "What do you think about Brazil's sanitation and infrastructure problems?",
+      question: "Where are you from?",
       options_attributes: [
-        {option: "Pretty bad. Makes me not want to visit."},
-        {option: "Probably overstated. I would vacation there."},
-        {option: "No opinion."}
+        {option: "North America"},
+        {option: "South America"},
+        {option: "Africa"},
+        {option: "Asia"},
+        {option: "Europe"},
+        {option: "Oceania"},
+        {option: "Antartica"}
       ]
     }
   ]
@@ -61,38 +65,32 @@ Survey.create!(
 
 Survey.create!(
   author_id: 1,
-  survey_title: "American Politics",
+  survey_title: "Favorites",
 
   questions_attributes: [
     {
-      question: "Which best describes your political leanings?",
+      question: "Which is your favorite?",
       options_attributes: [
-        {option: "Far left"},
-        {option: "Lefty-moderate"},
-        {option: "Moderate"},
-        {option: "Righty-moderate"},
-        {option: "Far-right"},
-        {option: "None of the above"}
+        {option: "Puppies"},
+        {option: "Kittehs"},
+        {option: "Lizards"},
       ]
     },
     {
-      question: "Which of these issues do you feel most strongly about?",
+      question: "How do you destress?",
       options_attributes: [
-        {option: "Freedom of speech"},
-        {option: "Education"},
-        {option: "Protecting citizens from harm"},
-        {option: "Economic freedom"}
+        {option: "Socialize"},
+        {option: "Netflix"},
+        {option: "Exercise"}
       ]
     },
     {
-      question: "Who would you rather see as the next president?",
+      question: "Where would you prefer to go on vacation?",
       options_attributes: [
-        {option: "Clinton"},
-        {option: "Trump"},
-        {option: "Sanders"},
-        {option: "Gary Johnson"},
-        {option: "Jeb Bush"},
-        {option: "A randomly selected citizen"}
+        {option: "Prague"},
+        {option: "Rome"},
+        {option: "Sydney"},
+        {option: "Tokyo"},
       ]
     }
   ]
@@ -101,7 +99,6 @@ Survey.create!(
 Survey.create!(
   author_id: 2,
   survey_title: "Your Mood",
-
   questions_attributes: [
     {
       question: "What are you craving?",
@@ -125,65 +122,62 @@ Survey.create!(
 
 Survey.create!(
   author_id: 2,
-  survey_title: "2016 Olympics",
+  survey_title: "Tech",
 
   questions_attributes: [
     {
-      question: "Who are you rooting for?",
+      question: "What kind of phone do you have?",
       options_attributes: [
-        {option: "USA"},
-        {option: "China"},
-        {option: "Italy"},
-        {option: "Brazil"},
-        {option: "Other"}
+        {option: "iPhone"},
+        {option: "Samsung"},
+        {option: "Other Android phone"},
+        {option: "Other phone not listed"},
+        {option: "None"},
       ]
     },
     {
-      question: "What do you think about Brazil's sanitation and infrastructure problems?",
+      question: "Where are you from?",
       options_attributes: [
-        {option: "Pretty bad. Makes me not want to visit."},
-        {option: "Probably overstated. I would vacation there."},
-        {option: "No opinion."}
+        {option: "North America"},
+        {option: "South America"},
+        {option: "Africa"},
+        {option: "Asia"},
+        {option: "Europe"},
+        {option: "Oceania"},
+        {option: "Antartica"}
       ]
     }
   ]
 )
 
-
 Survey.create!(
   author_id: 2,
-  survey_title: "American Politics",
+  survey_title: "Favorites",
 
   questions_attributes: [
     {
-      question: "Which best describes your political leanings?",
+      question: "Which is your favorite?",
       options_attributes: [
-        {option: "Far left"},
-        {option: "Lefty-moderate"},
-        {option: "Moderate"},
-        {option: "Righty-moderate"},
-        {option: "Far-right"},
-        {option: "None of the above"}
+        {option: "Puppies"},
+        {option: "Kittehs"},
+        {option: "Lizards"},
       ]
     },
     {
-      question: "Which of these issues do you feel most strongly about?",
+      question: "How do you destress?",
       options_attributes: [
-        {option: "Freedom of speech"},
-        {option: "Education"},
-        {option: "Protecting citizens from harm"},
-        {option: "Economic freedom"}
+        {option: "Socialize"},
+        {option: "Netflix"},
+        {option: "Exercise"}
       ]
     },
     {
-      question: "Who would you rather see as the next president?",
+      question: "Where would you prefer to go on vacation?",
       options_attributes: [
-        {option: "Clinton"},
-        {option: "Trump"},
-        {option: "Sanders"},
-        {option: "Gary Johnson"},
-        {option: "Jeb Bush"},
-        {option: "A randomly selected citizen"}
+        {option: "Prague"},
+        {option: "Rome"},
+        {option: "Sydney"},
+        {option: "Tokyo"},
       ]
     }
   ]

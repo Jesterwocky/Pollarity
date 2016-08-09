@@ -1,5 +1,6 @@
 module.exports = {
   createSurveyResponse: function(responseData, success, error) {
+
     $.ajax({
       url: "api/responses",
       type: "POST",
@@ -20,7 +21,7 @@ module.exports = {
     });
   },
 
-  reponsesByUser: function(userId, success, error) {
+  responsesByUser: function(userId, success, error) {
     $.ajax({
       url: `api/users/${userId}/responses`,
       type: "GET",
