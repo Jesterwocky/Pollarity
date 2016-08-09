@@ -49,7 +49,6 @@ const NavBar = React.createClass ({
 
   signInAsGuest(e) {
     e.preventDefault();
-
     SessionActions.logInUser({
       username: "GUEST",
       password: "password"

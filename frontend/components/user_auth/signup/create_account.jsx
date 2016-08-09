@@ -2,6 +2,7 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 const hashHistory = require('react-router').hashHistory;
 const SessionActions = require('../../../actions/session_actions.js');
+const SessionStore = require('../../../stores/session_store.js');
 
 const CreateAccount = React.createClass({
   getInitialState() {
@@ -15,9 +16,13 @@ const CreateAccount = React.createClass({
     this.listener = SessionStore.addListener(this._onSessionChange);
   },
 
+  componentWillUnmount() {
+    this.listener.remove();
+  },
+
   _onSessionChange() {
     if (SessionStore.isUserLoggedIn) {
-      hashHistory.push("");
+      hashHistory.push(`users/${SessionStore.currentUser().id}/surveys`);
     }
   },
 

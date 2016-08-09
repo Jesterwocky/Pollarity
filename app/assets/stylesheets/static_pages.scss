@@ -15,6 +15,7 @@ span, article, footer, time, small {
   box-sizing: inherit;
   background: transparent;
   font-family: sans-serif;
+  font-size: inherit;
 }
 
 ul {
@@ -84,9 +85,9 @@ body {
 
 .nav-bar-content-non-home ul {
   float: right;
-  margin-top: 5px;
   margin-right: 20px;
 }
+
 
 .nav-bar-content ul {
   float: right;
@@ -132,6 +133,14 @@ body {
   line-height: 3;
 }
 
+.nav-bar-logo-logged-in-non-home {
+  line-height: 2;
+  font-weight: normal;
+  font-size: 14px;
+  margin-left: 360px;
+  line-height: 4;
+}
+
 .inspiration {
   font-size: 11px;
   font-weight: 100;
@@ -159,6 +168,7 @@ ul.user-options {
   float: right;
   padding: 0px;
   width: 120px;
+  cursor: pointer;
 }
 
 .user-options li{
@@ -195,6 +205,9 @@ button.nav-bar-logo-logged-in {
   line-height: 4;
 }
 
+ul.nav-bar-survey-options {
+  float: left;
+}
 
 .nav-bar-survey-options li {
   float:left;
@@ -538,19 +551,17 @@ button.nav-bar-logo-logged-in {
 }
 
 small.survey-url {
-  margin-left: 20px;
-  font-size: 10px;
-}
-
-small.survey-url {
   display: inline-block;
   margin-right: 10px;
   font-size: 12px;
-  color: #DA5229
+  font-weight: normal;
+  color: black;
 }
 
 .survey-url a {
   text-decoration: underline;
+  font-weight: bold;
+  color: #5D92C0;
 }
 
 div.user-question {
@@ -742,9 +753,9 @@ section.survey-title-section {
 .survey-response-page {
   background: #25364A;
   top: 0px;
-  bottom: 0px;
   left: 0px;
   right: 0px;
+  height: 100%;
   position: absolute;
   z-index: 300;
   color: white;

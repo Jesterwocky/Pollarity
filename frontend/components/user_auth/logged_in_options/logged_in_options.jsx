@@ -19,14 +19,16 @@ const LoggedInOptions = React.createClass({
     this.listener = SessionStore.addListener(this._handleSessionChange);
   },
 
-  _handleSessionChange() {
-    this.setState({
-      username: SessionStore.currentUser().username
-    });
-  },
-
   componentWillUnmount() {
     this.listener.remove();
+  },
+
+  _handleSessionChange() {
+    if (SessionStore.isUserLoggedIn) {
+      this.setState({
+        username: SessionStore.currentUser().username
+      });
+    }
   },
 
   goToRoot(e) {
@@ -63,7 +65,7 @@ const LoggedInOptions = React.createClass({
 
         <li>
           <div className="user-option" onClick={this.logOut}>
-            Logout
+            Log out
           </div>
         </li>
 
@@ -89,7 +91,7 @@ const LoggedInOptions = React.createClass({
           </li>
         </ul>
 
-        <button onClick={this.goToRoot} className="nav-bar-logo-logged-in">Pollarity</button>
+        <button onClick={this.goToRoot} className="nav-bar-logo-logged-in-non-home">Pollarity</button>
 
         {this.userOptions()}
       </div>

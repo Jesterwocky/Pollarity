@@ -19,6 +19,7 @@ const UserSurveysIndexItem = React.createClass({
 
   render() {
     let questions = this.listQuestions();
+    let responseUrl = `${window.location.origin}/#/${this.props.survey.response_url}`;
 
     return (
       <div className={"user-survey group"}>
@@ -26,7 +27,7 @@ const UserSurveysIndexItem = React.createClass({
           {this.props.survey.survey_title}
           <div className="survey-controls">
             <small className="survey-url">
-              <a href="">Vote here:</a> {this.props.survey.response_url}
+              <a href={responseUrl}>Share:</a> {responseUrl}
             </small>
             <button className="edit-survey-in-modal">Edit Survey</button>
             <button className="delete-selected-questions">Delete Selected Questions</button>

@@ -30,14 +30,6 @@ const _ensureLoggedIn = function(nextState, replace) {
   }
 };
 
-const _ensureNotLoggedIn = function(nextState, replace) {
-  // if (SessionStore.isUserLoggedIn()) {
-  //   replace("/");
-  // }
-
-  console.log("Entry file is having issues");
-};
-
 const App = React.createClass({
   render() {
     return (
@@ -54,8 +46,8 @@ const routes = (
     <IndexRoute component={Home}/>
     <Route path="login" component={Login}/>
     <Route path="settings" component={UserSettings} onEnter={_ensureLoggedIn}/>
-    <Route path="users/new" component={Signup} onEnter={_ensureNotLoggedIn}/>
-    <Route path="users/new/create-account" component={CreateAccount} onEnter={_ensureLoggedIn}/>
+    <Route path="users/new" component={Signup}/>
+    <Route path="users/new/create-account" component={CreateAccount}/>
     <Route path="users/:userId/surveys" component={UserSurveysIndex} onEnter={_ensureLoggedIn}/>
     <Route path="surveys/:surveyId" component={ResponseForm}/>
   </Route>

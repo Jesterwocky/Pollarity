@@ -18,10 +18,13 @@ const Login = React.createClass({
     this.listener = SessionStore.addListener(this._onSessionChange);
   },
 
+  componentWillUnmount() {
+    this.listener.remove();
+  },
+
   _onSessionChange() {
     if (SessionStore.isUserLoggedIn) {
-      let userId = SessionStore.currentUser().id;
-      hashHistory.push(`users/${userId}/surveys`);
+      hashHistory.push(`users/${SessionStore.currentUser().id}/surveys`);
     }
   },
 

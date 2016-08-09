@@ -19,15 +19,22 @@ const LoggedInOptions = React.createClass({
     this.listener = SessionStore.addListener(this._handleSessionChange);
   },
 
+  componentWillUnmount() {
+    this.listener.remove();
+  },
+
   _handleSessionChange() {
-    this.setState({
-      username: SessionStore.currentUser().username
-    });
+    if (SessionStore.isUserLoggedIn) {
+      this.setState({
+        username: SessionStore.currentUser().username
+      });
+    }
   },
 
   logOut(e) {
     e.preventDefault();
     SessionActions.logOut();
+    hashHistory.push("");
   },
 
   goToUserPolls(e) {
@@ -43,7 +50,7 @@ const LoggedInOptions = React.createClass({
         </li>
 
         <li>
-          <a href="" onClick={this.logOut}>Logout</a>
+          <a href="" onClick={this.logOut}>Log out</a>
         </li>
 
       </ul>

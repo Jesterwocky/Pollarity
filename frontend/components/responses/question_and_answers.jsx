@@ -15,13 +15,20 @@ const QuestionAndAnswers = React.createClass({
           <ResponseOption
             key={i}
             surveyId={this.props.question.id}
-            option={option}/>
+            option={option}
+          />
         </li>
       );
     });
 
     return responseElements;
   },
+
+  // updateAnswer(optionId) {
+  //   this.setState({
+  //     seledtedOptionId: optionId
+  //   });
+  // },
 
   render() {
     return (

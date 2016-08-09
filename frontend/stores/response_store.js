@@ -45,7 +45,7 @@ ResponseStore.userResponses = function(userId) {
   return userResponses;
 };
 
-ResponseStore.onDispatch = function(payload) {
+ResponseStore.__onDispatch = function(payload) {
   switch (payload.actionType) {
     case ResponseConstants.RESPONSES_RECEIVED:
       _resetResponses(payload.responses);
