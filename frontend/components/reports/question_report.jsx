@@ -31,6 +31,7 @@ const QuestionReport = React.createClass({
           option={option}
           totalQuestionVotes={this.props.votes.length}
           optionTally={this._tallyVotes(option)}
+          totalOptions={this.props.question.options.length}
         />
       );
     });
@@ -42,7 +43,7 @@ const QuestionReport = React.createClass({
     return(
       <div className={"question-report group"}>
         <h2>{this.props.question.question}</h2>
-          <div className="poll-results-display group">
+          <div className="poll-results-display-window group">
             {this.optionDisplays()}
           </div>
       </div>

@@ -838,4 +838,26 @@ section.survey-title-section {
 
 .question-report {
   padding-top: 30px;
+  width: 680px;
+  margin-top: 50px;
+  margin-left: 60px;
+  width: 80%;
+  height: 80%;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  border: 2px solid gray;
+}
+
+.poll-results-display-window {
+  width: 80%;
+  height: 70%;
+  border-left: 4px solid #3F7CAB;
+  border-bottom: 4px solid #3F7CAB;
+}
+
+.option-display {
+}
+
+div.option-vote-percentage {
+  background: #3F7CAB;
 }
