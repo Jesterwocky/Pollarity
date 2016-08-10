@@ -18,12 +18,12 @@ class Api::ResponsesController < ApplicationController
 
     if @response.save
 
-      Pusher.trigger("question_#{@response.question}", 'vote', {
-        message: {
-          question: @response.question.id,
-          selected_option: @response.selected_option_id
-        }
-      })
+      # Pusher.trigger("question_#{@response.question}", 'vote', {
+      #   message: {
+      #     question: @response.question.id,
+      #     selected_option: @response.selected_option_id
+      #   }
+      # })
 
       render json: @response.to_json(include: :question)
     else

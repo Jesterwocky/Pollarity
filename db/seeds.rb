@@ -11,23 +11,30 @@ User.create!(username: "Testeron", password: "password")
 
 Survey.create!(
   author_id: 1,
-  survey_title: "Your Mood",
+  survey_title: "You you you",
   questions_attributes: [
     {
-      question: "What are you craving?",
-      options_attributes: [
-        {option: "A pizza"},
-        {option: "A hug"},
-        {option: "sleep"},
-        {option: "Alcohol"}
-      ]
-    },
-    {
-      question: "Which of the following best describes your mood?",
+      question: "How are you feeling?",
       options_attributes: [
         {option: "Elated"},
         {option: "Deflated"},
         {option: "Neutral"}
+      ]
+    },
+    {
+      question: "What do you want most?",
+      options_attributes: [
+        {option: "Sleep"},
+        {option: "A hug"},
+        {option: "Coffee"}
+      ]
+    },
+    {
+      question: "Which pet is best?",
+      options_attributes: [
+        {option: "Puppehz"},
+        {option: "Kittehz"},
+        {option: "Lizards"}
       ]
     }
   ]
@@ -35,29 +42,32 @@ Survey.create!(
 
 Survey.create!(
   author_id: 1,
-  survey_title: "Tech",
+  survey_title: "Programming",
 
   questions_attributes: [
     {
-      question: "What kind of phone do you have?",
+      question: "What did you primarily do/study before programming?",
       options_attributes: [
-        {option: "iPhone"},
-        {option: "Samsung"},
-        {option: "Other Android phone"},
-        {option: "Other phone not listed"},
-        {option: "None"},
+        {option: "Math or engineering"},
+        {option: "Visual or performing arts"},
+        {option: "Business, writing, or other office work"}
       ]
     },
     {
-      question: "Where are you from?",
+      question: "Which language do you prefer?",
       options_attributes: [
-        {option: "North America"},
-        {option: "South America"},
-        {option: "Africa"},
-        {option: "Asia"},
-        {option: "Europe"},
-        {option: "Oceania"},
-        {option: "Antartica"}
+        {option: "Ruby"},
+        {option: "JavaScript"},
+        {option: "Other"}
+      ]
+    },
+    {
+      question: "All else being equal, where would you prefer to work?",
+      options_attributes: [
+        {option: "Large company"},
+        {option: "Startup"},
+        {option: "Consultancy"},
+        {option: "Don't care"}
       ]
     }
   ]
@@ -65,32 +75,28 @@ Survey.create!(
 
 Survey.create!(
   author_id: 1,
-  survey_title: "Favorites",
+  survey_title: "Quest",
 
   questions_attributes: [
     {
-      question: "Which is your favorite?",
+      question: "What is your quest?",
       options_attributes: [
-        {option: "Puppies"},
-        {option: "Kittehs"},
-        {option: "Lizards"},
+        {option: "Get a job"},
+        {option: "Seek the holy grail"},
+        {option: "Save the world"},
+        {option: "Defeat the ultimate evil"}
       ]
     },
     {
-      question: "How do you destress?",
+      question: "Weapon of choice?",
       options_attributes: [
-        {option: "Socialize"},
-        {option: "Netflix"},
-        {option: "Exercise"}
-      ]
-    },
-    {
-      question: "Where would you prefer to go on vacation?",
-      options_attributes: [
-        {option: "Prague"},
-        {option: "Rome"},
-        {option: "Sydney"},
-        {option: "Tokyo"},
+        {option: "My wit"},
+        {option: "My 1337 skillz"},
+        {option: "Sword"},
+        {option: "Bow"},
+        {option: "Axe"},
+        {option: "Giant robot"},
+        {option: "Reverse psychology"}
       ]
     }
   ]
@@ -98,53 +104,30 @@ Survey.create!(
 
 Survey.create!(
   author_id: 2,
-  survey_title: "Your Mood",
+  survey_title: "You you you",
   questions_attributes: [
     {
-      question: "What are you craving?",
-      options_attributes: [
-        {option: "A pizza"},
-        {option: "A hug"},
-        {option: "sleep"},
-        {option: "Alcohol"}
-      ]
-    },
-    {
-      question: "Which of the following best describes your mood?",
+      question: "How are you feeling?",
       options_attributes: [
         {option: "Elated"},
         {option: "Deflated"},
         {option: "Neutral"}
       ]
-    }
-  ]
-)
-
-Survey.create!(
-  author_id: 2,
-  survey_title: "Tech",
-
-  questions_attributes: [
+    },
     {
-      question: "What kind of phone do you have?",
+      question: "What do you want most?",
       options_attributes: [
-        {option: "iPhone"},
-        {option: "Samsung"},
-        {option: "Other Android phone"},
-        {option: "Other phone not listed"},
-        {option: "None"},
+        {option: "Sleep"},
+        {option: "A hug"},
+        {option: "Coffee"}
       ]
     },
     {
-      question: "Where are you from?",
+      question: "Which pet is best?",
       options_attributes: [
-        {option: "North America"},
-        {option: "South America"},
-        {option: "Africa"},
-        {option: "Asia"},
-        {option: "Europe"},
-        {option: "Oceania"},
-        {option: "Antartica"}
+        {option: "Puppehz"},
+        {option: "Kittehz"},
+        {option: "Lizards"}
       ]
     }
   ]
@@ -152,32 +135,61 @@ Survey.create!(
 
 Survey.create!(
   author_id: 2,
-  survey_title: "Favorites",
+  survey_title: "Programming",
 
   questions_attributes: [
     {
-      question: "Which is your favorite?",
+      question: "What did you primarily do/study before programming?",
       options_attributes: [
-        {option: "Puppies"},
-        {option: "Kittehs"},
-        {option: "Lizards"},
+        {option: "Math or engineering"},
+        {option: "Visual or performing arts"},
+        {option: "Business, writing, or other office work"}
       ]
     },
     {
-      question: "How do you destress?",
+      question: "Which language do you prefer?",
       options_attributes: [
-        {option: "Socialize"},
-        {option: "Netflix"},
-        {option: "Exercise"}
+        {option: "Ruby"},
+        {option: "JavaScript"},
+        {option: "Other"}
       ]
     },
     {
-      question: "Where would you prefer to go on vacation?",
+      question: "All else being equal, where would you prefer to work?",
       options_attributes: [
-        {option: "Prague"},
-        {option: "Rome"},
-        {option: "Sydney"},
-        {option: "Tokyo"},
+        {option: "Large company"},
+        {option: "Startup"},
+        {option: "Consultancy"},
+        {option: "Don't care"}
+      ]
+    }
+  ]
+)
+
+Survey.create!(
+  author_id: 2,
+  survey_title: "Quest",
+
+  questions_attributes: [
+    {
+      question: "What is your quest?",
+      options_attributes: [
+        {option: "Get a job"},
+        {option: "Seek the holy grail"},
+        {option: "Save the world"},
+        {option: "Defeat the ultimate evil"}
+      ]
+    },
+    {
+      question: "Weapon of choice?",
+      options_attributes: [
+        {option: "My wit"},
+        {option: "My 1337 skillz"},
+        {option: "Sword"},
+        {option: "Bow"},
+        {option: "Axe"},
+        {option: "Giant robot"},
+        {option: "Reverse psychology"}
       ]
     }
   ]
