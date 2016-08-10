@@ -7,13 +7,6 @@ const ResponseActions = require('../../actions/response_actions.js');
 
 const ResponseOption = React.createClass({
 
-  // componentDidMount() {
-  //
-  //   if (this.props.selected) {
-  //     $(`#option-${this.props.option.id}`).addClass("currently-selected-option");
-  //   }
-  // },
-
   selectOption(e) {
     e.preventDefault();
     let optionId = this.props.option.id;

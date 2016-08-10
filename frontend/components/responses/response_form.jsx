@@ -65,7 +65,7 @@ const ResponseForm = React.createClass ({
     }
 
     return (
-      <div className="survey-response-page">
+      <div className={"survey-response-page group"}>
 
         <div className="response-page-header">
           <h1>Header goes here</h1>

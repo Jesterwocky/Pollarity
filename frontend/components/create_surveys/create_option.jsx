@@ -11,15 +11,16 @@ const CreateOption = React.createClass({
   },
 
   updateThisOption(e) {
+
     e.preventDefault();
 
     this.setState({
       option: e.currentTarget.value
     });
 
-    this.props.updateOpt(
+    this.props.updateOption(
       this.props.optionNum,
-      {option: this.state.option}
+      {option: e.currentTarget.value}
     );
   },
 

@@ -9,6 +9,8 @@ class Survey < ActiveRecord::Base
   has_many :questions,
     dependent: :destroy
 
+  accepts_nested_attributes_for :questions
+
   has_many :options,
     through: :questions
 
@@ -19,7 +21,6 @@ class Survey < ActiveRecord::Base
     through: :responses,
     source: :responder
 
-  accepts_nested_attributes_for :questions
 
   def create_url
     self.response_url = "surveys/#{self.id}"

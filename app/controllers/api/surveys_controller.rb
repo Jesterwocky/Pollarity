@@ -1,6 +1,5 @@
 class Api::SurveysController < ApplicationController
   def show
-    # params may be incorrect here...
     @survey = Survey.find(params[:id].to_i)
 
     if @survey
@@ -43,6 +42,6 @@ class Api::SurveysController < ApplicationController
   end
 
   def survey_params
-    params.permit(:survey_title, :author_id, questions_attributes: [:id, :question, :options])
+    params.permit(:survey_title, :author_id, questions_attributes: [:id, :question, options_attributes: [:id, :option]])
   end
 end

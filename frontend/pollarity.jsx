@@ -31,6 +31,13 @@ const _ensureLoggedIn = function(nextState, replace) {
   }
 };
 
+const _ensureTrackable = function(nextState, replace) {
+  // if (!SessionStore.isUserLoggedIn()) {
+  //   docCookies.setItem("pollarityAnonymousPolltaker", "x");
+  // }
+  console.log("Should allow anon polltakers soon!");
+};
+
 const App = React.createClass({
   render() {
     return (
@@ -50,7 +57,7 @@ const routes = (
     <Route path="users/new" component={Signup}/>
     <Route path="users/new/create-account" component={CreateAccount}/>
     <Route path="users/:userId/surveys" component={UserSurveysIndex} onEnter={_ensureLoggedIn}/>
-    <Route path="surveys/:surveyId" component={ResponseForm}/>
+    <Route path="surveys/:surveyId" component={ResponseForm} onEnter={_ensureTrackable}/>
   </Route>
 );
 

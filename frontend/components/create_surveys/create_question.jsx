@@ -11,13 +11,13 @@ const CreateQuestion = React.createClass({
         key={0}
         optionNum={0}
         deleteOption={this.deleteOption}
-        updateOpt={this.updateOpt}
+        updateOption={this.updateOption}
       />,
       <CreateOption
         key={1}
         optionNum={1}
         deleteOption={this.deleteOption}
-        updateOpt={this.updateOpt}
+        updateOption={this.updateOption}
       />
     ];
 
@@ -25,7 +25,7 @@ const CreateQuestion = React.createClass({
       question: this.props.initialQuestionText,
       answerOptions: answerOptions,
       optionNum: 2,
-      options: {}
+      options_attributes: {}
     });
   },
 
@@ -38,7 +38,7 @@ const CreateQuestion = React.createClass({
 
     this.props.updateQuestion(
       this.props.questionNum,
-      {question: this.state.question, options: this.state.options}
+      {question: e.currentTarget.value, options_attributes: this.state.options_attributes}
     );
   },
 
@@ -51,7 +51,7 @@ const CreateQuestion = React.createClass({
       <CreateOption
         key={this.state.optionNum}
         optionNum={this.state.optionNum}
-        updateOpt={this.updateOpt}
+        updateOption={this.updateOption}
         deleteOption={this.deleteOption}
       />
     );
@@ -62,18 +62,20 @@ const CreateQuestion = React.createClass({
     });
   },
 
-  updateOpt(optionNum, optionData) {
-    let options = {};
+  updateOption(optionNum, optionData) {
 
-    Object.keys(this.state.options).forEach((key) => {
-      options[key] = this.state.options[key];
-    });
-
-    options[optionNum] = optionData;
-
-    this.setState({
-      options: options
-    });
+    this.state.options_attributes[optionNum] = optionData;
+    // let options = {};
+    //
+    // Object.keys(this.state.options_attributes).forEach((key) => {
+    //   options[key] = this.state.options_attributes[key];
+    // });
+    //
+    // options[optionNum] = optionData;
+    //
+    // this.setState({
+    //   options: options
+    // });
   },
 
   deleteOption(num) {
