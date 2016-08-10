@@ -17,6 +17,14 @@ class Api::ResponsesController < ApplicationController
     @response = Response.new(response_params)
 
     if @response.save
+
+      Pusher.trigger("survey_#{@response.survey}", 'vote', {
+        message: {
+          question: @response.question.id,
+          selected_option: @response.selected_option_id
+        }
+      })
+
       render json: @response.to_json(include: :question)
     else
       render json: @response.errors.full_messages, status: 401

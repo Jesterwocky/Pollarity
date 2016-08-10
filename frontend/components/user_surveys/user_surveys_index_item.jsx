@@ -1,5 +1,5 @@
-const React = require('react');
-const ReactDOM = require('react-dom');
+const React       = require('react');
+const ReactDOM    = require('react-dom');
 const hashHistory = require('react-router').hashHistory;
 const SurveyStore = require('../../stores/survey_store.js');
 

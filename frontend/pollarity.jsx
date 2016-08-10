@@ -57,6 +57,7 @@ const routes = (
     <Route path="users/new" component={Signup}/>
     <Route path="users/new/create-account" component={CreateAccount}/>
     <Route path="users/:userId/surveys" component={UserSurveysIndex} onEnter={_ensureLoggedIn}/>
+    <Route path="users/:userId/surveys/:surveyId" component={SurveyReport} onEnter={_ensureLoggedIn}/>
     <Route path="surveys/:surveyId" component={ResponseForm} onEnter={_ensureTrackable}/>
   </Route>
 );

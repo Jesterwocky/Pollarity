@@ -17,3 +17,4 @@ bundle.js
 bundle.js.map
 *sprockets*
 .DS_Store
+.byebug_history
