@@ -8,6 +8,10 @@ const OptionDisplay   = require('./option_display.jsx');
 
 const QuestionReport = React.createClass({
 
+  componentDidMount() {
+
+  },
+
   optionDisplays() {
     let displays = [];
 

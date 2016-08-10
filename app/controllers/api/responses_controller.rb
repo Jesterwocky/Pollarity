@@ -18,7 +18,7 @@ class Api::ResponsesController < ApplicationController
 
     if @response.save
 
-      Pusher.trigger("survey_#{@response.survey}", 'vote', {
+      Pusher.trigger("question_#{@response.question}", 'vote', {
         message: {
           question: @response.question.id,
           selected_option: @response.selected_option_id

@@ -111,9 +111,6 @@ const CreateSurvey = React.createClass({
       <div className={fullBoxClassnames}>
 
         <div className="question-type-tabs">
-          <div onClick={this.toggleFormType} className="question-type-tab">
-            QUESTION
-          </div>
 
           <div onClick={this.toggleFormType} className="question-type-tab-selected">
             SURVEY
@@ -126,7 +123,7 @@ const CreateSurvey = React.createClass({
           <section className="multi-q-survey-section">
 
             <p className="multi-q-text">
-              Combine multiple questions into a survey and send the link to participants. Participants can answer at their own pace.
+              Combine questions into a survey and send the link to participants. Participants can answer at their own pace.
             </p>
 
             <section className="survey-title-section">

@@ -10,7 +10,6 @@ const UserSurveysIndexItem = React.createClass({
     return this.props.survey.questions.map((question, i) => {
       return(
         <div key={i} className={"user-question group"}>
-          <input type="checkbox" className="survey-edit-checkbox"/>
           <div className="survey-question-text">{question.question}</div>
         </div>
       );
@@ -20,17 +19,23 @@ const UserSurveysIndexItem = React.createClass({
   render() {
     let questions = this.listQuestions();
     let responseUrl = `${window.location.origin}/#/${this.props.survey.response_url}`;
+    let reportingUrl = `${window.location.origin}/#/users/${SessionStore.currentUser().id}/surveys/${this.props.survey.id}`;
 
     return (
       <div className={"user-survey group"}>
         <div className="user-survey-title">
           {this.props.survey.survey_title}
+
           <div className="survey-controls">
+            <div className="poll-report-link">
+              <a href={reportingUrl}>
+                realtime poll results
+              </a>
+            </div>
+            <a href={responseUrl} className="url-share-link">share:</a>
             <small className="survey-url">
-              <a href={responseUrl}>Share:</a> {responseUrl}
+                {responseUrl}
             </small>
-            <button className="edit-survey-in-modal">Edit Survey</button>
-            <button className="delete-selected-questions">Delete Selected Questions</button>
           </div>
         </div>
         {questions}
