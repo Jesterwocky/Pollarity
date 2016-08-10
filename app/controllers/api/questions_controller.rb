@@ -1,5 +1,17 @@
 class Api::QuestionsController < ApplicationController
 
+  def show
+    # probably don't need this
+    @question = Question.find(params(:id))
+
+    if @question
+      render json: @question.to_json(include: {options: {include: :votes}})
+    else
+      render json: @question.errors.full_messages, state: 401
+    end
+
+  end
+
   def update
     @question = Question.find(params(:id))
 

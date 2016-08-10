@@ -5,7 +5,8 @@ class Question < ActiveRecord::Base
     dependent: :destroy
 
   has_many :responses,
-    through: :options
+    through: :options,
+    source: :votes
 
   accepts_nested_attributes_for :options
 end

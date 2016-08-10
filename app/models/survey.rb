@@ -15,11 +15,12 @@ class Survey < ActiveRecord::Base
     through: :questions
 
   has_many :responses,
-    through: :questions
+    through: :options,
+    source: :votes
 
   has_many :responders,
-    through: :responses,
-    source: :responder
+    through: :options,
+    source: :voters
 
 
   def create_url

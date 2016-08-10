@@ -3,13 +3,27 @@ class Api::ResponsesController < ApplicationController
   def index
     if params[:survey_id]
       @responses = Survey.find(params[:survey_id].to_i).responses
-      render json: @responses
+
+      if @responses
+        render json: @responses.to_json(include: :question)
+      else
+        render json: {}
+      end
     elsif params[:user_id]
       @responses = User.find(params[:user_id].to_i).votes
-      render json: @responses.to_json(include: :question)
+      if @responses
+        render json: @responses.to_json(include: :question)
+      else
+        render json: {}
+      end
     else
-      # Shouldn't need this; route doesn't exist
-      Survey.all
+      # Shouldn't need this; route doesn't exist currently
+      @responses = Survey.all.responses
+      if @responses
+        render json: @responses.to_json(include: :question)
+      else
+        render json: {}
+      end
     end
   end
 
@@ -18,11 +32,12 @@ class Api::ResponsesController < ApplicationController
 
     if @response.save
 
-      # Pusher.trigger("question_#{@response.question}", 'vote', {
-      #   message: {
-      #     question: @response.question.id,
-      #     selected_option: @response.selected_option_id
-      #   }
+      # Pusher.trigger("question_#{@response.question.id}", 'vote', {
+      #
+      #   # message: {
+      #   #   question: @response.question.id,
+      #   #   selected_option: @response.selected_option_id
+      #   # }
       # })
 
       render json: @response.to_json(include: :question)

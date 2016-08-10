@@ -32,6 +32,7 @@ module.exports = {
   },
 
   receiveSurveyResponse(response) {
+    
     Dispatcher.dispatch({
       actionType: ResponseConstants.RESPONSE_RECEIVED,
       response: response

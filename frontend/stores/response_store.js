@@ -10,8 +10,9 @@ const _resetResponses = function(responses) {
   _responses = {};
 
   responses.forEach((response) => {
-      _responses[response.id] = response;
+    _responses[response.id] = response;
   });
+
 };
 
 const _addResponse = function(response) {
@@ -27,10 +28,25 @@ ResponseStore.answersToSurvey = function() {
   let selectedOptions = [];
 
   Object.keys(_responses).forEach((responseId) => {
-    selectedOptions.push(_responses[responseId].selected_option_id);
+    selectedOptions.push({
+      questionId: _responses[responseId].question.id,
+      optionId: _responses[responseId].selected_option_id
+    });
   });
 
   return selectedOptions;
+};
+
+ResponseStore.answersToQuestion = function(questionId) {
+  let questionAnswers = [];
+
+  Object.keys(_responses).forEach((responseId) => {
+    if (_responses[responseId].question.id === questionId) {
+      questionAnswers.push(_responses[responseId]);
+    }
+  });
+
+  return questionAnswers;
 };
 
 ResponseStore.userResponses = function(userId) {

@@ -4,15 +4,14 @@ const React           = require('react');
 const ReactDOM        = require('react-dom');
 const hashHistory     = require('react-router').hashHistory;
 const SurveyStore     = require('../../stores/survey_store.js');
-const ResponseStore   = require('../../stores/response_store.js');
-const ResponseActions = require('../../actions/response_actions.js');
 const QuestionReport  = require('./question_report.jsx');
+const ResponseStore = require('../../stores/response_store.js');
+const ResponseActions = require('../../actions/response_actions.js');
 
 const SurveyReport = React.createClass({
 
   getInitialState() {
     return({
-      surveyId: undefined,
       surveyTitle: undefined,
       responseUrl: undefined,
       questions: []
@@ -24,24 +23,24 @@ const SurveyReport = React.createClass({
     this.responseListener = ResponseStore.addListener(this._onResponseChange);
 
     SurveyActions.getSurvey(this.props.params.surveyId);
+    ResponseActions.surveyResponses(this.props.params.surveyId);
 
-    const pusher = new Pusher('98aa24bcedf9f814bbe7', {
-      encrypted: true
-    });
-
-    const channel = pusher.subscribe(`survey_${this.props.params.surveyId}`);
-    channel.bind('vote', function(data) {
-      alert(data.message);
-      ResponseActions.surveyResponses(this.props.params.surveyId);
-    });
-
+    // const pusher = new Pusher('98aa24bcedf9f814bbe7', {
+    //   encrypted: true
+    // });
+    //
+    // const channel = pusher.subscribe(`questions_${this.props.params.question.id}`);
+    //
+    // channel.bind('vote', function(data) {
+    //   alert("Someone voted!");
+    //   ResponseActions.surveyResponses(this.props.params.surveyId);
+    // });
   },
 
   _onSurveyChange() {
     let survey = SurveyStore.find(this.props.params.surveyId);
 
     this.setState({
-      surveyId: survey.id,
       surveyTitle: survey.survey_title,
       responseUrl: `${window.location.origin}/#/${survey.response_url}`,
       questions: survey.questions
@@ -49,11 +48,27 @@ const SurveyReport = React.createClass({
   },
 
   _onResponseChange() {
-    let responses = ResponseStore.answersToSurvey();
+
+    let numVotes = ResponseStore.answersToSurvey().length;
 
     this.setState({
-      responses: responses
+      numVotes: numVotes,
+      votes: ResponseStore.answersToSurvey()
     });
+  },
+
+  _questionResponses(question) {
+    let responses = [];
+
+    if (this.state.votes !== undefined && this.state.votes.length > 0) {
+      this.state.votes.forEach((vote) => {
+        if (vote.questionId === question.id) {
+          responses.push(vote.optionId);
+        }
+      });
+    }
+
+    return responses;
   },
 
   questionReports() {
@@ -61,16 +76,20 @@ const SurveyReport = React.createClass({
 
     if (this.state.questions.length > 0) {
       this.state.questions.forEach((question, i) => {
+        let votes = this._questionResponses(question);
+
         reports.push(
           <QuestionReport
             key={i}
             question={question}
+            votes={votes}
           />
         );
       });
     }
 
     return reports;
+
   },
 
   render() {
@@ -80,9 +99,10 @@ const SurveyReport = React.createClass({
         <div className={"response-instructions group"}>
           <aside>
             Respond at <a href={this.state.responseUrl}>{this.state.responseUrl}</a>
+          <p>Total votes: {this.state.numVotes}</p>
           </aside>
+          {this.questionReports()}
         </div>
-        {this.questionReports()}
       </div>
     );
   }

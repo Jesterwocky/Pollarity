@@ -50,7 +50,6 @@ const QuestionAndAnswers = React.createClass({
       responseElements.push(
         <li>
           <ResponseOption
-            key={i}
             surveyId={this.props.question.id}
             option={option}
             selected={isSelected}

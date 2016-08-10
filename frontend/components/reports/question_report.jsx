@@ -8,17 +8,29 @@ const OptionDisplay   = require('./option_display.jsx');
 
 const QuestionReport = React.createClass({
 
-  componentDidMount() {
+  _tallyVotes(option) {
+    let tally = 0;
 
+    this.props.votes.forEach((vote) => {
+      if (vote === option.id) {
+        tally += 1;
+      }
+    });
+
+    return tally;
   },
 
   optionDisplays() {
     let displays = [];
 
-    this.props.question.options.forEach((option) => {
+    this.props.question.options.forEach((option, i) => {
+
       displays.push(
         <OptionDisplay
+          key={i}
           option={option}
+          totalQuestionVotes={this.props.votes.length}
+          optionTally={this._tallyVotes(option)}
         />
       );
     });
