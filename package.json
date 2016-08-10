@@ -1,7 +1,7 @@
 {
   "name": "PollarityApp",
   "version": "1.0.0",
-  "description": "## Heroku link [Heroku link goes here]",
+  "description": "## Heroku link [https://pollarity-polls.herokuapp.com]",
   "main": "index.js",
   "directories": {
     "doc": "docs",
