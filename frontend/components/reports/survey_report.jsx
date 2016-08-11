@@ -25,16 +25,16 @@ const SurveyReport = React.createClass({
     SurveyActions.getSurvey(this.props.params.surveyId);
     ResponseActions.surveyResponses(this.props.params.surveyId);
 
-    // const pusher = new Pusher('98aa24bcedf9f814bbe7', {
-    //   encrypted: true
-    // });
-    //
-    // const channel = pusher.subscribe(`questions_${this.props.params.question.id}`);
-    //
-    // channel.bind('vote', function(data) {
-    //   alert("Someone voted!");
-    //   ResponseActions.surveyResponses(this.props.params.surveyId);
-    // });
+    const pusher = new Pusher('98aa24bcedf9f814bbe7', {
+      encrypted: true
+    });
+
+    let surveyId = this.props.params.surveyId;
+    const channel = pusher.subscribe(`survey_${surveyId}`);
+
+    channel.bind('vote', function(data) {
+      ResponseActions.surveyResponses(surveyId);
+    });
   },
 
   componentWillUnmount() {

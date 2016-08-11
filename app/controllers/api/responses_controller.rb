@@ -1,4 +1,7 @@
+require 'pusher'
+
 class Api::ResponsesController < ApplicationController
+
 
   def index
     if params[:survey_id]
@@ -32,13 +35,13 @@ class Api::ResponsesController < ApplicationController
 
     if @response.save
 
-      # Pusher.trigger("question_#{@response.question.id}", 'vote', {
-      #
-      #   # message: {
-      #   #   question: @response.question.id,
-      #   #   selected_option: @response.selected_option_id
-      #   # }
-      # })
+      Pusher.trigger("survey_#{@response.survey.id}", 'vote', {
+
+        # message: {
+        #   question: @response.question.id,
+        #   selected_option: @response.selected_option_id
+        # }
+      })
 
       render json: @response.to_json(include: :question)
     else
