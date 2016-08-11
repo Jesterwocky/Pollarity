@@ -6,8 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create!(username: "GUEST", password: "password")
-User.create!(username: "Testeron", password: "password")
+User.create!(username: "GUEST", password: "password", anon: false)
+User.create!(username: "Testeron", password: "password", anon:false)
 
 Survey.create!(
   author_id: 1,

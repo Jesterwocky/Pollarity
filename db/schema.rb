@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160808160827) do
+ActiveRecord::Schema.define(version: 20160811145108) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,11 +56,12 @@ ActiveRecord::Schema.define(version: 20160808160827) do
   add_index "surveys", ["response_url"], name: "index_surveys_on_response_url", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "username",        null: false
-    t.string   "password_digest", null: false
-    t.string   "session_token",   null: false
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "username",                        null: false
+    t.string   "password_digest",                 null: false
+    t.string   "session_token",                   null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.boolean  "anon",            default: false
   end
 
   add_index "users", ["session_token"], name: "index_users_on_session_token", using: :btree

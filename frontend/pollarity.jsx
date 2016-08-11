@@ -32,10 +32,32 @@ const _ensureLoggedIn = function(nextState, replace) {
 };
 
 const _ensureTrackable = function(nextState, replace) {
-  // if (!SessionStore.isUserLoggedIn()) {
-  //   docCookies.setItem("pollarityAnonymousPolltaker", "x");
-  // }
-  console.log("Should allow anon polltakers soon!");
+  console.log("Ensuring trackability");
+  if (!SessionStore.isUserLoggedIn()) {
+    if (docCookies.getItem("pollarityAnonymousPolltaker") === null) {
+      let anonUsername = Math.random().toString(36).slice(2);
+      console.log(`New anon username: ${anonUsername}`);
+
+      docCookies.setItem("pollarityAnonymousPolltaker", anonUsername);
+
+      SessionActions.signUpUser({
+        username: anonUsername,
+        password: "pollarity-anon-user",
+        anon: true
+      });
+
+      console.log(`Did it! Signed up anon user ${anonUsername}`);
+    }
+
+    else {
+      SessionActions.logInUser({
+        username: docCookies.getItem("pollarityAnonymousPolltaker"),
+        password: "pollarity-anon-user",
+        anon: true
+      });
+    }
+  }
+  console.log("Hello anon!");
 };
 
 const App = React.createClass({

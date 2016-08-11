@@ -1,5 +1,6 @@
 module.exports = {
   signup: function(user, success, error) {
+    debugger
     $.ajax({
       url: "api/users",
       type: "POST",

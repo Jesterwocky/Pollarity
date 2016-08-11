@@ -8,6 +8,7 @@ module.exports = {
   },
 
   signUpUser(user) {
+    debugger
     SessionAPIUtil.signup(user, this.receiveCurrentUser);
   },
 
