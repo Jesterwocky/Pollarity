@@ -13,10 +13,11 @@ const OptionDisplay = React.createClass({
 
     return (
       <div className={"option-display group"}>
-        <div className={"option-vote-percentage group"} style={percentageBasedSettings}>
+        <div className="percent-bar-overlay">
           <h3>{this.props.option.option}</h3>
-          <small className="option-percent-text">{percentage}</small>
+          <p className={"option-percent-text group"}>{percentage}</p>
         </div>
+        <div className={"option-vote-percentage group"} style={percentageBasedSettings}></div>
       </div>
     );
   }

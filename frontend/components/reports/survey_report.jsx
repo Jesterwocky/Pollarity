@@ -99,10 +99,11 @@ const SurveyReport = React.createClass({
         <div className={"response-instructions group"}>
           <aside>
             Respond at <a href={this.state.responseUrl}>{this.state.responseUrl}</a>
-          <p>Total votes: {this.state.numVotes}</p>
+          <p>Total participants: {this.state.numVotes}</p>
           </aside>
-          {this.questionReports()}
         </div>
+
+        {this.questionReports()}
       </div>
     );
   }

@@ -43,9 +43,25 @@ const QuestionReport = React.createClass({
     return(
       <div className={"question-report group"}>
         <h2>{this.props.question.question}</h2>
-          <div className="poll-results-display-window group">
-            {this.optionDisplays()}
+          <div className={"poll-results-display-window group"}>
+            <div className={"poll-results-inner group"}>
+              {this.optionDisplays()}
+            </div>
+            <div className={"under-graph-markings"}>
+              <small id={"0"} className={"marking"}></small>
+              <small id={"10"} className={"marking"}></small>
+              <small id={"20"} className={"marking"}></small>
+              <small id={"30"} className={"marking"}></small>
+              <small id={"40"} className={"marking"}></small>
+              <small id={"50"} className={"marking"}></small>
+              <small id={"60"} className={"marking"}></small>
+              <small id={"70"} className={"marking"}></small>
+              <small id={"80"} className={"marking"}></small>
+              <small id={"90"} className={"marking"}></small>
+              <small id={"100"} className={"marking"}></small>
+            </div>
           </div>
+          <p className="total-question-votes">Total votes: {this.props.votes.length}</p>
       </div>
     );
   }
