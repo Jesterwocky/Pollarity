@@ -37,6 +37,11 @@ const SurveyReport = React.createClass({
     // });
   },
 
+  componentWillUnmount() {
+    this.surveyListener.remove();
+    this.responseListener.remove();
+  },
+
   _onSurveyChange() {
     let survey = SurveyStore.find(this.props.params.surveyId);
 

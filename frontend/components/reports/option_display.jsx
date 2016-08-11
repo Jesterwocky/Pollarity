@@ -7,8 +7,8 @@ const OptionDisplay = React.createClass({
   render() {
     let percentage = 0;
 
-    if (this.props.totalQuestionVotes.length > 0) {
-      let percentage = 100 * (this.props.optionTally / this.props.totalQuestionVotes);
+    if (this.props.totalQuestionVotes > 0) {
+      percentage = 100 * (this.props.optionTally / this.props.totalQuestionVotes);
     }
 
     let percentageBasedSettings = {
