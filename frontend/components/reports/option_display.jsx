@@ -19,7 +19,7 @@ const OptionDisplay = React.createClass({
       <div className={"option-display group"}>
         <div className="percent-bar-overlay">
           <h3>{this.props.option.option}</h3>
-          <p className={"option-percent-text group"}>{percentage}%</p>
+          <p className={"option-percent-text group"}>{Number((percentage).toFixed(1))}%</p>
         </div>
         <div className={"option-vote-percentage group"} style={percentageBasedSettings}></div>
       </div>

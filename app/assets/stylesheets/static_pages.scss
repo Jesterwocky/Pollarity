@@ -829,7 +829,7 @@ section.survey-title-section {
   margin-top: 15px;
 
   h1 {
-    font-size: 50px;
+    font-size: 60px;
     padding-bottom: 20px;
     text-align: center;
     font-weight: bold;
@@ -843,6 +843,7 @@ section.survey-title-section {
   h3 {
     font-size: 18px;
     margin: 0px;
+    margin-left: 5px;
     float: left;
     display: block;
     width: 100%;
@@ -861,7 +862,7 @@ section.survey-title-section {
   top: 71px;
   right: 20px;
   background: #D7E4EE;
-  border-radius: 3px;
+  border-radius: 2px;
   position: fixed;
   z-index: -1;
 }
@@ -874,6 +875,11 @@ section.survey-title-section {
 
 div.option-percent-text {
   float: left;
+  padding-left: 5px;
+}
+
+p.option-percent-text.group {
+    margin-left: 5px;
 }
 
 .percent-bar-overlay {
@@ -887,6 +893,7 @@ div.option-percent-text {
   width: 100%;
   padding: 20px;
   padding-left: 15px;
+  padding-top: 10px;
   background: #25364a;
   color: white;
 }
@@ -904,9 +911,10 @@ div.option-percent-text {
 .question-report {
   margin-top: 10px;
   min-width: 450px;
-  padding: 35px;
-  padding-bottom: 50px;
-  border: 4px solid #e8eaec;
+  padding: 5%;
+  padding-bottom: 8%;
+  padding-right: 7%;
+  border: 5px solid #e8eaec;
   border-radius: 3px;
   box-sizing: border-box;
 }
