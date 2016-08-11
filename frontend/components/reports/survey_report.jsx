@@ -92,18 +92,39 @@ const SurveyReport = React.createClass({
 
   },
 
+  pollDataSummary() {
+    return(
+      <div>
+        <h4>{this.state.surveyTitle}</h4>
+        <p>survey summary</p>
+        <ul>
+          <li>{this.state.responseUrl}</li>
+          <li>Total participants: {this.state.numVotes}</li>
+          <li>Questions summary goes here</li>
+        </ul>
+      </div>
+    );
+  },
+
   render() {
     return(
       <div className={"survey-report-page group"}>
-        <h1>{this.state.surveyTitle}</h1>
-        <div className={"response-instructions group"}>
-          <aside>
-            Respond at <a href={this.state.responseUrl}>{this.state.responseUrl}</a>
-          <p>Total participants: {this.state.numVotes}</p>
-          </aside>
+        <div className={"survey-reporting-sidebar group"}>
+          {this.pollDataSummary()}
         </div>
 
-        {this.questionReports()}
+        <div className={"main-survey-content group"}>
+
+          <div className={"response-instructions group"}>
+            <h1>{this.state.surveyTitle}</h1>
+            <aside className="response-url">
+              Respond at: <a href={this.state.responseUrl}>{this.state.responseUrl}</a>
+            </aside>
+          </div>
+
+          {this.questionReports()}
+
+        </div>
       </div>
     );
   }

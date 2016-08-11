@@ -821,20 +821,23 @@ section.survey-title-section {
   background: yellow;
 }
 
+
 .survey-report-page {
   width: 100%;
   height: 100%;
-  margin-left: 20px;
+  margin: 20px;
+  margin-top: 15px;
 
   h1 {
     font-size: 50px;
     padding-bottom: 20px;
     text-align: center;
+    font-weight: bold;
   }
 
   h2 {
     font-size: 30px;
-    padding-bottom: 15px;
+    padding-bottom: 20px;
   }
 
   h3 {
@@ -850,6 +853,25 @@ section.survey-title-section {
   }
 }
 
+.survey-reporting-sidebar {
+  width: 28%;
+  min-height: 200px;
+  box-sizing: border-box;
+  padding: 20px;
+  top: 71px;
+  right: 20px;
+  background: #D7E4EE;
+  border-radius: 3px;
+  position: fixed;
+  z-index: -1;
+}
+
+.main-survey-content {
+  width: 67%;
+  min-width: 660px;
+  background: white;
+}
+
 div.option-percent-text {
   float: left;
 }
@@ -861,18 +883,32 @@ div.option-percent-text {
 }
 
 .response-instructions {
+  border-radius: 3px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px;
+  background: #25364a;
+  color: white;
+}
 
+.response-instructions aside {
+  font-size: 20px;
+  text-align: center;
+}
+
+.response-instructions aside a {
+  text-decoration: underline;
+  bottom-margin: 10px;
 }
 
 .question-report {
-  margin-top: 25px;
-  width: 700px;
-  padding: 45px;
-  padding-bottom: 65px;
+  margin-top: 10px;
+  min-width: 450px;
+  padding: 35px;
+  padding-bottom: 50px;
   border: 4px solid #e8eaec;
-  border-radius: 4px;
+  border-radius: 3px;
   box-sizing: border-box;
-
 }
 
 .poll-results-inner {
@@ -885,11 +921,11 @@ div.option-percent-text {
 .poll-results-display-window {
   width: 100%;
   box-sizing: border-box;
+  margin-left: 5px;
 }
 
 .option-display {
   margin-top: 10px;
-  margin-bottom: 10px;
   min-height: 70px;
 }
 
