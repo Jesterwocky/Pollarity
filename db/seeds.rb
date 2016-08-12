@@ -11,7 +11,22 @@ User.create!(username: "Testeron", password: "password", anon:false)
 
 Survey.create!(
   author_id: 1,
-  survey_title: "You you you",
+  survey_title: "Pet vs Pet",
+  questions_attributes: [
+    {
+      question: "Which pet is best?",
+      options_attributes: [
+        {option: "Puppehz", image_url: "http://res.cloudinary.com/pollaritycloud/image/upload/v1471002397/la6gfsh7s8vwzhotkvkk.jpg"},
+        {option: "Kittehz", image_url: "http://res.cloudinary.com/pollaritycloud/image/upload/v1471002381/kbshb262pn5wslebsvey.jpg"},
+        {option: "Lizards", image_url: "http://res.cloudinary.com/pollaritycloud/image/upload/v1471002413/o1ejfg83h0koru9psxi0.jpg"}
+      ]
+    }
+  ]
+)
+
+Survey.create!(
+  author_id: 1,
+  survey_title: "How you doin?",
   questions_attributes: [
     {
       question: "How are you feeling?",
@@ -28,46 +43,42 @@ Survey.create!(
         {option: "A hug"},
         {option: "Coffee"}
       ]
-    },
-    {
-      question: "Which pet is best?",
-      options_attributes: [
-        {option: "Puppehz"},
-        {option: "Kittehz"},
-        {option: "Lizards"}
-      ]
     }
   ]
 )
 
 Survey.create!(
   author_id: 1,
-  survey_title: "Programming",
+  survey_title: "Work and Life",
 
   questions_attributes: [
     {
-      question: "What did you primarily do/study before programming?",
+      question: "What did you study in school?",
       options_attributes: [
-        {option: "Math or engineering"},
+        {option: "Math, engineering, science, or programming"},
         {option: "Visual or performing arts"},
-        {option: "Business, writing, or other office work"}
-      ]
-    },
-    {
-      question: "Which language do you prefer?",
-      options_attributes: [
-        {option: "Ruby"},
-        {option: "JavaScript"},
+        {option: "Business, writing, languages, or history"},
         {option: "Other"}
       ]
     },
     {
-      question: "All else being equal, where would you prefer to work?",
+      question: "Which do you like best?",
       options_attributes: [
-        {option: "Large company"},
-        {option: "Startup"},
-        {option: "Consultancy"},
-        {option: "Don't care"}
+        {option: "Breakfast"},
+        {option: "Lunch"},
+        {option: "Dinner"},
+        {option: "Snacks"}
+      ]
+    },
+    {
+      question: "When are you most productive?",
+      options_attributes: [
+        {option: "Early morning"},
+        {option: "Morning"},
+        {option: "Lunchtime"},
+        {option: "Midafternoon"},
+        {option: "Evening"},
+        {option: "Late at night"}
       ]
     }
   ]
@@ -104,7 +115,22 @@ Survey.create!(
 
 Survey.create!(
   author_id: 2,
-  survey_title: "You you you",
+  survey_title: "Pet vs Pet",
+  questions_attributes: [
+    {
+      question: "Which pet is best?",
+      options_attributes: [
+        {option: "Puppehz", image_url: "http://res.cloudinary.com/pollaritycloud/image/upload/v1471002397/la6gfsh7s8vwzhotkvkk.jpg"},
+        {option: "Kittehz", image_url: "http://res.cloudinary.com/pollaritycloud/image/upload/v1471002381/kbshb262pn5wslebsvey.jpg"},
+        {option: "Lizards", image_url: "http://res.cloudinary.com/pollaritycloud/image/upload/v1471002413/o1ejfg83h0koru9psxi0.jpg"}
+      ]
+    }
+  ]
+)
+
+Survey.create!(
+  author_id: 2,
+  survey_title: "How you doin?",
   questions_attributes: [
     {
       question: "How are you feeling?",
@@ -121,46 +147,42 @@ Survey.create!(
         {option: "A hug"},
         {option: "Coffee"}
       ]
-    },
-    {
-      question: "Which pet is best?",
-      options_attributes: [
-        {option: "Puppehz"},
-        {option: "Kittehz"},
-        {option: "Lizards"}
-      ]
     }
   ]
 )
 
 Survey.create!(
   author_id: 2,
-  survey_title: "Programming",
+  survey_title: "Work and Life",
 
   questions_attributes: [
     {
-      question: "What did you primarily do/study before programming?",
+      question: "What did you study in school?",
       options_attributes: [
-        {option: "Math or engineering"},
+        {option: "Math, engineering, science, or programming"},
         {option: "Visual or performing arts"},
-        {option: "Business, writing, or other office work"}
-      ]
-    },
-    {
-      question: "Which language do you prefer?",
-      options_attributes: [
-        {option: "Ruby"},
-        {option: "JavaScript"},
+        {option: "Business, writing, languages, or history"},
         {option: "Other"}
       ]
     },
     {
-      question: "All else being equal, where would you prefer to work?",
+      question: "Which do you like best?",
       options_attributes: [
-        {option: "Large company"},
-        {option: "Startup"},
-        {option: "Consultancy"},
-        {option: "Don't care"}
+        {option: "Breakfast"},
+        {option: "Lunch"},
+        {option: "Dinner"},
+        {option: "Snacks"}
+      ]
+    },
+    {
+      question: "When are you most productive?",
+      options_attributes: [
+        {option: "Early morning"},
+        {option: "Morning"},
+        {option: "Lunchtime"},
+        {option: "Midafternoon"},
+        {option: "Evening"},
+        {option: "Late at night"}
       ]
     }
   ]
