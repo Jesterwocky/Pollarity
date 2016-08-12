@@ -75,6 +75,7 @@ const NavBar = React.createClass ({
             <li><LoginButton/></li>
             <li><SignupButton/></li>
           </ul>
+
         </div>
       );
     }

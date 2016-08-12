@@ -83,7 +83,6 @@ const ResponseForm = React.createClass ({
 
     return (
       <div className={"survey-response-page group"}>
-
         <ErrorDisplay errors={this.state.errors}/>
 
         <div className="survey-response-form">

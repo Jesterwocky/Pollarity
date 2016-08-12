@@ -68,12 +68,6 @@ const LoggedInOptions = React.createClass({
             Log out
           </div>
         </li>
-
-        <li>
-          <div className="user-option" onClick={this.goToSettings}>
-            Settings
-          </div>
-        </li>
       </ul>
     );
   },

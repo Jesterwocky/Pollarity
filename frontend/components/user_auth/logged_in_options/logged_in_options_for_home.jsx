@@ -59,7 +59,7 @@ const LoggedInOptions = React.createClass({
 
   render() {
     return (
-      <div className="logged-in-user-menu">
+      <div>
         {this.userOptions()}
       </div>
     );
