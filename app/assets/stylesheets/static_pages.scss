@@ -120,8 +120,6 @@ body {
 .home-user-options {
   font-size: 15px;
   line-height: 2.7;
-  float: right;
-  display: inline;
 }
 
 .home-user-options li {
@@ -432,8 +430,12 @@ ul.nav-bar-survey-options {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  background: black;
-  opacity: 30%;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 3px;
+  padding: 30px;
+  padding-top: 20px;
+  padding-bottom: 80px;
+
 }
 
 .home-content h1 {
