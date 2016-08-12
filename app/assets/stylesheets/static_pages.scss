@@ -858,13 +858,52 @@ section.survey-title-section {
   width: 28%;
   min-height: 200px;
   box-sizing: border-box;
-  padding: 20px;
+  padding: 40px;
   top: 71px;
   right: 20px;
   background: #D7E4EE;
   border-radius: 2px;
   position: fixed;
   z-index: -1;
+
+  h4 {
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-weight: normal;
+  }
+
+  h5 {
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 5px;
+    font-size: 18px;
+  }
+}
+
+.survey-reporting-sidebar ul {
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.survey-reporting-sidebar li {
+  padding-top: 5px;
+  padding-bottom: 15px;
+}
+
+ul.question-text-list {
+}
+
+.question-text-list li {
+  font-size: 12px;
+  padding: 0px;
+  padding-top: 5px;
+  margin-left: 10px;
+}
+
+.question-text-list {
+  list-style: circle;
 }
 
 .main-survey-content {
@@ -958,4 +997,5 @@ small.marking {
 
 small.marking:last-child {
   border-right: 4px solid #3F7CAB;
+  padding-right: 4px;
 }

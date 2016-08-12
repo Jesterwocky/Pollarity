@@ -94,18 +94,30 @@ const SurveyReport = React.createClass({
     }
 
     return reports;
+  },
 
+  questionText() {
+    let questionList = [];
+
+    this.state.questions.forEach((question) => {
+      questionList.push(<li>{question.question}</li>);
+    });
+
+    return questionList;
   },
 
   pollDataSummary() {
     return(
       <div>
         <h4>{this.state.surveyTitle}</h4>
-        <p>survey summary</p>
-        <ul>
+        <ul className="summary-list">
           <li>{this.state.responseUrl}</li>
           <li>Total participants: {this.state.numVotes}</li>
-          <li>Questions summary goes here</li>
+          <li>Questions:
+            <ul className="question-text-list">
+              {this.questionText()}
+            </ul>
+          </li>
         </ul>
       </div>
     );
