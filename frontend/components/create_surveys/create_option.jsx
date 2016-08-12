@@ -32,6 +32,7 @@ const CreateOption = React.createClass({
   render() {
     return (
       <div>
+        <UploadButton/>
         <input type="text"
           onChange={this.updateThisOption}
           value={this.state.option}

@@ -1,4 +1,6 @@
 class Response < ActiveRecord::Base
+  validates :selected_option_id, :responder_id, presence: true
+
   belongs_to :option,
     class_name: :Option,
     foreign_key: :selected_option_id,

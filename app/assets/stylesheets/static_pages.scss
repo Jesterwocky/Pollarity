@@ -359,7 +359,8 @@ ul.nav-bar-survey-options {
   background-image: image-url("subtle-dots.png"), image-url("handsup.jpeg");
   background-repeat: repeat, no-repeat;
   // background-position: 0, absolute;
-  background-size: 45px 45px, cover;
+  background-size: 50px 30px, cover;
+  padding-top: -80px;
 
   position:absolute;
   top: 0px;
@@ -937,13 +938,14 @@ p.option-percent-text.group {
 }
 
 .response-instructions aside {
-  font-size: 30px;
+  font-size: 20px;
   text-align: center;
 }
 
 .response-instructions aside a {
   text-decoration: underline;
   bottom-margin: 10px;
+  font-size: 35px;
 }
 
 .question-report {

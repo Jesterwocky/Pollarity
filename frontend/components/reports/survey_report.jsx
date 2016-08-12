@@ -135,7 +135,7 @@ const SurveyReport = React.createClass({
           <div className={"response-instructions group"}>
             <h1>{this.state.surveyTitle}</h1>
             <aside className="response-url">
-              Respond at: <a href={this.state.responseUrl}>{this.state.responseUrl}</a>
+              <a href={this.state.responseUrl}>{this.state.responseUrl}</a>
             </aside>
           </div>
 

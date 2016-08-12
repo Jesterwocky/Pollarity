@@ -1,4 +1,6 @@
 class Survey < ActiveRecord::Base
+  validates :author_id, :survey_title, :questions_attributes, presence: true
+
   after_create :create_url
 
   belongs_to :author,

@@ -21,6 +21,6 @@ class Api::OptionsController < ApplicationController
   end
 
   def option_params
-    params.permit(:option, :question_id)
+    params.permit(:option, :question_id, :image_option)
   end
 end

@@ -1,4 +1,6 @@
 class Question < ActiveRecord::Base
+  validates :survey_id, :question, :options_attributes, presence: true
+
   belongs_to :survey
 
   has_many :options,

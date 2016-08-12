@@ -41,7 +41,7 @@ const QuestionReport = React.createClass({
 
   render() {
     return(
-      <div className={"question-report group"}>
+      <div id={this.props.question.question} className={"question-report group"}>
         <h2>{this.props.question.question}</h2>
           <div className={"poll-results-display-window group"}>
             <div className={"poll-results-inner group"}>

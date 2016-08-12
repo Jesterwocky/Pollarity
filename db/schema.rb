@@ -11,16 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160811145108) do
+ActiveRecord::Schema.define(version: 20160812045758) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "options", force: :cascade do |t|
-    t.integer  "question_id", null: false
-    t.string   "option",      null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "question_id",               null: false
+    t.string   "option",                    null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.string   "image_option_file_name"
+    t.string   "image_option_content_type"
+    t.integer  "image_option_file_size"
+    t.datetime "image_option_updated_at"
   end
 
   add_index "options", ["question_id"], name: "index_options_on_question_id", using: :btree
