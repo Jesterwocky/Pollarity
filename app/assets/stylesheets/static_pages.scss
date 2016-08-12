@@ -856,22 +856,21 @@ section.survey-title-section {
 
 .survey-reporting-sidebar {
   width: 28%;
-  min-height: 200px;
   box-sizing: border-box;
-  padding: 40px;
+  padding: 30px;
   top: 71px;
   right: 20px;
   background: #D7E4EE;
   border-radius: 2px;
   position: fixed;
   z-index: -1;
+  overflow-wrap: break-word;
 
   h4 {
     padding: 0px;
     margin: 0px;
     margin-bottom: 10px;
     font-size: 25px;
-    font-weight: normal;
   }
 
   h5 {
@@ -888,8 +887,8 @@ section.survey-title-section {
 }
 
 .survey-reporting-sidebar li {
-  padding-top: 5px;
-  padding-bottom: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 ul.question-text-list {
@@ -898,7 +897,7 @@ ul.question-text-list {
 .question-text-list li {
   font-size: 12px;
   padding: 0px;
-  padding-top: 5px;
+  padding-top: 15px;
   margin-left: 10px;
 }
 
