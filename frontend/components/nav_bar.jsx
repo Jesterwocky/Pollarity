@@ -84,7 +84,7 @@ const NavBar = React.createClass ({
   render() {
     return (
       <div className="nav-bar">
-        <div className={"nav-bar-content-non-home group"}>
+        <div className="nav-bar-content-non-home">
           {this.loginBasedContent()}
         </div>
       </div>
