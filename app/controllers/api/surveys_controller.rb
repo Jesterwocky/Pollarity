@@ -11,7 +11,6 @@ class Api::SurveysController < ApplicationController
 
   def create
     @survey = Survey.new(survey_params)
-    # ensure_survey_title(@survey)
 
     if @survey.save
       render json: @survey.to_json(include: {questions: {include: :options}})
@@ -42,6 +41,6 @@ class Api::SurveysController < ApplicationController
   end
 
   def survey_params
-    params.permit(:survey_title, :author_id, questions_attributes: [:id, :question, options_attributes: [:id, :option]])
+    params.permit(:survey_title, :author_id, questions_attributes: [:id, :question, options_attributes: [:id, :option, :image_url, :thumbnail_url]])
   end
 end

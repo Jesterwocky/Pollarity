@@ -223,6 +223,30 @@ ul.nav-bar-survey-options {
   cursor: pointer;
 }
 
+.image-upload-icon {
+  background: #9ac0e2;
+  border-radius: 10%;
+  padding: 5px;
+  color: white;
+  font-size: 10px;
+  margin-right: 5px;
+}
+
+.image-option-preview {
+  font-size: 10px;
+  color: #20b32d;
+  display: inline;
+  font-weight: bold;
+}
+
+.image-option-preview img {
+  width: 10%;
+  height: auto;
+  border: 3px solid #20b32d;
+  border-radius: 2px;
+  margin-bottom: 3px;
+}
+
 .user-surveys-link {
   text-align: center;
   padding-left: 20px;

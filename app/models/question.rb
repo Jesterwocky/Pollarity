@@ -1,5 +1,5 @@
 class Question < ActiveRecord::Base
-  validates :survey_id, :question, :options_attributes, presence: true
+  validates :question, :options, presence: true
 
   belongs_to :survey
 

@@ -1,5 +1,6 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
+const UploadButton = require('./upload_button.jsx');
 
 const CreateOption = React.createClass({
 
@@ -26,9 +27,19 @@ const CreateOption = React.createClass({
 
   updateImage(images) {
     this.setState({
-      imageUrl: image.url,
-      thumbnailUrl: image.thumbnail_url
+      image_url: images[0].url,
+      thumbnail_url: images[0].thumbnail_url
     });
+  },
+
+  imagePreview() {
+    if (this.state.image_url !== undefined) {
+      return(
+        <small className="image-option-preview">
+          Loaded <img src={this.state.thumbnail_url}/>
+        </small>
+      );
+    }
   },
 
   deleteThisOption(e) {
@@ -39,6 +50,7 @@ const CreateOption = React.createClass({
   render() {
     return (
       <div>
+        {this.imagePreview()}
         <UploadButton updateImage={this.updateImage}/>
         <input type="text"
           onChange={this.updateThisOption}
