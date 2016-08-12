@@ -99,8 +99,8 @@ const SurveyReport = React.createClass({
   questionText() {
     let questionList = [];
 
-    this.state.questions.forEach((question) => {
-      questionList.push(<li>{question.question}</li>);
+    this.state.questions.forEach((question, i) => {
+      questionList.push(<li key={i}>{question.question}</li>);
     });
 
     return questionList;
