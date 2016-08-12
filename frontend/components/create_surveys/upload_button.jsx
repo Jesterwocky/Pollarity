@@ -4,11 +4,12 @@ const ReactDOM = require('react-dom');
 const UploadButton = React.createClass({
   upload(e) {
     e.preventDefault();
+
     cloudinary.openUploadWidget(
       window.cloudinary_options,
       function(error, images){
         if (error === null) {
-          
+          this.props.updateImage(images);
         }
       }
     );

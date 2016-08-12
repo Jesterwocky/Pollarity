@@ -24,6 +24,13 @@ const CreateOption = React.createClass({
     );
   },
 
+  updateImage(images) {
+    this.setState({
+      imageUrl: image.url,
+      thumbnailUrl: image.thumbnail_url
+    });
+  },
+
   deleteThisOption(e) {
     e.preventDefault();
     this.props.deleteOption(this.props.optionNum);
@@ -32,7 +39,7 @@ const CreateOption = React.createClass({
   render() {
     return (
       <div>
-        <UploadButton/>
+        <UploadButton updateImage={this.updateImage}/>
         <input type="text"
           onChange={this.updateThisOption}
           value={this.state.option}

@@ -5,8 +5,11 @@ module.exports = {
       type: "POST",
       data: user,
       dataType: "json",
-      success,
-      error
+      success: success,
+      error: function(xhr){
+        const errors = xhr.responseJSON;
+        error("signup", errors);
+      }
     });
   },
 
@@ -16,8 +19,11 @@ module.exports = {
       type: "POST",
       data: user,
       dataType: "json",
-      success,
-      error
+      success: success,
+      error: function(xhr){
+        const errors = xhr.responseJSON;
+        error("login", errors);
+      }
     });
   },
 

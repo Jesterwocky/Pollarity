@@ -1,18 +1,29 @@
 const SessionAPIUtil = require('../util/session_api_util.js');
 const LoginConstants = require('../constants/login_constants.js');
 const Dispatcher = require('../dispatcher/dispatcher.js');
+const ErrorActions = require('../actions/error_actions.js');
 
 module.exports = {
   logInUser(user) {
-    SessionAPIUtil.login(user, this.receiveCurrentUser);
+    SessionAPIUtil.login(
+      user,
+      this.receiveCurrentUser,
+      ErrorActions.setErrors
+    );
   },
 
   signUpUser(user) {
-    SessionAPIUtil.signup(user, this.receiveCurrentUser);
+    SessionAPIUtil.signup(
+      user,
+      this.receiveCurrentUser,
+      ErrorActions.setErrors
+    );
   },
 
   logOut() {
-    SessionAPIUtil.logOut(this.removeCurrentUser);
+    SessionAPIUtil.logOut(
+      this.removeCurrentUser
+    );
   },
 
 
@@ -28,5 +39,4 @@ module.exports = {
       actionType: LoginConstants.LOGOUT
     });
   }
-
 };

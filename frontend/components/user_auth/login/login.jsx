@@ -5,21 +5,31 @@ const Link = require('react-router').Link;
 const SessionStore = require('../../../stores/session_store.js');
 const SessionActions = require('../../../actions/session_actions.js');
 const hashHistory = require('react-router').hashHistory;
+const ErrorStore = require('../../../stores/error_store.js');
 
 const Login = React.createClass({
   getInitialState() {
     return ({
       username: "",
-      password: ""
+      password: "",
+      errors: []
     });
   },
 
   componentDidMount() {
     this.listener = SessionStore.addListener(this._onSessionChange);
+    this.errorListener = ErrorStore.addListener(this._onErrorChange);
   },
 
   componentWillUnmount() {
     this.listener.remove();
+    this.errorListner.remove();
+  },
+
+  _onErrorChange() {
+    this.setState({
+      errors: ErrorStore.errors(this.formType())
+    });
   },
 
   _onSessionChange() {
@@ -48,6 +58,30 @@ const Login = React.createClass({
     });
   },
 
+  formType() {
+    return this.props.location.pathname.slice(1);
+  },
+
+  errors() {
+    let errorList = [];
+
+    if (this.state.errors !== undefined && this.state.errors.length > 0) {
+      this.state.errors.forEach((error, i) => {
+        errorList.push(
+          <li key={i} className="error-item">
+            {error}
+          </li>
+        );
+      });
+    }
+
+    return (
+      <ul className="error-text">
+        {errorList}
+      </ul>
+    );
+  },
+
   render() {
     let loginPageClasses = "login-page group";
 
@@ -61,6 +95,9 @@ const Login = React.createClass({
           <div className="login-internal-box">
 
             <h1>Log In</h1>
+
+            {this.errors()}
+
             <form onSubmit={this.logIn}>
 
               <label>Username</label>
