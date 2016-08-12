@@ -1,5 +1,5 @@
 module.exports = {
-  createSurveyResponse: function(responseData, success, error) {
+  createResponse: function(responseData, success, error) {
 
     $.ajax({
       url: "api/responses",
@@ -31,24 +31,24 @@ module.exports = {
     });
   },
 
-  changeSurveyResponse: function(responseData, success, error) {
+  changeResponse: function(responseId, newOptionId, success, error) {
     $.ajax({
-      url: `api/responses/${responseData.id}`,
+      url: `api/responses/${responseId}`,
       type: "PATCH",
-      data: responseData,
+      data: {selected_option_id: newOptionId},
       dataType: "json",
       success,
       error
     });
   },
 
-  deleteSurveyResponse: function(responseId, success, error) {
+  deleteResponse: function(responseId, success, error) {
     $.ajax({
-      url: `api/responses/${responseid}`,
+      url: `api/responses/${responseId}`,
       type: "DELETE",
       dataType: "json",
       success,
       error
     });
-  }
+  },
 };

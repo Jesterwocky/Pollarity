@@ -74,24 +74,10 @@ const CreateSurvey = React.createClass({
 
   updateQuestion(questionNum, questionData) {
     this.state.questions[questionNum] = questionData;
-    // let questions = {};
-    //
-    //
-    // Object.keys(this.state.questions).forEach((key) => {
-    //   questions[key] = this.state.questions[key];
-    // });
-    //
-    // questions[questionNum] = questionData;
-    //
-    // this.setState({
-    //   questions: questions
-    // });
   },
 
   saveSurvey(e) {
     e.preventDefault();
-
-    $(".modal").hide();
 
     let surveyData = {
       author_id: SessionStore.currentUser().id,
@@ -100,6 +86,16 @@ const CreateSurvey = React.createClass({
     };
 
     SurveyActions.createSurvey(surveyData);
+
+    this.setState({
+        questionType: "multi",
+        surveyTitle: "",
+        questionNum: 0,
+        questionElements: [],
+        questions: {}
+    });
+
+    $(".modal").hide();
   },
 
   render() {

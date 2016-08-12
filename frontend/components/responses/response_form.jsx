@@ -20,9 +20,12 @@ const ResponseForm = React.createClass ({
     });
   },
 
-  componentDidMount() {
+  // was componentDidMount
+  componentWillMount() {
     this.surveyListener = SurveyStore.addListener(this._handleSurveyChange);
     SurveyActions.getSurvey(this.state.surveyId);
+
+    ResponseActions.getResponsesByUser(SessionStore.currentUser().id);
   },
 
   componentWillUnmount() {

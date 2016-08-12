@@ -4,26 +4,31 @@ const Dispatcher = require('../dispatcher/dispatcher.js');
 const ResponseConstants = require('../constants/response_constants.js');
 
 module.exports = {
-  getResponsesByUser(userId) {
-    ResponseApiUtil.responsesByUser(userId, this.receiveSurveyResponses);
+  // create
+  createResponse(responseData) {
+    ResponseApiUtil.createResponse(responseData, this.receiveSurveyResponse);
   },
 
-  createSurveyResponse(responseData) {
-    ResponseApiUtil.createSurveyResponse(responseData, this.receiveSurveyResponse);
+  // read
+  getResponsesByUser(userId) {
+    ResponseApiUtil.responsesByUser(userId, this.receiveSurveyResponses);
   },
 
   surveyResponses(surveyId) {
     ResponseApiUtil.surveyResponses(surveyId, this.receiveSurveyResponses);
   },
 
-  changeSurveyResponse(surveyData) {
-    ResponseApiUtil.changeSurveyResponse(surveyData, this.receiveSurveyResponse);
+  // update
+  changeResponse(responseId, newOptionId) {
+    ResponseApiUtil.changeResponse(responseId, newOptionId, this.receiveSurveyResponse);
   },
 
-  deleteSurveyResponse(responseId) {
-    ResponseApiUtil.deleteSurveyResponse(responseId, this.removeSurveyResponse);
+  // delete
+  deleteResponse(responseId) {
+    ResponseApiUtil.deleteResponse(responseId, this.removeSurveyResponse);
   },
 
+  // callbacks
   receiveSurveyResponses(responses) {
     Dispatcher.dispatch({
       actionType: ResponseConstants.RESPONSES_RECEIVED,
@@ -32,7 +37,6 @@ module.exports = {
   },
 
   receiveSurveyResponse(response) {
-    
     Dispatcher.dispatch({
       actionType: ResponseConstants.RESPONSE_RECEIVED,
       response: response

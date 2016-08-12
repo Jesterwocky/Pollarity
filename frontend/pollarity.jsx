@@ -33,7 +33,9 @@ const _ensureLoggedIn = function(nextState, replace) {
 
 const _ensureTrackable = function(nextState, replace) {
   console.log("Ensuring trackability");
+
   if (!SessionStore.isUserLoggedIn()) {
+
     if (docCookies.getItem("pollarityAnonymousPolltaker") === null) {
       let anonUsername = Math.random().toString(36).slice(2);
       console.log(`New anon username: ${anonUsername}`);

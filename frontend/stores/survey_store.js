@@ -42,20 +42,18 @@ SurveyStore.find = function(surveyId) {
 
 SurveyStore.allForUser = function(userId) {
   let userSurveys = [];
+  let surveyIds = Object.keys(_surveys);
 
-  Object.keys(_surveys).forEach((key) => {
-    if (_surveys[key].author_id === userId) {
-      userSurveys.push(_surveys[key]);
-    }
-  });
+  if (surveyIds.length > 0) {
+    surveyIds.forEach((surveyId) => {
+      if (_surveys[surveyId].author_id === userId) {
+        userSurveys.push(_surveys[surveyId]);
+      }
+    });
+  }
 
   return userSurveys;
 };
-
-// SurveyStore.surveyQuestions = function(surveyId) {
-//   let survey = _surveys[surveyId];
-//
-// };
 
 SurveyStore.__onDispatch = function(payload) {
   switch (payload.actionType) {

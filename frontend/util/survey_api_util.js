@@ -10,6 +10,7 @@ module.exports = {
   },
 
   userSurveys: function(userId, success, error) {
+
     $.ajax({
       url: `api/users/${userId}/surveys`,
       type: "GET",

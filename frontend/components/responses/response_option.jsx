@@ -7,26 +7,69 @@ const ResponseActions = require('../../actions/response_actions.js');
 
 const ResponseOption = React.createClass({
 
-  selectOption(e) {
-    e.preventDefault();
-    let optionId = this.props.option.id;
-
-    ResponseActions.createSurveyResponse({
-      responder_id: SessionStore.currentUser().id,
-      selected_option_id: this.props.option.id
+  getInitialState() {
+    return({
+      selected: false
     });
+  },
+
+  componentDidMount() {
+    if (this.props.currentResponse !== undefined) {
+      if (this.props.currentResponse.selected_option_id == this.props.option.id) {
+        this.setState({
+          selected: true
+        });
+      }
+    }
+  },
+
+  selectResponse(e) {
+    e.preventDefault();
+
+    this.setState({
+      selected: false
+    });
+
+    if (this.props.currentResponse.optionId == this.props.option.id) {
+      ResponseActions.deleteResponse(this.props.currentResponse.responseId);
+    }
+
+    else if (this.props.currentResponse.optionId !== undefined) {
+      this.setState({
+        selected: true
+      });
+
+      ResponseActions.changeResponse(
+        this.props.currentResponse.responseId,
+        this.props.option.id
+      );
+    }
+
+    else {
+      this.setState({
+        selected: true
+      });
+      
+      ResponseActions.createResponse({
+        responder_id: SessionStore.currentUser().id,
+        selected_option_id: this.props.option.id
+      });
+    }
   },
 
   render() {
     let identifier = `option-${this.props.option.id}`;
+
     let classnames = "response-option";
 
-    if (this.props.selected) {
-      classnames = "response-option currently-selected-option";
+    if (this.props.currentResponse !== undefined) {
+      if(this.props.currentResponse.optionId == this.props.option.id) {
+        classnames = classnames.concat(" currently-selected-option");
+      }
     }
 
     return(
-      <div className={classnames} id={identifier} onClick={this.selectOption}>
+      <div className={classnames} id={identifier} onClick={this.selectResponse}>
         <p className="participant-option-text">
           {this.props.option.option}
         </p>

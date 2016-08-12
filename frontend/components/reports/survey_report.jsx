@@ -54,11 +54,11 @@ const SurveyReport = React.createClass({
 
   _onResponseChange() {
 
-    let numVotes = ResponseStore.answersToSurvey().length;
+    let numVotes = ResponseStore.answersToSurvey(this.props.params.surveyId).length;
 
     this.setState({
       numVotes: numVotes,
-      votes: ResponseStore.answersToSurvey()
+      votes: ResponseStore.answersToSurvey(this.props.params.surveyId)
     });
   },
 

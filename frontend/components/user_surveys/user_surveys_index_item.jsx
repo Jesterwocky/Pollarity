@@ -6,7 +6,6 @@ const SurveyStore = require('../../stores/survey_store.js');
 const UserSurveysIndexItem = React.createClass({
 
   listQuestions() {
-
     return this.props.survey.questions.map((question, i) => {
       return(
         <div key={i} className={"user-question group"}>

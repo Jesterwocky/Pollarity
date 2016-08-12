@@ -23,11 +23,11 @@ const _removeResponse = function(responseId) {
   delete _responses[responseId];
 };
 
-// Should be a function of survey id... How to get from option id to survey??
-ResponseStore.answersToSurvey = function() {
+ResponseStore.answersToSurvey = function(surveyId) {
   let selectedOptions = [];
 
   Object.keys(_responses).forEach((responseId) => {
+    if (_responses[responseId].question.survey.id === parseInt(surveyId))
     selectedOptions.push({
       questionId: _responses[responseId].question.id,
       optionId: _responses[responseId].selected_option_id
@@ -61,17 +61,21 @@ ResponseStore.userResponses = function(userId) {
   return userResponses;
 };
 
-ResponseStore.userResponsesToQuestion = function(userId, questionId) {
-  let responses = [];
+ResponseStore.userResponseToQuestion = function(userId, questionId) {
+  let response = {};
 
-  Object.keys(_responses).forEach((key) => {
+  if (Object.keys(_responses).length > 0) {
+    Object.keys(_responses).forEach((key) => {
+      if (parseInt(_responses[key].question.id) === questionId) {
+        response = {
+          optionId: _responses[key].selected_option_id,
+          responseId: _responses[key].id
+        };
+      }
+    });
+  }
 
-    if (parseInt(_responses[key].question.id) === questionId) {
-      responses.push(_responses[key].selected_option_id);
-    }
-  });
-
-  return responses;
+  return response;
 };
 
 ResponseStore.__onDispatch = function(payload) {

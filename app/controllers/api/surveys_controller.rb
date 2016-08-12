@@ -27,7 +27,7 @@ class Api::SurveysController < ApplicationController
       Survey.all
     end
 
-    render json: @surveys.to_json(include: {questions: {include: :options}})
+    render json: @surveys.to_json(include: {questions: {include: {options: {include: :votes}}}})
   end
 
   def destroy

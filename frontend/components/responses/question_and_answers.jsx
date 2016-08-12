@@ -10,10 +10,13 @@ const ResponseOption = require('./response_option.jsx');
 const QuestionAndAnswers = React.createClass({
 
   getInitialState() {
-    // This should eventually be able to look up the user and question
-    // and determine if they've voted before
+    let currentResponse = ResponseStore.userResponseToQuestion(
+      SessionStore.currentUser().id,
+      this.props.question.id
+    );
+
     return({
-      selectedOptionId: undefined
+      currentResponse: currentResponse
     });
   },
 
@@ -26,33 +29,27 @@ const QuestionAndAnswers = React.createClass({
     this.responseListener.remove();
   },
 
-
   _handleResponseChange() {
-
-    let responses = ResponseStore.userResponsesToQuestion(
+    let currentResponse = ResponseStore.userResponseToQuestion(
       SessionStore.currentUser().id,
       this.props.question.id
     );
 
-    let mostRecentResponse = responses[responses.length - 1];
-
     this.setState({
-      selectedOptionId: parseInt(mostRecentResponse)
+      currentResponse: currentResponse
     });
   },
 
-  responses () {
+  selectableOptions () {
     let responseElements = [];
 
     this.props.question.options.forEach((option, i) => {
-      let isSelected = (option.id === this.state.selectedOptionId);
-
       responseElements.push(
-        <li>
+        <li key={i}>
           <ResponseOption
-            surveyId={this.props.question.id}
+            key={i}
             option={option}
-            selected={isSelected}
+            currentResponse={this.state.currentResponse}
           />
         </li>
       );
@@ -61,18 +58,12 @@ const QuestionAndAnswers = React.createClass({
     return responseElements;
   },
 
-  updateAnswer(optionId) {
-    this.setState({
-      selectedOptionId: optionId
-    });
-  },
-
   render() {
     return (
       <div className="question-and-answer-set">
         <h4 className="question-ask-text">{this.props.question.question}</h4>
         <ul>
-          {this.responses()}
+          {this.selectableOptions()}
         </ul>
       </div>
     );

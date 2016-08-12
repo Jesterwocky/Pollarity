@@ -16,8 +16,12 @@ class User < ActiveRecord::Base
     through: :votes,
     source: :option
 
-  has_many :replied_to_surveys,
+  has_many :replied_to_questions,
     through: :selected_options,
+    source: :question
+
+  has_many :replied_to_surveys,
+    through: :replied_to_questions,
     source: :survey
 
   attr_reader :password
