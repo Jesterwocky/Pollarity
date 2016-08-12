@@ -7,12 +7,13 @@ const CreateOption = React.createClass({
   getInitialState() {
 
     return({
-      option: ""
+      option: "",
+      image_url: undefined,
+      thumbnail_url: undefined,
     });
   },
 
   updateThisOption(e) {
-
     e.preventDefault();
 
     this.setState({
@@ -21,7 +22,11 @@ const CreateOption = React.createClass({
 
     this.props.updateOption(
       this.props.optionNum,
-      {option: e.currentTarget.value}
+      {
+        option: e.currentTarget.value,
+        image_url: this.state.image_url,
+        thumbnail_url: this.state.thumbnail_url
+      }
     );
   },
 
@@ -30,6 +35,15 @@ const CreateOption = React.createClass({
       image_url: images[0].url,
       thumbnail_url: images[0].thumbnail_url
     });
+
+    this.props.updateOption(
+      this.props.optionNum,
+      {
+        option: this.state.option,
+        image_url: images[0].url,
+        thumbnail_url: images[0].thumbnail_url
+      }
+    );
   },
 
   imagePreview() {

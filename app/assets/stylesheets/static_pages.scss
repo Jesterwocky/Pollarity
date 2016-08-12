@@ -839,7 +839,12 @@ section.survey-title-section {
   margin-bottom: 10px;
   display: inline-block;
   cursor: pointer;
+}
 
+img.image-response-option {
+  max-height: 220px;
+  width: auto;
+  padding-bottom: 10px
 }
 
 .currently-selected-option {

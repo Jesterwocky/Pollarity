@@ -49,11 +49,19 @@ const ResponseOption = React.createClass({
       this.setState({
         selected: true
       });
-      
+
       ResponseActions.createResponse({
         responder_id: SessionStore.currentUser().id,
         selected_option_id: this.props.option.id
       });
+    }
+  },
+
+  optionImage() {
+    if (this.props.option.image_url !== null) {
+      return(
+        <img src={this.props.option.image_url} className="image-response-option"/>
+      );
     }
   },
 
@@ -71,6 +79,7 @@ const ResponseOption = React.createClass({
     return(
       <div className={classnames} id={identifier} onClick={this.selectResponse}>
         <p className="participant-option-text">
+          {this.optionImage()}
           {this.props.option.option}
         </p>
       </div>

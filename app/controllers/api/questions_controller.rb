@@ -33,6 +33,6 @@ class Api::QuestionsController < ApplicationController
   end
 
   def question_params
-    params.permit(:question, :survey_id, options_attributes: [:id, :option])
+    params.permit(:question, :survey_id, options_attributes: [:id, :option, :image_url, :thumbnail_url])
   end
 end

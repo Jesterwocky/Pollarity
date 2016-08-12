@@ -1,4 +1,7 @@
 class Option < ActiveRecord::Base
+  # validates :question_id, presence: true
+  validates :option, presence: true, unless: :image_url?
+
   belongs_to :question
 
   has_one :survey,
