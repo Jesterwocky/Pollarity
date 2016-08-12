@@ -956,8 +956,11 @@ p.option-percent-text.group {
 }
 
 img.report-image {
-  height: 10%;
+  max-height: 100px;
   width: auto;
+  margin-left: 20px;
+  margin-bottom: 5px;
+  margin-top: 25px;
 }
 
 .response-instructions {
