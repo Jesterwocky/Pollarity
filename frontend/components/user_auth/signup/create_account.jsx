@@ -3,6 +3,8 @@ const ReactDOM = require('react-dom');
 const hashHistory = require('react-router').hashHistory;
 const SessionActions = require('../../../actions/session_actions.js');
 const SessionStore = require('../../../stores/session_store.js');
+const ErrorStore = require('../../../stores/error_store.js');
+const ErrorDisplay = require('../../../error_display.jsx');
 
 const CreateAccount = React.createClass({
   getInitialState() {
@@ -14,10 +16,22 @@ const CreateAccount = React.createClass({
 
   componentDidMount() {
     this.listener = SessionStore.addListener(this._onSessionChange);
+    this.errorListener = ErrorStore.addListener(this._onErrorChange);
   },
 
   componentWillUnmount() {
     this.listener.remove();
+    this.errorListener.remove();
+  },
+
+  _onErrorChange() {
+    this.setState({
+      errors: ErrorStore.errors(this.formType())
+    });
+  },
+
+  formType() {
+    return "signup";
   },
 
   _onSessionChange() {
@@ -52,7 +66,10 @@ const CreateAccount = React.createClass({
     return(
       <div className={classnames}>
         <div className="create-account-box">
-          <h1>Participant sign up</h1>
+          <h1>Signup</h1>
+
+          <ErrorDisplay errors={this.state.errors}/>
+
           <form onSubmit={this.createAccount}>
 
             <label>Username</label>

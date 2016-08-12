@@ -26,7 +26,6 @@ module.exports = {
     );
   },
 
-
   receiveCurrentUser(user) {
     Dispatcher.dispatch({
       actionType: LoginConstants.LOGIN,

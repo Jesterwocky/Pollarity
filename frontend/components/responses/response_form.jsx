@@ -6,6 +6,8 @@ const SurveyStore = require('../../stores/survey_store.js');
 const ResponseStore = require('../../stores/response_store.js');
 const ResponseActions = require('../../actions/response_actions.js');
 const QuestionAndAnswers = require('./question_and_answers.jsx');
+const ErrorStore = require('../../stores/error_store.js');
+const ErrorDisplay = require('../../error_display.jsx');
 
 const ResponseForm = React.createClass ({
 
@@ -23,6 +25,7 @@ const ResponseForm = React.createClass ({
   // was componentDidMount
   componentWillMount() {
     this.surveyListener = SurveyStore.addListener(this._handleSurveyChange);
+    this.errorListener = ErrorStore.addListener(this._onErrorChange);
     SurveyActions.getSurvey(this.state.surveyId);
 
     ResponseActions.getResponsesByUser(SessionStore.currentUser().id);
@@ -30,6 +33,17 @@ const ResponseForm = React.createClass ({
 
   componentWillUnmount() {
     this.surveyListener.remove();
+    this.errorListener.remove();
+  },
+
+  _onErrorChange() {
+    this.setState({
+      errors: ErrorStore.errors(this.formType())
+    });
+  },
+
+  formType() {
+    return "responseForm";
   },
 
   _handleSurveyChange() {
@@ -70,9 +84,7 @@ const ResponseForm = React.createClass ({
     return (
       <div className={"survey-response-page group"}>
 
-        <div className="response-page-header">
-          <h1>Header goes here</h1>
-        </div>
+        <ErrorDisplay errors={this.state.errors}/>
 
         <div className="survey-response-form">
           <h1>{surveyTitle}</h1>

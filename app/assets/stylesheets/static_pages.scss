@@ -825,20 +825,22 @@ section.survey-title-section {
 
 .survey-response-page {
   background: #25364A;
+  color: white;
+  text-align: center;
+  font-size: 35px;
+  width: 100%;
+  height: 100%;
   top: 0px;
   left: 0px;
   right: 0px;
-  height: 100%;
-  width: 100%;
   position: relative;
-  z-index: 300;
-  color: white;
+  padding-top: 50px;
 }
 
-.response-page-header {
-  height: 50px;
+.participant-option-text img {
   width: 100%;
-  background: black;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .survey-response-form {

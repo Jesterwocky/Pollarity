@@ -6,8 +6,11 @@ module.exports = {
       type: "POST",
       data: responseData,
       dataType: "json",
-      success,
-      error
+      success: success,
+      error: function(xhr){
+        const errors =xhr.responseJSON;
+        error("responseForm", errors);
+      }
     });
   },
 
