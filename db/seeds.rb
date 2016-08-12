@@ -26,6 +26,41 @@ Survey.create!(
 
 Survey.create!(
   author_id: 1,
+  survey_title: "I want to...",
+  questions_attributes: [
+    {
+      question: "Be famous",
+      options_attributes: [
+        {image_url: "http://res.cloudinary.com/pollaritycloud/image/upload/v1471026927/ajzlr7k3xf909cdmxjdy.png"},
+        {image_url: "http://res.cloudinary.com/pollaritycloud/image/upload/v1471026935/dm8rzw9ymskkdyljpfe6.png"},
+      ]
+    },
+    {
+      question: "Try Haggis",
+      options_attributes: [
+        {image_url: "http://res.cloudinary.com/pollaritycloud/image/upload/v1471026927/ajzlr7k3xf909cdmxjdy.png"},
+        {image_url: "http://res.cloudinary.com/pollaritycloud/image/upload/v1471026935/dm8rzw9ymskkdyljpfe6.png"},
+      ]
+    },
+    {
+      question: "Move to a new city",
+      options_attributes: [
+        {image_url: "http://res.cloudinary.com/pollaritycloud/image/upload/v1471026927/ajzlr7k3xf909cdmxjdy.png"},
+        {image_url: "http://res.cloudinary.com/pollaritycloud/image/upload/v1471026935/dm8rzw9ymskkdyljpfe6.png"},
+      ]
+    },
+    {
+      question: "Write a book",
+      options_attributes: [
+        {image_url: "http://res.cloudinary.com/pollaritycloud/image/upload/v1471026927/ajzlr7k3xf909cdmxjdy.png"},
+        {image_url: "http://res.cloudinary.com/pollaritycloud/image/upload/v1471026935/dm8rzw9ymskkdyljpfe6.png"},
+      ]
+    }
+  ]
+)
+
+Survey.create!(
+  author_id: 1,
   survey_title: "How you doin?",
   questions_attributes: [
     {
@@ -123,6 +158,41 @@ Survey.create!(
         {option: "Puppehz", image_url: "http://res.cloudinary.com/pollaritycloud/image/upload/v1471002397/la6gfsh7s8vwzhotkvkk.jpg"},
         {option: "Kittehz", image_url: "http://res.cloudinary.com/pollaritycloud/image/upload/v1471002381/kbshb262pn5wslebsvey.jpg"},
         {option: "Lizards", image_url: "http://res.cloudinary.com/pollaritycloud/image/upload/v1471002413/o1ejfg83h0koru9psxi0.jpg"}
+      ]
+    }
+  ]
+)
+
+Survey.create!(
+  author_id: 2,
+  survey_title: "I want to...",
+  questions_attributes: [
+    {
+      question: "Be famous",
+      options_attributes: [
+        {image_url: "http://res.cloudinary.com/pollaritycloud/image/upload/v1471026927/ajzlr7k3xf909cdmxjdy.png"},
+        {image_url: "http://res.cloudinary.com/pollaritycloud/image/upload/v1471026935/dm8rzw9ymskkdyljpfe6.png"},
+      ]
+    },
+    {
+      question: "Try Haggis",
+      options_attributes: [
+        {image_url: "http://res.cloudinary.com/pollaritycloud/image/upload/v1471026927/ajzlr7k3xf909cdmxjdy.png"},
+        {image_url: "http://res.cloudinary.com/pollaritycloud/image/upload/v1471026935/dm8rzw9ymskkdyljpfe6.png"},
+      ]
+    },
+    {
+      question: "Move to a new city",
+      options_attributes: [
+        {image_url: "http://res.cloudinary.com/pollaritycloud/image/upload/v1471026927/ajzlr7k3xf909cdmxjdy.png"},
+        {image_url: "http://res.cloudinary.com/pollaritycloud/image/upload/v1471026935/dm8rzw9ymskkdyljpfe6.png"},
+      ]
+    },
+    {
+      question: "Write a book",
+      options_attributes: [
+        {image_url: "http://res.cloudinary.com/pollaritycloud/image/upload/v1471026927/ajzlr7k3xf909cdmxjdy.png"},
+        {image_url: "http://res.cloudinary.com/pollaritycloud/image/upload/v1471026935/dm8rzw9ymskkdyljpfe6.png"},
       ]
     }
   ]
