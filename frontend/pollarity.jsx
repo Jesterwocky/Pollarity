@@ -4,10 +4,10 @@ import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router';
 
 const Home = require('./components/home.jsx');
 const NavBar = require('./components/nav_bar.jsx');
-const Signup = require('./components/user_auth/signup/signup.jsx');
 const Login = require('./components/user_auth/login/login.jsx');
 const UserSettings = require('./components/user_auth/logged_in_options/user_settings.jsx');
 const SessionActions = require('./actions/session_actions.js');
+// const Signup = require('./components/user_auth/signup/signup.jsx');
 const CreateAccount = require('./components/user_auth/signup/create_account.jsx');
 const UserSurveysIndex = require('./components/user_surveys/user_surveys_index.jsx');
 const SessionStore = require('./stores/session_store.js');
@@ -78,8 +78,7 @@ const routes = (
     <IndexRoute component={Home}/>
     <Route path="login" component={Login}/>
     <Route path="settings" component={UserSettings} onEnter={_ensureLoggedIn}/>
-    <Route path="users/new" component={Signup}/>
-    <Route path="users/new/create-account" component={CreateAccount}/>
+    <Route path="users/new" component={CreateAccount}/>
     <Route path="users/:userId/surveys" component={UserSurveysIndex} onEnter={_ensureLoggedIn}/>
     <Route path="users/:userId/surveys/:surveyId" component={SurveyReport} onEnter={_ensureLoggedIn}/>
     <Route path="surveys/:surveyId" component={ResponseForm} onEnter={_ensureTrackable}/>
