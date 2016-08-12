@@ -1,3 +1,7 @@
+html {
+  height: 100%;
+}
+
 html, body, header, nav, h1, a,
 ul, li, strong, main, button, i,
 section, img, div, h2, p, form,
@@ -53,6 +57,21 @@ input[type="submit"] {
 
 // -------------------------------------------------------------------
 // ACTUAL STYLING STARTS HERE-----------------------------------------
+
+.error-text {
+  color: red;
+  font-weight: bold;
+  font-size: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 100%;
+  text-align: center;
+}
+
+.error-item {
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
 
 //This should be on the home page only
 body {
@@ -562,7 +581,8 @@ ul.nav-bar-survey-options {
 }
 
 .user-surveys-list {
-  width: 800px;
+  width: 75%;
+  min-width: 800px;
   float: left;
   display: inline-block;
   position: absolute;
@@ -570,7 +590,7 @@ ul.nav-bar-survey-options {
 
 .user-survey .user-survey-title {
   background: #C2D5E4;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: bold;
   margin-top: 15px;
   padding: 10px;
@@ -592,7 +612,6 @@ div.user-question {
 .user-survey .survey-controls {
   float: right;
   font-size: 12px;
-
 }
 
 div.poll-report-link {

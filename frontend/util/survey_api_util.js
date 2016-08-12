@@ -4,19 +4,24 @@ module.exports = {
       url: "api/surveys",
       type: "GET",
       dataType: "json",
-      success,
-      error
+      success: success,
+      error: function(xhr){
+        const errors = xhr.responseJSON;
+        error("seeSurveys", errors);
+      }
     });
   },
 
   userSurveys: function(userId, success, error) {
-
     $.ajax({
       url: `api/users/${userId}/surveys`,
       type: "GET",
       dataType: "json",
-      success,
-      error
+      success: success,
+      error: function(xhr){
+        const errors = xhr.responseJSON;
+        error("seeUserSurveys", errors);
+      }
     });
   },
 
@@ -26,8 +31,11 @@ module.exports = {
       type: "POST",
       data: surveyData,
       dataType: "json",
-      success,
-      error
+      success: success,
+      error: function(xhr){
+        const errors = xhr.responseJSON;
+        error("createSurveyForm", errors);
+      }
     });
   },
 
@@ -36,8 +44,11 @@ module.exports = {
       url: `api/surveys/${surveyId}`,
       type: "GET",
       dataType: "json",
-      success,
-      error
+      success: success,
+      error: function(xhr){
+        const errors = xhr.responseJSON;
+        error("seeSurvey", errors);
+      }
     });
   },
 
@@ -47,8 +58,11 @@ module.exports = {
       type: "DELETE",
       data: surveyId,
       dataType: "json",
-      success,
-      error
+      success: success,
+      error: function(xhr){
+        const errors = xhr.responseJSON;
+        error("deleteSurvey", errors);
+      }
     });
   }
 };

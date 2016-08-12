@@ -1,10 +1,11 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
-const Link = require('react-router').Link;
 const hashHistory = require('react-router').hashHistory;
 const SurveyStore = require('../../stores/survey_store.js');
 const SurveyActions = require('../../actions/survey_actions.js');
 const CreateQuestion = require('./create_question.jsx');
+const ErrorStore = require('../../stores/error_store.js');
+const ErrorDisplay = require('../../error_display.jsx');
 
 const CreateSurvey = React.createClass({
   getInitialState() {
@@ -17,6 +18,30 @@ const CreateSurvey = React.createClass({
     });
   },
 
+  componentDidMount() {
+    this.surveyListener = SurveyStore.addListener(this._onSurveyChange);
+    this.errorListener = ErrorStore.addListener(this._onErrorChange);
+  },
+
+  componentWillUnmount() {
+    this.surveyListener.remove();
+    this.errorListener.remove();
+  },
+
+  _onSurveyChange() {
+    $(".modal").hide();
+  },
+
+  _onErrorChange() {
+    this.setState({
+      errors: ErrorStore.errors(this.formType())
+    });
+  },
+
+  formType() {
+    return "createSurveyForm";
+  },
+
   updateTitle(e) {
     e.preventDefault();
 
@@ -25,10 +50,10 @@ const CreateSurvey = React.createClass({
     });
   },
 
-  toggleFormType(e) {
-    e.preventDefault();
-    console.log("Toggling form type!");
-  },
+  // toggleFormType(e) {
+  //   e.preventDefault();
+  //   console.log("Toggling form type!");
+  // },
 
   addQuestionBox(e) {
     e.preventDefault();
@@ -94,8 +119,6 @@ const CreateSurvey = React.createClass({
         questionElements: [],
         questions: {}
     });
-
-    $(".modal").hide();
   },
 
   render() {
@@ -115,6 +138,8 @@ const CreateSurvey = React.createClass({
         </div>
 
         <div className="question-box-body">
+
+          <ErrorDisplay errors={this.state.errors}/>
 
           <section className="multi-q-survey-section">
 

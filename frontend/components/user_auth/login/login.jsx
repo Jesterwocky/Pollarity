@@ -31,6 +31,30 @@ const Login = React.createClass({
       errors: ErrorStore.errors(this.formType())
     });
   },
+  
+  formType() {
+    return this.props.location.pathname.slice(1);
+  },
+
+  errors() {
+    let errorList = [];
+
+    if (this.state.errors !== undefined && this.state.errors.length > 0) {
+      this.state.errors.forEach((error, i) => {
+        errorList.push(
+          <li key={i} className="error-item">
+            {error}
+          </li>
+        );
+      });
+    }
+
+    return (
+      <ul className="error-text">
+        {errorList}
+      </ul>
+    );
+  },
 
   _onSessionChange() {
     if (SessionStore.isUserLoggedIn) {
@@ -56,30 +80,6 @@ const Login = React.createClass({
       username: this.state.username,
       password: this.state.password
     });
-  },
-
-  formType() {
-    return this.props.location.pathname.slice(1);
-  },
-
-  errors() {
-    let errorList = [];
-
-    if (this.state.errors !== undefined && this.state.errors.length > 0) {
-      this.state.errors.forEach((error, i) => {
-        errorList.push(
-          <li key={i} className="error-item">
-            {error}
-          </li>
-        );
-      });
-    }
-
-    return (
-      <ul className="error-text">
-        {errorList}
-      </ul>
-    );
   },
 
   render() {
