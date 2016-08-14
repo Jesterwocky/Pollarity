@@ -1,6 +1,5 @@
 module.exports = {
   createResponse: function(responseData, success, error) {
-
     $.ajax({
       url: "api/responses",
       type: "POST",

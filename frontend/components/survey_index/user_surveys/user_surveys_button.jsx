@@ -1,7 +1,7 @@
-const React = require('react');
-const ReactDOM = require('react-dom');
-const hashHistory = require('react-router').hashHistory;
-const SessionStore = require('../../stores/session_store.js');
+const React        = require('react');
+const ReactDOM     = require('react-dom');
+const hashHistory  = require('react-router').hashHistory;
+const SessionStore = require('../../../stores/session_store.js');
 
 const UserSurveysButton = React.createClass({
 

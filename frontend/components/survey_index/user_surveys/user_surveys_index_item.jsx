@@ -1,10 +1,10 @@
-const React       = require('react');
-const ReactDOM    = require('react-dom');
-const hashHistory = require('react-router').hashHistory;
-const SurveyStore = require('../../stores/survey_store.js');
+const React        = require('react');
+const ReactDOM     = require('react-dom');
+const hashHistory  = require('react-router').hashHistory;
+const SurveyStore  = require('../../../stores/survey_store.js');
+const SessionStore = require('../../../stores/session_store.js');
 
 const UserSurveysIndexItem = React.createClass({
-
   listQuestions() {
     return this.props.survey.questions.map((question, i) => {
       return(
@@ -23,12 +23,11 @@ const UserSurveysIndexItem = React.createClass({
     return (
       <div className={"user-survey group"}>
         <div className="user-survey-title">
-          {this.props.survey.survey_title}
-
+          <a href={reportingUrl}>{this.props.survey.survey_title}</a>
           <div className="survey-controls">
             <div className="poll-report-link">
               <a href={reportingUrl}>
-                realtime poll results
+                Live poll results
               </a>
             </div>
             <a href={responseUrl} className="url-share-link">share:</a>

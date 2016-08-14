@@ -4,8 +4,8 @@ const hashHistory = require('react-router').hashHistory;
 const SessionStore = require('../../../stores/session_store.js');
 const SessionActions = require('../../../actions/session_actions.js');
 
-const CreateSurveyButton = require('../../create_surveys/create_survey_button.jsx');
-const UserSurveysButton = require('../../user_surveys/user_surveys_button.jsx');
+const CreateSurveyButton = require('../../survey_creation/create_survey_button.jsx');
+const UserSurveysButton = require('../../nav_bar/nav_bar_items/user_surveys_button.jsx');
 
 
 const LoggedInOptions = React.createClass({

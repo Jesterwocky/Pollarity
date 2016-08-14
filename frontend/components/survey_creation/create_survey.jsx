@@ -30,6 +30,14 @@ const CreateSurvey = React.createClass({
 
   _onSurveyChange() {
     $(".modal").hide();
+
+    this.setState({
+      questionType: "multi",
+      surveyTitle: "",
+      questionNum: 0,
+      questionElements: [],
+      questions: {}
+    });
   },
 
   _onErrorChange() {
@@ -52,7 +60,6 @@ const CreateSurvey = React.createClass({
 
   // toggleFormType(e) {
   //   e.preventDefault();
-  //   console.log("Toggling form type!");
   // },
 
   addQuestionBox(e) {
@@ -94,6 +101,7 @@ const CreateSurvey = React.createClass({
 
   closeModal(e) {
     e.preventDefault();
+
     $(".modal").hide();
   },
 
@@ -111,14 +119,6 @@ const CreateSurvey = React.createClass({
     };
 
     SurveyActions.createSurvey(surveyData);
-
-    this.setState({
-        questionType: "multi",
-        surveyTitle: "",
-        questionNum: 0,
-        questionElements: [],
-        questions: {}
-    });
   },
 
   render() {
@@ -149,7 +149,12 @@ const CreateSurvey = React.createClass({
 
             <section className="survey-title-section">
               <label>Title:</label>
-              <input type="text" onChange={this.updateTitle} className="survey-title-input" placeholder="Survey Title"/>
+              <input type="text"
+                onChange={this.updateTitle}
+                className="survey-title-input"
+                placeholder="Survey Title"
+                value={this.state.surveyTitle}
+              />
             </section>
 
           </section>

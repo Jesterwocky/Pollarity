@@ -69,7 +69,7 @@ const NavBar = React.createClass ({
           <ul className="login-and-signup">
             <li>
               <button className="guest-signin-button" onClick={this.signInAsGuest}>
-                Be our guest
+                Guest login
               </button>
             </li>
             <li><LoginButton/></li>
