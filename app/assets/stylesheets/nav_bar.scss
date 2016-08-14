@@ -1,0 +1,49 @@
+.nav-bar-logo-large {
+  line-height: 1.5;
+  font-size: 25px;
+  float: left;
+}
+
+.nav-bar-for-home {
+  width: 100%;
+  min-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  position: relative;
+  background: rgba(0, 0, 0, 0.4);
+  padding-top: 30px;
+}
+
+.inspiration {
+  font-size: 12px;
+  text-align: center;
+  font-weight: normal;
+  line-height: 3.2;
+}
+
+.inspiration a {
+  padding-left: 34px;
+}
+
+.nav-bar-for-home-content {
+  width: 85%;
+  height: 75px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+ul.home-user-options {
+  display: inline;
+  float: right;
+  line-height: 2;
+}
+
+.home-user-options li{
+  float: left;
+  padding-left: 20px;
+}

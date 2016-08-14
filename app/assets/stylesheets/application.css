@@ -12,5 +12,13 @@
  *
  *= require_tree .
  *= require_self
- *= static_pages.scss
+ *= reset.scss
+ *= errors.scss
+ *= home_page.scss
+ *= nav_bar.scss
+ *= participation.scss
+ *= poll_reporting.scss
+ *= signup_and_signin.scss
+ *= survey_create.scss
+ *= survey_index.scss
  */

@@ -1,0 +1,185 @@
+.survey-report-page {
+  width: 100%;
+  height: 100%;
+  margin: 20px;
+  margin-top: 15px;
+
+  h1 {
+    font-size: 60px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  h2 {
+    font-size: 30px;
+    padding-bottom: 20px;
+  }
+
+  h3 {
+    font-size: 18px;
+    margin: 0px;
+    margin-left: 5px;
+    float: left;
+    display: block;
+    width: 100%;
+  }
+
+  p.total-question-votes {
+    margin-top: 10px;
+  }
+}
+
+.survey-reporting-sidebar {
+  width: 28%;
+  box-sizing: border-box;
+  padding: 30px;
+  top: 71px;
+  right: 20px;
+  background: #D7E4EE;
+  border-radius: 2px;
+  position: fixed;
+  z-index: -1;
+  overflow-wrap: break-word;
+
+  h4 {
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 10px;
+    font-size: 25px;
+  }
+
+  h5 {
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 5px;
+    font-size: 18px;
+  }
+}
+
+.survey-reporting-sidebar ul {
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.survey-reporting-sidebar li {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+ul.question-text-list {
+}
+
+.question-text-list li {
+  font-size: 12px;
+  padding: 0px;
+  padding-top: 15px;
+  margin-left: 10px;
+}
+
+.question-text-list {
+  list-style: circle;
+}
+
+.main-survey-content {
+  width: 67%;
+  min-width: 660px;
+  background: white;
+}
+
+div.option-percent-text {
+  float: left;
+  padding-left: 5px;
+}
+
+p.option-percent-text.group {
+    margin-left: 5px;
+}
+
+.percent-bar-overlay {
+  position: absolute;
+  padding-top: 10px;
+}
+
+img.report-image {
+  max-height: 100px;
+  width: auto;
+  margin-left: 20px;
+  margin-bottom: 5px;
+  margin-top: 25px;
+}
+
+.response-instructions {
+  border-radius: 3px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px;
+  padding-left: 15px;
+  padding-top: 10px;
+  background: #25364a;
+  color: white;
+}
+
+.response-instructions aside {
+  font-size: 20px;
+  text-align: center;
+}
+
+.response-instructions aside a {
+  text-decoration: underline;
+  bottom-margin: 10px;
+  font-size: 35px;
+}
+
+.question-report {
+  margin-top: 10px;
+  min-width: 450px;
+  padding: 5%;
+  padding-bottom: 8%;
+  padding-right: 7%;
+  border: 5px solid #e8eaec;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.poll-results-inner {
+  border-left: 4px solid #3F7CAB;
+  border-bottom: 4px solid #3F7CAB;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.poll-results-display-window {
+  width: 100%;
+  box-sizing: border-box;
+  margin-left: 5px;
+}
+
+.option-display {
+  margin-top: 10px;
+  min-height: 70px;
+}
+
+div.option-vote-percentage {
+  background: #7dc6ff;
+  min-height: 70px;
+}
+
+.under-graph-markings {
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+
+small.marking {
+  width: 10%;
+  height: 10px;
+  border-left: 4px solid #3F7CAB;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+small.marking:last-child {
+  border-right: 4px solid #3F7CAB;
+  padding-right: 4px;
+}

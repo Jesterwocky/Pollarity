@@ -1,0 +1,162 @@
+.signup-page {
+  text-align: center;
+
+  background: white;
+  position:relative;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.signup-page h1 {
+  font-size: 32px;
+  color: #7386A9;
+  font-weight: bold;
+  line-height: 4.5;
+}
+
+.signup-page h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  margin-top: 18px;
+}
+
+.signup-page ul {
+  width: 625px;
+  display: inline-flex;
+}
+
+.signup-page li {
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-left: 35px;
+  padding-right: 35px;
+  font-size: 14px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.signup-page .usage-icon {
+  height: 85px;
+  width: 85px;
+  background: #7386A9;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8px;
+  color: white;
+}
+
+.signup-page aside {
+  font-size: 11px;
+  margin-top: 55px;
+  color: #74767B;
+}
+
+.create-account-page {
+  background: white;
+  position:absolute;
+  top: 70px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+
+  font-weight: bold;
+}
+
+.create-account-page h1 {
+  font-size: 35px;
+  margin-top: 25px;
+  margin-bottom: 45px;
+}
+
+.create-account-page label {
+  font-size: 14px;
+}
+
+.create-account-box .user-auth-field {
+  margin-bottom: 15px;
+  padding: 5px;
+}
+
+.create-account-box {
+  width: 430px;
+  height: 430px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login-page {
+  background: #25364A;
+  position:absolute;
+  z-index: 200;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.login-header {
+  height: 140px;
+  width: 100%;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 10;
+}
+
+.login-box {
+  width: 380px;
+  height: 350px;
+  background: #F4F4F4;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 4px;
+
+}
+
+.login-internal-box {
+  border-radius: 5px;
+  width: 300px;
+  height: 260px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 45px
+}
+
+.login-internal-box h1 {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.user-auth-field {
+  background: white;
+  border: 1px solid #B2B9C1;
+  border-radius: 3px;
+  height: 35px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px
+}
+
+.login-form-button {
+  color: white;
+  background: #DA5229;
+  border-radius: 3px;
+  width: 100%;
+  height: 35px;
+  text-align: center;
+}
+
+.no-account-box {
+  margin-top: 20px;
+
+  color: gray;
+  font-size: 10px;
+  text-align: center;
+  width: 100%;
+}

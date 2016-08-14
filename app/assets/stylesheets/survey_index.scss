@@ -1,0 +1,131 @@
+#user-surveys {
+  background: white;
+  position:absolute;
+  top: 55px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.left-menu {
+  float: left;
+  display: inline-block;
+}
+
+#user-surveys-left-menu {
+  width: 180px;
+  height: 100%;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#user-surveys-left-menu .index-side-button {
+  height: 30px;
+  width: 150px;
+  border-radius: 3px;
+  margin-left: 14px;
+  margin-right: 14px;
+  margin-top: 14px;
+}
+
+#create-polls-from-index-button {
+  text-align: center;
+  line-height: 2.8;
+  color: white;
+  background: #DA5229;
+}
+
+#create-polls-from-index-button:hover{
+  background: #ED7D5E;
+}
+
+#my-polls-linklike {
+  text-align: left;
+  color: #25364A;
+  background: #e1edf7;
+}
+
+.my-polls-text {
+  float: left;
+  margin-left: 10px;
+  margin-top: 8px;
+}
+
+.content-indicator-icon {
+  float: right;
+  margin-top: 8px;
+  margin-right: 10px;
+}
+
+.user-surveys-list {
+  width: 75%;
+  min-width: 800px;
+  float: left;
+  display: inline-block;
+  position: absolute;
+}
+
+.user-survey .user-survey-title {
+  background: #C2D5E4;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 15px;
+  padding: 12px;
+}
+
+div.user-question {
+  color: #64819a;
+  padding: 8px;
+  margin-bottom: 1px;
+  background: #D7E4EE;
+  font-size: 14px;
+  padding-left: 15px;
+}
+
+.user-question .survey-edit-checkbox, .user-question .survey-question-text {
+  float: left;
+}
+
+.user-survey .survey-controls {
+  float: right;
+  font-size: 12px;
+}
+
+div.poll-report-link {
+  cursor: pointer;
+  display: inline;
+  padding: 5px;
+  text-align: center;
+  margin-right: 30px;
+  line-height: .7;
+  text-decoration: underline;
+}
+
+.user-survey .survey-controls button{
+  font-size: 12px;
+  color: #5D92C0;
+  margin-left: 10px;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+a.url-share-link {
+  text-decoration: underline;
+  font-weight: bold;
+  color: #5D92C0;
+  line-height: 1.6;
+  margin-right: 5px;
+}
+
+small.survey-url {
+  display: inline-block;
+  font-weight: normal;
+  color: black;
+  text-align: right;
+  display:inline;
+  float:right;
+  background: white;
+  border-radius: 2px;
+  padding: 2px;
+  font-size: 15px;
+}

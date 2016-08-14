@@ -1,10 +1,12 @@
 const React    = require('react');
 const ReactDOM = require('react-dom');
 
-const ClonsedSiteLink = React.createClass({
+const ClonedSiteLink = React.createClass({
   render(){
     return (
-      <a href="https://www.polleverywhere.com/" className="inspiration">Inspired by Poll Everywhere</a>
+      <div className="inspiration">
+        <a href="https://www.polleverywhere.com/">Inspired by Poll Everywhere</a>
+      </div>
     );
   }
 });

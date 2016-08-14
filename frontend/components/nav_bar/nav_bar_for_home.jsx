@@ -4,6 +4,7 @@ const hashHistory    = require('react-router').hashHistory;
 const SessionStore   = require('../../stores/session_store.js');
 const SessionActions = require('../../actions/session_actions.js');
 const LogoLarge      = require('./nav_bar_items/logo_large.jsx');
+const ClonedSiteLink = require('./nav_bar_items/cloned_site_link.jsx');
 
 const NavBarForHome = React.createClass({
   getInitialState() {
@@ -56,19 +57,20 @@ const NavBarForHome = React.createClass({
   },
 
   loginBasedContent() {
-    console.log("Displaying");
-
     if (this.state.loggedIn) {
       return (
-        <div className={"nav-bar-content group"}>
+        <div className={"nav-bar-for-home-content group"}>
+          <LogoLarge/>
           {this.loggedInUserOptions()}
+          <ClonedSiteLink/>
         </div>
       );
     }
 
     else {
       return (
-        <div className={"nav-bar-content group"}>
+        <div className={"nav-bar-for-home-content group"}>
+          <LogoLarge/>
           <LoginAndSignupButtons/>
         </div>
       );
@@ -77,8 +79,7 @@ const NavBarForHome = React.createClass({
 
   render() {
     return (
-      <div className="nav-bar-for-home">
-        <LogoLarge/>
+      <div className={"nav-bar-for-home group"}>
         {this.loginBasedContent()}
       </div>
     );

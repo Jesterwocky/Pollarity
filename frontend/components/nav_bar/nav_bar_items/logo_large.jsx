@@ -9,7 +9,7 @@ const LogoLarge = React.createClass({
 
   render() {
     return (
-      <a onClick={this.goToRoot} className="nav-bar-logo-not-logged-in">
+      <a onClick={this.goToRoot} className="nav-bar-logo-large">
         Pollarity
       </a>
     );

@@ -1,0 +1,34 @@
+.home-page {
+  background-image: image-url("subtle-dots.png"), image-url("handsup_audience.jpeg");
+  background-repeat: repeat, no-repeat;
+  // background-position: 0, absolute;
+  background-size: 50px 30px, cover;
+  position:absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.home-content {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.4);
+  height: 200px;
+}
+
+.home-content h1 {
+  font-size: 48px;
+  margin-right: 20px;
+  bottom: 0px;
+}
+
+.home-content h2 {
+  font-size: 20px;
+  line-height: 1.4;
+  margin-right: 20px;
+}

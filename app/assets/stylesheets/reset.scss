@@ -1,3 +1,6 @@
+html {
+  height: 100%;
+}
 
 html, body, header, nav, h1, a,
 ul, li, strong, main, button, i,
@@ -15,6 +18,8 @@ span, article, footer, time, small {
   vertical-align: inherit;
   box-sizing: inherit;
   background: transparent;
+  font-family: sans-serif;
+  font-size: inherit;
 }
 
 ul {
@@ -35,6 +40,7 @@ textarea,
 button {
   -webkit-appearance: none;
   -moz-appearance: none;
+  box-sizing: border-box;
 }
 
 button,
@@ -42,6 +48,7 @@ input[type="submit"] {
   cursor: pointer;
 }
 
+//clearfix
 .group:after {
   content: "";
   display: block;

@@ -7,7 +7,7 @@ const Home = React.createClass({
     return(
       <div className={"home-page group"}>
         <NavBarForHome/>
-        <div className="home-content">
+        <div className={"home-content group"}>
           <h1>Live Audience Participation</h1>
           <h2>Pollarity lets you engage your audience or class in real time</h2>
           <section></section>
