@@ -13,7 +13,7 @@ class Api::SurveysController < ApplicationController
     @survey = Survey.new(survey_params)
 
     if @survey.save
-      render json: @survey.to_json(include: {questions: {include: :options}})
+      render json: @survey.to_json(include: {questions: {include: {options: {include: :votes}}}})
     else
       render json: @survey.errors.full_messages, status: 401
     end

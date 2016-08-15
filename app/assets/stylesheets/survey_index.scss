@@ -96,7 +96,7 @@ div.user-question {
 
 .user-survey .survey-controls {
   float: right;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 div.poll-report-link {
@@ -136,4 +136,41 @@ small.survey-url {
   border-radius: 2px;
   padding: 2px;
   font-size: 15px;
+}
+
+ul.user-question-row {
+  float: right;
+  font-size: 14px;
+  margin-right: 10%;
+}
+
+.user-question li {
+  display: inline;
+  padding-left: 20px;
+}
+
+.user-question .mouseover-question-details {
+  display: none;
+}
+
+.user-question:hover .mouseover-question-details {
+  display: block;
+  position: absolute;
+  background: white;
+  padding: 10px;
+  padding-top: 0px;
+  border-radius: 3px;
+}
+
+img.option-summary-image {
+  max-height: 30px;
+  width: auto;
+}
+
+ul.question-summary-list {
+  font-size: 12px;
+}
+
+.question-summary-list li {
+  padding-bottom: 5px;
 }
