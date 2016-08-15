@@ -42,7 +42,32 @@ ul.home-user-options {
   line-height: 2;
 }
 
-.home-user-options li{
+.home-user-options li {
   float: left;
   padding-left: 20px;
+}
+
+ul.login-and-signup {
+  float: right;
+  font-size: 14px;
+}
+
+.login-and-signup li {
+  display:inline-block;
+}
+
+.login-and-signup li button {
+  padding: 13px;
+}
+
+.signup-button {
+  background: #1873A4;
+  background-size: cover;
+  border-radius: 5px;
+}
+
+.guest-signin-button {
+  background: #DA5229;
+  padding: 10px;
+  font-size: 12px;
 }

@@ -27,3 +27,5 @@ const LoginAndSignup = React.createClass ({
     );
   }
 });
+
+module.exports = LoginAndSignup;

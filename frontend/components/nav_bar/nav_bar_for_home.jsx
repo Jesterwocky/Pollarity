@@ -5,6 +5,7 @@ const SessionStore   = require('../../stores/session_store.js');
 const SessionActions = require('../../actions/session_actions.js');
 const LogoLarge      = require('./nav_bar_items/logo_large.jsx');
 const ClonedSiteLink = require('./nav_bar_items/cloned_site_link.jsx');
+const LoginAndSignupButtons = require('./nav_bar_items/login_and_signup_buttons.jsx');
 
 const NavBarForHome = React.createClass({
   getInitialState() {
@@ -72,6 +73,7 @@ const NavBarForHome = React.createClass({
         <div className={"nav-bar-for-home-content group"}>
           <LogoLarge/>
           <LoginAndSignupButtons/>
+          <ClonedSiteLink/>
         </div>
       );
     }
