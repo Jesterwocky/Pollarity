@@ -1,13 +1,14 @@
-const React = require('react');
-const ReactDOM = require('react-dom');
-const hashHistory = require('react-router').hashHistory;
-const SessionStore = require('../../stores/session_store.js');
-const SurveyStore = require('../../stores/survey_store.js');
-const ResponseStore = require('../../stores/response_store.js');
-const ResponseActions = require('../../actions/response_actions.js');
+const React              = require('react');
+const ReactDOM           = require('react-dom');
+const hashHistory        = require('react-router').hashHistory;
+const SessionStore       = require('../../stores/session_store.js');
+const SurveyStore        = require('../../stores/survey_store.js');
+const ResponseStore      = require('../../stores/response_store.js');
+const ResponseActions    = require('../../actions/response_actions.js');
 const QuestionAndAnswers = require('./question_and_answers.jsx');
-const ErrorStore = require('../../stores/error_store.js');
-const ErrorDisplay = require('../../error_display.jsx');
+const ErrorStore         = require('../../stores/error_store.js');
+const ErrorDisplay       = require('../../error_display.jsx');
+const SurveyActions      = require('../../actions/survey_actions.js');
 
 const ResponseForm = React.createClass ({
 
@@ -77,8 +78,8 @@ const ResponseForm = React.createClass ({
 
   render() {
     let surveyTitle = "";
-    if (this.survey !== undefined) {
-      surveyTitle = this.survey.survey_title;
+    if (this.state.survey !== undefined) {
+      surveyTitle = this.state.survey.survey_title;
     }
 
     return (
