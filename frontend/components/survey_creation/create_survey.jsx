@@ -15,7 +15,8 @@ const CreateSurvey = React.createClass({
       surveyTitle: "",
       questionNum: 0,
       questionElements: [],
-      questions: {}
+      questions: {},
+      errors: []
     });
   },
 
@@ -37,7 +38,8 @@ const CreateSurvey = React.createClass({
       surveyTitle: "",
       questionNum: 0,
       questionElements: [],
-      questions: {}
+      questions: {},
+      errors: []
     });
   },
 
