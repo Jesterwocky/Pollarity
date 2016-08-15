@@ -5,11 +5,12 @@ const ReactDOM        = require('react-dom');
 const hashHistory     = require('react-router').hashHistory;
 const SurveyStore     = require('../../stores/survey_store.js');
 const QuestionReport  = require('./question_report.jsx');
-const ResponseStore = require('../../stores/response_store.js');
+const ResponseStore   = require('../../stores/response_store.js');
 const ResponseActions = require('../../actions/response_actions.js');
+const SurveyActions   = require('../../actions/survey_actions.js');
+const NavBarForPollCreator = require('../nav_bar/nav_bar_for_poll_creator');
 
 const SurveyReport = React.createClass({
-
   getInitialState() {
     return({
       surveyTitle: undefined,
@@ -112,7 +113,6 @@ const SurveyReport = React.createClass({
         <h4>{this.state.surveyTitle}</h4>
         <ul className="summary-list">
           <li>{this.state.responseUrl}</li>
-          <li>Total participants: {this.state.numVotes}</li>
           <li>Questions:
             <ul className="question-text-list">
               {this.questionText()}
@@ -125,22 +125,27 @@ const SurveyReport = React.createClass({
 
   render() {
     return(
-      <div className={"survey-report-page group"}>
-        <div className={"survey-reporting-sidebar group"}>
-          {this.pollDataSummary()}
-        </div>
+      <div>
+        <NavBarForPollCreator/>
 
-        <div className={"main-survey-content group"}>
+        <div className={"survey-report-page group"}>
 
-          <div className={"response-instructions group"}>
-            <h1>{this.state.surveyTitle}</h1>
-            <aside className="response-url">
-              <a href={this.state.responseUrl}>{this.state.responseUrl}</a>
-            </aside>
+          <div className={"survey-reporting-sidebar group"}>
+            {this.pollDataSummary()}
           </div>
 
-          {this.questionReports()}
+          <div className={"main-survey-content group"}>
 
+            <div className={"response-instructions group"}>
+              <h1>{this.state.surveyTitle}</h1>
+              <aside className="response-url">
+                <a href={this.state.responseUrl}>{this.state.responseUrl}</a>
+              </aside>
+            </div>
+
+            {this.questionReports()}
+
+          </div>
         </div>
       </div>
     );

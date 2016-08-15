@@ -1,7 +1,7 @@
-const React = require('react');
-const ReactDOM = require('react-dom');
-const LoginButton = require('../../user_auth/login/login_button.jsx');
-const SignupButton = require('../../user_auth/signup/signup_button.jsx');
+const React          = require('react');
+const ReactDOM       = require('react-dom');
+const LoginButton    = require('../../user_auth/login/login_button.jsx');
+const SignupButton   = require('../../user_auth/signup/signup_button.jsx');
 const SessionActions = require('../../../actions/session_actions.js');
 
 const LoginAndSignup = React.createClass ({

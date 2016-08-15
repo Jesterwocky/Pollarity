@@ -2,6 +2,11 @@
   line-height: 1.5;
   font-size: 25px;
   float: left;
+  cursor: pointer;
+}
+
+.nav-bar-logo-small {
+  cursor: pointer;
 }
 
 .nav-bar-for-home {
@@ -28,7 +33,7 @@
 }
 
 .nav-bar-for-home-content {
-  width: 85%;
+  width: 75%;
   height: 75px;
   margin-left: auto;
   margin-right: auto;
@@ -70,4 +75,88 @@ ul.login-and-signup {
   background: #DA5229;
   padding: 10px;
   font-size: 12px;
+}
+
+// poll creator
+.nav-bar-for-poll-creator {
+  width: 100%;
+  top: 0px;
+  position: relative;
+  background: #25364A;
+  color: white;
+  text-align: center;
+  z-index: 100;
+}
+
+.nav-bar-content-for-poll-creator {
+  width: 100%;
+  position:relative;
+  line-height: 3.5;
+}
+
+ul.nav-bar-survey-options {
+  float: left;
+}
+
+.nav-bar-survey-options li {
+  float:left;
+  line-height: 3.5;
+}
+
+div.user-option {
+  height: 40px;
+  color: black;
+  border: 1px solid #D7E4EE;
+}
+
+.create-survey-button {
+  padding: 0px;
+  background: #5D92C0;
+  text-align: center;
+  width: 55px;
+  cursor: pointer;
+}
+
+.user-surveys-link {
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+.nav-bar-username {
+  box-sizing: border-box;
+}
+
+.user-surveys-link:hover, .nav-bar-username:hover {
+  background: #2A4A6E;
+}
+
+ul.user-options {
+  float: right;
+  display: inline;
+  line-height: 3.5;
+  cursor: pointer;
+}
+
+.user-options li {
+  display: block;
+  width: 120px;
+  text-align: left;
+}
+
+.user-options div {
+  padding-left: 12px;
+}
+
+div.user-option {
+  height: 40px;
+  line-height: 2.4;
+  background: white;
+  display: none;
+}
+
+div.user-option:hover {
+  border-left: 3px solid #25364A;
+  padding-left: 10px;
 }

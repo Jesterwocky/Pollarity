@@ -1,7 +1,8 @@
-const React        = require('react');
-const ReactDOM     = require('react-dom');
+const React       = require('react');
+const ReactDOM    = require('react-dom');
+const hashHistory = require('react-router').hashHistory;
 
-const LogoLarge = React.createClass({
+const LogoSmall = React.createClass({
   goToRoot(e) {
     e.preventDefault();
     hashHistory.push("");
@@ -9,11 +10,11 @@ const LogoLarge = React.createClass({
 
   render() {
     return (
-      <a onClick={this.goToRoot} className="nav-bar-logo">
+      <a onClick={this.goToRoot} className="nav-bar-logo-small">
         Pollarity
       </a>
     );
   }
 });
 
-module.exports = LogoLarge;
+module.exports = LogoSmall;

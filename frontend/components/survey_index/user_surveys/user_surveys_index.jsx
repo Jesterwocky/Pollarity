@@ -1,9 +1,10 @@
-const React       = require('react');
-const ReactDOM    = require('react-dom');
-const hashHistory = require('react-router').hashHistory;
-const SurveyStore          = require('../../../stores/survey_store.js');
-const SurveyActions        = require('../../../actions/survey_actions.js');
-const CreateSurvey         = require('../../survey_creation/create_survey.jsx');
+const React         = require('react');
+const ReactDOM      = require('react-dom');
+const hashHistory   = require('react-router').hashHistory;
+const SurveyStore   = require('../../../stores/survey_store.js');
+const SurveyActions = require('../../../actions/survey_actions.js');
+const CreateSurvey  = require('../../survey_creation/create_survey.jsx');
+const NavBarForPollCreator = require('../../nav_bar/nav_bar_for_poll_creator.jsx');
 const UserSurveysIndexItem = require('./user_surveys_index_item.jsx');
 
 const UserSurveysIndex = React.createClass({
@@ -52,7 +53,9 @@ const UserSurveysIndex = React.createClass({
 
     return(
       <div id="user-surveys" className="group">
+        <NavBarForPollCreator/>
         <aside id="user-surveys-left-menu" className="left-menu">
+
           <button
             onClick={this.openModal}
             id="create-polls-from-index-button"
@@ -64,10 +67,8 @@ const UserSurveysIndex = React.createClass({
             <p className="my-polls-text">
               My Polls
             </p>
-            <p className="content-indicator-icon">
-              >
-            </p>
           </div>
+
         </aside>
 
         <div className={"user-surveys-list group"}>

@@ -1,16 +1,17 @@
-const React                = require('react');
-const ReactDOM             = require('react-dom');
-const hashHistory          = require('react-router').hashHistory;
-const SessionStore         = require('../stores/session_store.js');
-const SessionActions       = require('../actions/session_actions.js');
-const SurveyCreatorOptions = require('./survey_creator_options.jsx');
-const LogoSmall            = require('./logo_small.jsx');
+const React          = require('react');
+const ReactDOM       = require('react-dom');
+const hashHistory    = require('react-router').hashHistory;
+const SessionStore   = require('../../stores/session_store.js');
+const SessionActions = require('../../actions/session_actions.js');
+const LogoSmall      = require('./nav_bar_items/logo_small.jsx');
+const SurveyCreatorOptions = require('./nav_bar_items/survey_creator_options.jsx');
 
-const NavBarForHome = React.createClass({
+const NavBarForPollCreator = React.createClass({
   getInitialState() {
     return({
       loggedIn: SessionStore.isUserLoggedIn(),
-      currentUsername: SessionStore.currentUser()
+      username: SessionStore.currentUser().username,
+      anonymous: SessionStore.currentUser().anon
     });
   },
 
@@ -25,8 +26,45 @@ const NavBarForHome = React.createClass({
   _handleSessionChange() {
     this.setState({
       loggedIn: SessionStore.isUserLoggedIn(),
-      currentUsername: SessionStore.currentUser().username
+      username: SessionStore.currentUser().username,
+      anonymous: SessionStore.currentUser().anon
     });
+  },
+
+  openMenu(e) {
+    e.preventDefault();
+    $(".user-option").toggle();
+  },
+
+  logOut(e) {
+    e.preventDefault();
+    $(".user-option").toggle();
+    SessionActions.logOut();
+    hashHistory.push("");
+  },
+
+  goToSettings(e) {
+    e.preventDefault();
+    $(".user-option").toggle();
+    hashHistory.push("settings");
+  },
+
+  usernameMenu() {
+    return (
+      <ul className="user-options">
+        <li>
+          <div className="nav-bar-username" onClick={this.openMenu}>
+            {this.state.username}
+          </div>
+        </li>
+
+        <li>
+          <div className="user-option" onClick={this.logOut}>
+            Log out
+          </div>
+        </li>
+      </ul>
+    );
   },
 
   loginBasedContent() {
@@ -34,15 +72,8 @@ const NavBarForHome = React.createClass({
       return(
         <div className="nav-bar-content-for-poll-creator">
           <SurveyCreatorOptions/>
-          <UsernameOptions/>
-        </div>
-      );
-    }
-
-    else {
-      return(
-        <div className="nav-bar-content-for-poll-creator">
-
+          {this.usernameMenu()}
+          <LogoSmall/>
         </div>
       );
     }
@@ -51,10 +82,10 @@ const NavBarForHome = React.createClass({
   render() {
     return (
       <div className="nav-bar-for-poll-creator">
-        <LogoSmall/>
         {this.loginBasedContent()}
       </div>
     );
   }
-
 });
+
+module.exports = NavBarForPollCreator;
