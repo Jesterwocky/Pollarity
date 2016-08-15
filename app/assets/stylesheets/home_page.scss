@@ -3,11 +3,19 @@
   background-repeat: repeat, no-repeat;
   // background-position: 0, absolute;
   background-size: 50px 30px, cover;
-  position:absolute;
   top: 0px;
   bottom: 0px;
   left: 0px;
   right: 0px;
+  position:absolute;
+}
+
+img.home-computer {
+  height: 50%;
+  width: auto;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top: 50px;
 }
 
 .home-content {
@@ -18,13 +26,12 @@
   margin-right: auto;
   border-radius: 3px;
   background: rgba(0, 0, 0, 0.4);
-  height: 200px;
+  height: 100%;
 }
 
 .home-content h1 {
   font-size: 48px;
   margin-right: 20px;
-  bottom: 0px;
 }
 
 .home-content h2 {
