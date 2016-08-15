@@ -10,7 +10,7 @@ const Home = React.createClass({
           <NavBarForHome/>
           <h1>Live Audience Participation</h1>
           <h2>Pollarity lets you engage your audience or class in real time</h2>
-          <img className="home-computer" src="assets/computer_with_transparent_background_with_graphic.png"/>
+          <img className="home-computer" src="http://res.cloudinary.com/pollaritycloud/image/upload/v1471246252/computer_with_transparent_background_with_graphic_zgftye.png"/>
         </div>
       </div>
     );
