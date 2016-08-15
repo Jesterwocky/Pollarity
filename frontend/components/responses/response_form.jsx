@@ -9,6 +9,7 @@ const QuestionAndAnswers = require('./question_and_answers.jsx');
 const ErrorStore         = require('../../stores/error_store.js');
 const ErrorDisplay       = require('../../error_display.jsx');
 const SurveyActions      = require('../../actions/survey_actions.js');
+const NavBarForParticipant = require('../nav_bar/nav_bar_for_participant.jsx');
 
 const ResponseForm = React.createClass ({
 
@@ -84,6 +85,8 @@ const ResponseForm = React.createClass ({
 
     return (
       <div className={"survey-response-page group"}>
+        <NavBarForParticipant/>
+
         <ErrorDisplay errors={this.state.errors}/>
 
         <div className="survey-response-form">

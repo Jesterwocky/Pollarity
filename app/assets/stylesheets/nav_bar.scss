@@ -77,6 +77,23 @@ ul.login-and-signup {
   font-size: 12px;
 }
 
+//participant
+
+
+.nav-bar-for-participant {
+  width: 100%;
+  top: 0px;
+  position: relative;
+  background: black;
+  color: white;
+  text-align: center;
+  z-index: 100;
+  font-size: 16px;
+  font-weight: normal;
+  height: 55px;
+  line-height: 3.4;
+}
+
 // poll creator
 .nav-bar-for-poll-creator {
   width: 100%;

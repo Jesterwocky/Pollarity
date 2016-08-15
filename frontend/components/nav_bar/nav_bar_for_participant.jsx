@@ -1,13 +1,12 @@
 const React          = require('react');
 const ReactDOM       = require('react-dom');
 const hashHistory    = require('react-router').hashHistory;
-const SessionStore   = require('../stores/session_store.js');
-const SessionActions = require('../actions/session_actions.js');
-const LogoSmall      = require('./logo_small.jsx');
-const UsernameMenu   = require('./username_menu.jsx');
-const LoginAndSignupButtons = require('./login_and_signup_buttons.jsx');
+const SessionStore   = require('../../stores/session_store.js');
+const SessionActions = require('../../actions/session_actions.js');
+const LogoSmall      = require('./nav_bar_items/logo_small.jsx');
+const LoginAndSignupButtons = require('./nav_bar_items/login_and_signup_buttons.jsx');
 
-const NavBarForHome = React.createClass({
+const NavBarForParticipant = React.createClass({
   getInitialState() {
     return({
       loggedIn: SessionStore.isUserLoggedIn(),
@@ -32,30 +31,49 @@ const NavBarForHome = React.createClass({
     });
   },
 
-  loginBasedContent() {
-    if (this.state.loggedIn && !this.state.anonymous) {
-      return(
-        <div className="nav-bar-content-for-participant">
-          <UsernameMenu/>
-        </div>
-      );
-    }
+  usernameMenu() {
+    return (
+      <ul className="user-options">
+        <li>
+          <div className="nav-bar-username" onClick={this.openMenu}>
+            {this.state.username}
+          </div>
+        </li>
 
-    else {
-      return(
-        <div className="nav-bar-content-for-participant">
-          <LoginAndSignupButtons/>
-        </div>
-      );
-    }
+        <li>
+          <div className="user-option" onClick={this.logOut}>
+            Log out
+          </div>
+        </li>
+      </ul>
+    );
   },
+
+  // loginBasedContent() {
+  //   if (this.state.loggedIn && !this.state.anonymous) {
+  //     return(
+  //       <div className="nav-bar-content-for-participant">
+  //         {this.usernameMenu()}
+  //       </div>
+  //     );
+  //   }
+  //
+  //   else {
+  //     return(
+  //       <div className="nav-bar-content-for-participant">
+  //         <LoginAndSignupButtons/>
+  //       </div>
+  //     );
+  //   }
+  // },
 
   render() {
     return (
       <div className="nav-bar-for-participant">
         <LogoSmall/>
-        {this.loginBasedContent()}
       </div>
     );
   }
 });
+
+module.exports = NavBarForParticipant;

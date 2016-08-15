@@ -1,11 +1,12 @@
-const React = require('react');
-const ReactDOM = require('react-dom');
-const hashHistory = require('react-router').hashHistory;
-const SurveyStore = require('../../stores/survey_store.js');
-const SurveyActions = require('../../actions/survey_actions.js');
+const React          = require('react');
+const ReactDOM       = require('react-dom');
+const hashHistory    = require('react-router').hashHistory;
+const SurveyStore    = require('../../stores/survey_store.js');
+const SurveyActions  = require('../../actions/survey_actions.js');
 const CreateQuestion = require('./create_question.jsx');
-const ErrorStore = require('../../stores/error_store.js');
-const ErrorDisplay = require('../../error_display.jsx');
+const ErrorStore     = require('../../stores/error_store.js');
+const ErrorDisplay   = require('../../error_display.jsx');
+const SessionStore   = require('../../stores/session_store.js');
 
 const CreateSurvey = React.createClass({
   getInitialState() {
