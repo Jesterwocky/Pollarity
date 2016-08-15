@@ -71,19 +71,23 @@
 
 .user-survey .user-survey-title {
   background: #C2D5E4;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   margin-top: 15px;
   padding: 12px;
 }
 
+.user-survey-title a:hover {
+  color: #E8471B
+}
+
 div.user-question {
   color: #64819a;
-  padding: 8px;
+  padding: 7px;
   margin-bottom: 1px;
   background: #D7E4EE;
-  font-size: 14px;
-  padding-left: 15px;
+  font-size: 16px;
+  padding-left: 20px;
 }
 
 .user-question .survey-edit-checkbox, .user-question .survey-question-text {

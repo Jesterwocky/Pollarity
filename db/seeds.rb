@@ -26,7 +26,7 @@ Survey.create!(
 
 Survey.create!(
   author_id: 1,
-  survey_title: "I want to...",
+  survey_title: "Do you want to..?",
   questions_attributes: [
     {
       question: "Be famous",
@@ -165,7 +165,7 @@ Survey.create!(
 
 Survey.create!(
   author_id: 2,
-  survey_title: "I want to...",
+  survey_title: "Do you want to..?",
   questions_attributes: [
     {
       question: "Be famous",
