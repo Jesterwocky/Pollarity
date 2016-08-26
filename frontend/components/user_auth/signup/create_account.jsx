@@ -1,6 +1,8 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 const hashHistory = require('react-router').hashHistory;
+const Link = require('react-router').Link;
+
 const SessionActions = require('../../../actions/session_actions.js');
 const SessionStore = require('../../../stores/session_store.js');
 const ErrorStore = require('../../../stores/error_store.js');
@@ -80,6 +82,12 @@ const CreateAccount = React.createClass({
 
             <input type="submit" className="login-form-button" value="Create my Pollarity account"/>
           </form>
+          <div className="no-account-box">
+            <Link to={'/login'} className="new-account-link">
+              Already have an account? Sign in.
+            </Link>
+          </div>
+          
         </div>
       </div>
     );
