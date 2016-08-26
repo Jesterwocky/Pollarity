@@ -23,7 +23,7 @@ const Login = React.createClass({
 
   componentWillUnmount() {
     this.listener.remove();
-    this.errorListner.remove();
+    this.errorListener.remove();
   },
 
   _onErrorChange() {
@@ -31,7 +31,7 @@ const Login = React.createClass({
       errors: ErrorStore.errors(this.formType())
     });
   },
-  
+
   formType() {
     return this.props.location.pathname.slice(1);
   },

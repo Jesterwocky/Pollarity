@@ -3,9 +3,10 @@ const ReactDOM      = require('react-dom');
 const hashHistory   = require('react-router').hashHistory;
 const SurveyStore   = require('../../../stores/survey_store.js');
 const SurveyActions = require('../../../actions/survey_actions.js');
-const CreateSurvey  = require('../../survey_creation/create_survey.jsx');
+// const CreateSurvey  = require('../../survey_creation/create_survey.jsx');
 const NavBarForPollCreator = require('../../nav_bar/nav_bar_for_poll_creator.jsx');
 const UserSurveysIndexItem = require('./user_surveys_index_item.jsx');
+const CreateSurveyModal = require('../../survey_creation/create_survey_modal.jsx');
 
 const UserSurveysIndex = React.createClass({
   getInitialState() {
@@ -35,11 +36,6 @@ const UserSurveysIndex = React.createClass({
   openModal (e) {
     e.preventDefault();
     $(".modal").show();
-  },
-
-  closeModal(e) {
-    e.preventDefault();
-    $(".modal").hide();
   },
 
   userSurveyIndexItems () {
@@ -75,11 +71,7 @@ const UserSurveysIndex = React.createClass({
           {this.userSurveyIndexItems()}
         </div>
 
-        <div className="modal">
-          <div onClick={this.closeModal} className={"dark-overlay group"}></div>
-          <CreateSurvey/>
-        </div>
-
+        <CreateSurveyModal/>
       </div>
     );
   }

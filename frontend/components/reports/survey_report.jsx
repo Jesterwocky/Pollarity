@@ -4,11 +4,12 @@ const React           = require('react');
 const ReactDOM        = require('react-dom');
 const hashHistory     = require('react-router').hashHistory;
 const SurveyStore     = require('../../stores/survey_store.js');
-const QuestionReport  = require('./question_report.jsx');
 const ResponseStore   = require('../../stores/response_store.js');
 const ResponseActions = require('../../actions/response_actions.js');
 const SurveyActions   = require('../../actions/survey_actions.js');
-const NavBarForPollCreator = require('../nav_bar/nav_bar_for_poll_creator');
+const QuestionReport  = require('./question_report.jsx');
+const NavBarForPollCreator = require('../nav_bar/nav_bar_for_poll_creator.jsx');
+const CreateSurveyModal = require('../survey_creation/create_survey_modal.jsx');
 
 const SurveyReport = React.createClass({
   getInitialState() {
@@ -147,6 +148,8 @@ const SurveyReport = React.createClass({
 
           </div>
         </div>
+
+        <CreateSurveyModal/>
       </div>
     );
   }

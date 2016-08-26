@@ -122,6 +122,7 @@ const CreateSurvey = React.createClass({
     };
 
     SurveyActions.createSurvey(surveyData);
+    hashHistory.push(`users/${SessionStore.currentUser().id}/surveys`);
   },
 
   render() {

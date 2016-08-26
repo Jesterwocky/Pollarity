@@ -65,17 +65,6 @@ const CreateQuestion = React.createClass({
   updateOption(optionNum, optionData) {
 
     this.state.options_attributes[optionNum] = optionData;
-    // let options = {};
-    //
-    // Object.keys(this.state.options_attributes).forEach((key) => {
-    //   options[key] = this.state.options_attributes[key];
-    // });
-    //
-    // options[optionNum] = optionData;
-    //
-    // this.setState({
-    //   options: options
-    // });
   },
 
   deleteOption(num) {

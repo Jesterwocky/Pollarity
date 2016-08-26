@@ -24,6 +24,20 @@ Survey.create!(
   ]
 )
 
+Response.create!(selected_option_id: 1, responder_id: 1)
+Response.create!(selected_option_id: 1, responder_id: 2)
+Response.create!(selected_option_id: 1, responder_id: 1000)
+Response.create!(selected_option_id: 1, responder_id: 1001)
+Response.create!(selected_option_id: 1, responder_id: 1002)
+Response.create!(selected_option_id: 1, responder_id: 1003)
+Response.create!(selected_option_id: 1, responder_id: 1004)
+Response.create!(selected_option_id: 2, responder_id: 1005)
+Response.create!(selected_option_id: 2, responder_id: 1006)
+Response.create!(selected_option_id: 2, responder_id: 1007)
+Response.create!(selected_option_id: 2, responder_id: 1008)
+Response.create!(selected_option_id: 3, responder_id: 1009)
+Response.create!(selected_option_id: 3, responder_id: 1010)
+
 Survey.create!(
   author_id: 1,
   survey_title: "Do you want to..?",
@@ -58,6 +72,20 @@ Survey.create!(
     }
   ]
 )
+
+Response.create!(selected_option_id: 1, responder_id: 1)
+Response.create!(selected_option_id: 1, responder_id: 2)
+Response.create!(selected_option_id: 1, responder_id: 1000)
+Response.create!(selected_option_id: 1, responder_id: 1001)
+Response.create!(selected_option_id: 1, responder_id: 1002)
+Response.create!(selected_option_id: 1, responder_id: 1003)
+Response.create!(selected_option_id: 1, responder_id: 1004)
+Response.create!(selected_option_id: 2, responder_id: 1005)
+Response.create!(selected_option_id: 2, responder_id: 1006)
+Response.create!(selected_option_id: 2, responder_id: 1007)
+Response.create!(selected_option_id: 2, responder_id: 1008)
+Response.create!(selected_option_id: 3, responder_id: 1009)
+Response.create!(selected_option_id: 3, responder_id: 1010)
 
 Survey.create!(
   author_id: 1,
