@@ -73,19 +73,70 @@ Survey.create!(
   ]
 )
 
-Response.create!(selected_option_id: 1, responder_id: 1)
-Response.create!(selected_option_id: 1, responder_id: 2)
-Response.create!(selected_option_id: 1, responder_id: 1000)
-Response.create!(selected_option_id: 1, responder_id: 1001)
-Response.create!(selected_option_id: 1, responder_id: 1002)
-Response.create!(selected_option_id: 1, responder_id: 1003)
-Response.create!(selected_option_id: 1, responder_id: 1004)
-Response.create!(selected_option_id: 2, responder_id: 1005)
-Response.create!(selected_option_id: 2, responder_id: 1006)
-Response.create!(selected_option_id: 2, responder_id: 1007)
-Response.create!(selected_option_id: 2, responder_id: 1008)
-Response.create!(selected_option_id: 3, responder_id: 1009)
-Response.create!(selected_option_id: 3, responder_id: 1010)
+Response.create!(selected_option_id: 4, responder_id: 1)
+Response.create!(selected_option_id: 6, responder_id: 1)
+Response.create!(selected_option_id: 9, responder_id: 1)
+Response.create!(selected_option_id: 10, responder_id: 1)
+
+Response.create!(selected_option_id: 4, responder_id: 2)
+Response.create!(selected_option_id: 6, responder_id: 2)
+Response.create!(selected_option_id: 9, responder_id: 2)
+Response.create!(selected_option_id: 10, responder_id: 2)
+
+Response.create!(selected_option_id: 5, responder_id: 1000)
+Response.create!(selected_option_id: 6, responder_id: 1000)
+Response.create!(selected_option_id: 9, responder_id: 1000)
+Response.create!(selected_option_id: 11, responder_id: 1000)
+
+Response.create!(selected_option_id: 4, responder_id: 1001)
+Response.create!(selected_option_id: 7, responder_id: 1001)
+Response.create!(selected_option_id: 9, responder_id: 1001)
+Response.create!(selected_option_id: 10, responder_id: 1001)
+
+Response.create!(selected_option_id: 5, responder_id: 1002)
+Response.create!(selected_option_id: 7, responder_id: 1002)
+Response.create!(selected_option_id: 8, responder_id: 1002)
+Response.create!(selected_option_id: 10, responder_id: 1002)
+
+Response.create!(selected_option_id: 5, responder_id: 1003)
+Response.create!(selected_option_id: 7, responder_id: 1003)
+Response.create!(selected_option_id: 9, responder_id: 1003)
+Response.create!(selected_option_id: 11, responder_id: 1003)
+
+Response.create!(selected_option_id: 5, responder_id: 1004)
+Response.create!(selected_option_id: 7, responder_id: 1004)
+Response.create!(selected_option_id: 9, responder_id: 1004)
+Response.create!(selected_option_id: 10, responder_id: 1004)
+
+Response.create!(selected_option_id: 5, responder_id: 1005)
+Response.create!(selected_option_id: 7, responder_id: 1005)
+Response.create!(selected_option_id: 9, responder_id: 1005)
+Response.create!(selected_option_id: 11, responder_id: 1005)
+
+Response.create!(selected_option_id: 5, responder_id: 1006)
+Response.create!(selected_option_id: 7, responder_id: 1006)
+Response.create!(selected_option_id: 9, responder_id: 1006)
+Response.create!(selected_option_id: 11, responder_id: 1006)
+
+Response.create!(selected_option_id: 4, responder_id: 1007)
+Response.create!(selected_option_id: 7, responder_id: 1007)
+Response.create!(selected_option_id: 8, responder_id: 1007)
+Response.create!(selected_option_id: 10, responder_id: 1007)
+
+Response.create!(selected_option_id: 5, responder_id: 1008)
+Response.create!(selected_option_id: 7, responder_id: 1008)
+Response.create!(selected_option_id: 9, responder_id: 1008)
+Response.create!(selected_option_id: 10, responder_id: 1008)
+
+Response.create!(selected_option_id: 4, responder_id: 1009)
+Response.create!(selected_option_id: 7, responder_id: 1009)
+Response.create!(selected_option_id: 9, responder_id: 1009)
+Response.create!(selected_option_id: 10, responder_id: 1009)
+
+Response.create!(selected_option_id: 4, responder_id: 1010)
+Response.create!(selected_option_id: 7, responder_id: 1010)
+Response.create!(selected_option_id: 8, responder_id: 1010)
+Response.create!(selected_option_id: 10, responder_id: 1010)
 
 Survey.create!(
   author_id: 1,
@@ -109,6 +160,45 @@ Survey.create!(
     }
   ]
 )
+
+Response.create!(selected_option_id: 12, responder_id: 1)
+Response.create!(selected_option_id: 17, responder_id: 1)
+
+Response.create!(selected_option_id: 12, responder_id: 2)
+Response.create!(selected_option_id: 15, responder_id: 2)
+
+Response.create!(selected_option_id: 13, responder_id: 1000)
+Response.create!(selected_option_id: 16, responder_id: 1000)
+
+Response.create!(selected_option_id: 14, responder_id: 1001)
+Response.create!(selected_option_id: 15, responder_id: 1001)
+
+Response.create!(selected_option_id: 14, responder_id: 1002)
+Response.create!(selected_option_id: 15, responder_id: 1002)
+
+Response.create!(selected_option_id: 14, responder_id: 1003)
+Response.create!(selected_option_id: 17, responder_id: 1003)
+
+Response.create!(selected_option_id: 14, responder_id: 1004)
+Response.create!(selected_option_id: 17, responder_id: 1004)
+
+Response.create!(selected_option_id: 12, responder_id: 1005)
+Response.create!(selected_option_id: 16, responder_id: 1005)
+
+Response.create!(selected_option_id: 13, responder_id: 1006)
+Response.create!(selected_option_id: 17, responder_id: 1006)
+
+Response.create!(selected_option_id: 14, responder_id: 1007)
+Response.create!(selected_option_id: 15, responder_id: 1007)
+
+Response.create!(selected_option_id: 14, responder_id: 1008)
+Response.create!(selected_option_id: 17, responder_id: 1008)
+
+Response.create!(selected_option_id: 12, responder_id: 1009)
+Response.create!(selected_option_id: 16, responder_id: 1009)
+
+Response.create!(selected_option_id: 14, responder_id: 1010)
+Response.create!(selected_option_id: 16, responder_id: 1010)
 
 Survey.create!(
   author_id: 1,

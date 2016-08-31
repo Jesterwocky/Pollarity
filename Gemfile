@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem "font-awesome-rails"
 gem 'paperclip'
 gem 'figaro'
 gem 'pusher'

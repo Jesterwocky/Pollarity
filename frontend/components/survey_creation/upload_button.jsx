@@ -19,7 +19,7 @@ const UploadButton = React.createClass({
   render() {
     return (
       <button className="image-upload-icon" onClick={this.upload}>
-        Image
+        <i className="fa fa-camera" aria-hidden="true"></i>
       </button>
     );
   }
