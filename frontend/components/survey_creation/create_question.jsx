@@ -97,7 +97,7 @@ const CreateQuestion = React.createClass({
 
     return (
       <div className="external-question-box">
-        <a onClick={this.deleteThisQuestion} className="delete-question">X</a>
+        <a onClick={this.deleteThisQuestion} className="delete-question">&times;</a>
 
         <div className={questionContentClassnames}>
             <label>Question:</label>

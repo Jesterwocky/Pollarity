@@ -175,7 +175,7 @@ const CreateSurvey = React.createClass({
 
           <div className="survey-build-controls">
             <a href="" onClick={this.closeModal} className="cancel-link">Cancel</a>
-            <button onClick={this.saveSurvey} className="build-survey-button">Create -></button>
+            <button onClick={this.saveSurvey} className="build-survey-button">Create &rarr;</button>
           </div>
         </div>
 

@@ -71,7 +71,7 @@ const CreateOption = React.createClass({
           value={this.state.option}
           placeholder="Answer goes here"
         />
-        <button onClick={this.deleteThisOption} className="delete-option">X</button>
+      <button onClick={this.deleteThisOption} className="delete-option">&times;</button>
       </div>
     );
   }
