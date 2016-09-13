@@ -101,7 +101,6 @@ const UserSurveysIndexItem = React.createClass({
               <a href={reportingUrl}>{this.props.survey.survey_title}</a>
             </div>
             <div className="survey-controls">
-              <a className="edit-link" href="">Edit</a>
               <a className="poll-report-link" href={reportingUrl}>Live poll results</a>
               <a href={responseUrl} target="_blank" className="url-share-link">Share</a>
               <small className="survey-url">
