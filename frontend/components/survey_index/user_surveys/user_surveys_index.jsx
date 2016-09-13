@@ -68,7 +68,7 @@ const UserSurveysIndex = React.createClass({
         </aside>
 
         <div className={"user-surveys-list group"}>
-          {this.userSurveyIndexItems()}
+          {this.userSurveyIndexItems().reverse()}
         </div>
 
         <CreateSurveyModal/>

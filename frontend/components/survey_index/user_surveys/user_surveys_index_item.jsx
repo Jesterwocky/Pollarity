@@ -4,6 +4,18 @@ const hashHistory  = require('react-router').hashHistory;
 const SurveyStore  = require('../../../stores/survey_store.js');
 const SessionStore = require('../../../stores/session_store.js');
 
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+function format_date(dateTime) {
+  let date_numbers = dateTime.slice(0, 10).split("-");
+
+  let number_year  = parseInt(date_numbers[0]);
+  let number_month = parseInt(date_numbers[1]);
+  let number_day   = parseInt(date_numbers[2]);
+
+  return `${months[number_month]} ${number_day}, ${number_year}`;
+}
+
 const UserSurveysIndexItem = React.createClass({
   listQuestions() {
     return this.props.survey.questions.map((question, i) => {
@@ -71,25 +83,32 @@ const UserSurveysIndexItem = React.createClass({
     return totalVotes;
   },
 
+  date_info() {
+    return `Created ${format_date(this.props.survey.created_at)}`;
+  },
+
   render() {
-    let questions = this.listQuestionsWithData();
-    let responseUrl = `${window.location.origin}/#/${this.props.survey.response_url}`;
+    let questions    = this.listQuestionsWithData();
+    let responseUrl  = `${window.location.origin}/#/${this.props.survey.response_url}`;
     let reportingUrl = `${window.location.origin}/#/users/${SessionStore.currentUser().id}/surveys/${this.props.survey.id}`;
 
     return (
       <div className={"user-survey group"}>
-        <div className="user-survey-title">
-          <a href={reportingUrl}>{this.props.survey.survey_title}</a>
-          <div className="survey-controls">
+        <div className="user-survey-title group">
+          <div className="basic-survey-info">
+            <a href={reportingUrl}>{this.props.survey.survey_title}</a>
             <div className="poll-report-link">
               <a href={reportingUrl}>
                 Live poll results
               </a>
             </div>
+          </div>
+          <div className="survey-controls">
             <a href={responseUrl} className="url-share-link">share:</a>
             <small className="survey-url">
                 {responseUrl}
             </small>
+            <div className="user-survey-date">{this.date_info()}</div>
           </div>
         </div>
         {questions}
