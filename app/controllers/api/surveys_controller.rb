@@ -12,6 +12,7 @@ class Api::SurveysController < ApplicationController
   def create
     @survey = Survey.new(survey_params)
 
+    debugger
     if @survey.save
       render json: @survey.to_json(include: {questions: {include: {options: {include: :votes}}}})
     else

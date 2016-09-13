@@ -60,9 +60,11 @@ const UserSurveysIndex = React.createClass({
           </button>
 
           <div id="my-polls-linklike" className={buttonClasses}>
-            <p className="my-polls-text">
+            <div className="my-polls-text">
               My Polls
-            </p>
+            </div>
+
+            <div className="arrow">&rarr;</div>
           </div>
 
         </aside>

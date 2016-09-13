@@ -14,6 +14,7 @@
 .left-menu {
   float: left;
   display: inline-block;
+
 }
 
 #user-surveys-left-menu {
@@ -53,6 +54,15 @@
   float: left;
   margin-left: 10px;
   margin-top: 8px;
+
+}
+
+.arrow {
+  text-align: right;
+  float: right;
+  font-size: 16px;
+  line-height: 2;
+  margin-right: 8px;
 }
 
 .content-indicator-icon {
@@ -64,98 +74,113 @@
 .user-surveys-list {
   width: 75%;
   min-width: 800px;
+  max-width: 960px;
   float: left;
   display: inline-block;
   position: absolute;
+  margin-bottom: 25px;
 }
 
 .user-survey {
+  margin-top: 10px;
 
-  .user-survey-title {
-    background: #C2D5E4;
-    font-size: 25px;
-    font-weight: bold;
-    margin-top: 15px;
-    padding: 10px;
+  .user-survey-date {
+    font-size: 14px;
+    padding-top: 3px;
+    padding-left: 2px;
+    color: #9cb5ca;
+    text-align: left;
+    padding-bottom: 2px;
+  }
 
-    a:hover {
-      color: #E8471B
-    }
+  .user-survey-box {
 
-    .basic-survey-info {
-      width: 40%;
-      float:left;
-      height: 100%;
-      padding-left: 5px;
-      line-height: 1.8;
-    }
+    .user-survey-title {
+      background: #C2D5E4;
+      font-size: 22px;
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 700;
+      padding: 10px;
+      padding-top: 12px;
+      padding-left: 12px;
 
-    .poll-report-link {
-      cursor: pointer;
-      display: inline;
-      text-align: left;
-      color: #E8471B;
-      text-decoration: underline;
-      font-size: 15px;
-      padding-left: 10px;
-    }
+      a:hover {
+        color: #E8471B
+      }
 
-    .user-survey-date {
-      font-size: 12px;
-      padding-top: 5px;
-      color: #5D92C0;
-      text-align: right;
-    }
+      .basic-survey-info {
+        float:left;
+        height: 100%;
+      }
 
-    .survey-controls {
-      float: right;
-      font-size: 15px;
+      .survey-controls {
+        float: right;
+        font-size: 15px;
 
-      button{
-        font-size: 12px;
-        color: #5D92C0;
-        margin-left: 10px;
-        padding: 5px;
-        border-radius: 3px;
+        a {
+          margin-right: 15px;
+          color: #5D92C0;
+        }
+
+        a.edit-link {
+          text-decoration: underline;
+        }
+
+        a.poll-report-link {
+          cursor: pointer;
+          display: inline;
+          text-align: right;
+          color: #E8471B;
+          text-decoration: underline;
+          font-size: 15px;
+          line-height: 1.5;
+          width: 20%;
+        }
+
+        a.url-share-link {
+          text-decoration: underline;
+          font-weight: bold;
+          line-height: 1.6;
+          margin-right: 5px;
+        }
+      }
+
+      small.survey-url {
+        display: inline-block;
+        font-weight: normal;
+        color: black;
+        text-align: right;
+        display:inline;
+        float:right;
+        background: white;
+        border-radius: 2px;
+        padding: 2px;
+        font-size: 15px;
+        line-height: 1.4;
+        margin-left: 5px;
       }
     }
   }
+
 }
 
-div.user-question {
+.user-question {
   color: #64819a;
   padding: 7px;
   margin-bottom: 1px;
   background: #D7E4EE;
   font-size: 16px;
-  padding-left: 5%;
+  padding-left: 30px;
+}
+
+div.user-question:last-child {
+  padding-bottom: 8px;
 }
 
 .user-question .survey-edit-checkbox, .user-question .survey-question-text {
   float: left;
 }
 
-
-a.url-share-link {
-  text-decoration: underline;
-  font-weight: bold;
-  color: #5D92C0;
-  line-height: 1.6;
-  margin-right: 5px;
-}
-
-small.survey-url {
-  display: inline-block;
-  font-weight: normal;
-  color: black;
-  text-align: right;
-  display:inline;
-  float:right;
-  background: white;
-  border-radius: 2px;
-  padding: 2px;
-  font-size: 15px;
-}
 
 ul.user-question-row {
   float: right;
@@ -165,7 +190,7 @@ ul.user-question-row {
 
 .user-question li {
   display: inline;
-  padding-left: 20px;
+  padding-left: 25px;
 }
 
 .user-question .mouseover-question-details {

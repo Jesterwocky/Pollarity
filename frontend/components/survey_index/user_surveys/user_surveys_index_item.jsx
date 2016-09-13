@@ -6,14 +6,14 @@ const SessionStore = require('../../../stores/session_store.js');
 
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-function format_date(dateTime) {
-  let date_numbers = dateTime.slice(0, 10).split("-");
+function formatDate(dateTime) {
+  let dateNumbers = dateTime.slice(0, 10).split("-");
 
-  let number_year  = parseInt(date_numbers[0]);
-  let number_month = parseInt(date_numbers[1]);
-  let number_day   = parseInt(date_numbers[2]);
+  let numberYear  = parseInt(dateNumbers[0]);
+  let numberMonth = parseInt(dateNumbers[1]) - 1;
+  let numberDay   = parseInt(dateNumbers[2]);
 
-  return `${months[number_month]} ${number_day}, ${number_year}`;
+  return `${months[numberMonth]} ${numberDay}, ${numberYear}`;
 }
 
 const UserSurveysIndexItem = React.createClass({
@@ -83,8 +83,8 @@ const UserSurveysIndexItem = React.createClass({
     return totalVotes;
   },
 
-  date_info() {
-    return `Created ${format_date(this.props.survey.created_at)}`;
+  dateInfo() {
+    return `${formatDate(this.props.survey.created_at)}`;
   },
 
   render() {
@@ -94,24 +94,23 @@ const UserSurveysIndexItem = React.createClass({
 
     return (
       <div className={"user-survey group"}>
-        <div className="user-survey-title group">
-          <div className="basic-survey-info">
-            <a href={reportingUrl}>{this.props.survey.survey_title}</a>
-            <div className="poll-report-link">
-              <a href={reportingUrl}>
-                Live poll results
-              </a>
+        <div className="user-survey-date">{this.dateInfo()}</div>
+        <div className="user-survey-box">
+          <div className="user-survey-title group">
+            <div className="basic-survey-info">
+              <a href={reportingUrl}>{this.props.survey.survey_title}</a>
+            </div>
+            <div className="survey-controls">
+              <a className="edit-link" href="">Edit</a>
+              <a className="poll-report-link" href={reportingUrl}>Live poll results</a>
+              <a href={responseUrl} target="_blank" className="url-share-link">Share</a>
+              <small className="survey-url">
+                {responseUrl}
+              </small>
             </div>
           </div>
-          <div className="survey-controls">
-            <a href={responseUrl} className="url-share-link">share:</a>
-            <small className="survey-url">
-                {responseUrl}
-            </small>
-            <div className="user-survey-date">{this.date_info()}</div>
-          </div>
+          {questions}
         </div>
-        {questions}
       </div>
     );
   }
