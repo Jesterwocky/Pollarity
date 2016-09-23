@@ -37,10 +37,26 @@ module.exports = {
     );
   },
 
+  getSurveyToEdit(surveyId) {
+    SurveyApiUtil.getSurveyToEdit(
+      surveyId,
+      this.receiveSurveyToEdit,
+      ErrorActions.setErrors
+    );
+  },
+
   deleteSurvey(surveyId) {
     SurveyApiUtil.deleteSurvey(
       surveyId,
       this.receiveSurvey,
+      ErrorActions.setErrors
+    );
+  },
+
+  updateSurvey(surveyData) {
+    SurveyApiUtil.updateSurvey(
+      surveyData,
+      this.replaceSurvey,
       ErrorActions.setErrors
     );
   },
@@ -60,10 +76,30 @@ module.exports = {
     });
   },
 
+  receiveSurveyToEdit(survey) {
+    Dispatcher.dispatch({
+      actionType: SurveyConstants.SURVEY_RECEIVED_FOR_EDIT,
+      survey: survey
+    });
+  },
+
+  clearSurveyToEdit() {
+    Dispatcher.dispatch({
+      actionType: SurveyConstants.CLEAR_SURVEY_TO_EDIT,
+    });
+  },
+
   removeSurvey(surveyId) {
     Dispatcher.dispatch({
       actionType: SurveyConstants.SURVEY_REMOVED,
       surveyId: surveyId
+    });
+  },
+
+  replaceSurvey(survey) {
+    Dispatcher.dispatch({
+      actionType: SurveyConstants.SURVEY_UPDATED,
+      survey: survey
     });
   }
 };

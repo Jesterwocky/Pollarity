@@ -7,7 +7,7 @@ module.exports = {
       dataType: "json",
       success: success,
       error: function(xhr){
-        const errors =xhr.responseJSON;
+        const errors = xhr.responseJSON;
         error("responseForm", errors);
       }
     });

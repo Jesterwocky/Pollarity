@@ -31,7 +31,7 @@ const CreateSurvey = React.createClass({
   },
 
   _onSurveyChange() {
-    $(".modal").hide();
+    $(".new-survey-modal").hide();
 
     this.setState({
       questionType: "multi",
@@ -102,10 +102,10 @@ const CreateSurvey = React.createClass({
     });
   },
 
-  closeModal(e) {
+  closeNewSurveyModal(e) {
     e.preventDefault();
 
-    $(".modal").hide();
+    $(".new-survey-modal").hide();
   },
 
   updateQuestion(questionNum, questionData) {
@@ -118,20 +118,19 @@ const CreateSurvey = React.createClass({
     let surveyData = {
       author_id: SessionStore.currentUser().id,
       survey_title: this.state.surveyTitle,
-      questions_attributes: this.state.questions,
+      questions_attributes: this.state.questions
     };
 
     SurveyActions.createSurvey(surveyData);
+    // User will be directed to the surveys page if they create from a
+    // different page
     hashHistory.push(`users/${SessionStore.currentUser().id}/surveys`);
   },
 
   render() {
-    let fullBoxClassnames = "create-survey-box group";
-    let questionContentClassnames = "question-content-box group";
-    let overlayClasses = "dark-overlay group";
-
+    console.log(this.state.questions);
     return (
-      <div className={fullBoxClassnames}>
+      <div className="create-survey-box group">
 
         <div className="question-type-tabs">
 
@@ -166,7 +165,7 @@ const CreateSurvey = React.createClass({
           <section className="question-creation-section">
             {this.state.questionElements}
 
-            <div id="question-placeholder" className={questionContentClassnames}>
+            <div id="question-placeholder" className="question-content-box group">
               <label>Add a Question:</label>
               <input type="text" onChange={this.addQuestionBox} placeholder="Your question goes here"/>
             </div>
@@ -174,7 +173,7 @@ const CreateSurvey = React.createClass({
           </section>
 
           <div className="survey-build-controls">
-            <a href="" onClick={this.closeModal} className="cancel-link">Cancel</a>
+            <a onClick={this.closeNewSurveyModal} className="cancel-link">Cancel</a>
             <button onClick={this.saveSurvey} className="build-survey-button">Create &rarr;</button>
           </div>
         </div>

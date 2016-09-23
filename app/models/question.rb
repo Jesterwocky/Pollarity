@@ -10,5 +10,5 @@ class Question < ActiveRecord::Base
     through: :options,
     source: :votes
 
-  accepts_nested_attributes_for :options
+  accepts_nested_attributes_for :options, allow_destroy: true
 end

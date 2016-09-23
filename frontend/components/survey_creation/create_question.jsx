@@ -63,7 +63,6 @@ const CreateQuestion = React.createClass({
   },
 
   updateOption(optionNum, optionData) {
-
     this.state.options_attributes[optionNum] = optionData;
   },
 

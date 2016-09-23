@@ -3,6 +3,7 @@ const ReactDOM     = require('react-dom');
 const hashHistory  = require('react-router').hashHistory;
 const SurveyStore  = require('../../../stores/survey_store.js');
 const SessionStore = require('../../../stores/session_store.js');
+const SurveyActions = require('../../../actions/survey_actions.js');
 
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
@@ -87,6 +88,11 @@ const UserSurveysIndexItem = React.createClass({
     return `${formatDate(this.props.survey.created_at)}`;
   },
 
+  editSurvey (e) {
+    e.preventDefault();
+    SurveyActions.getSurveyToEdit(this.props.survey.id);
+  },
+
   render() {
     let questions    = this.listQuestionsWithData();
     let responseUrl  = `${window.location.origin}/#/${this.props.survey.response_url}`;
@@ -101,6 +107,7 @@ const UserSurveysIndexItem = React.createClass({
               <a href={reportingUrl}>{this.props.survey.survey_title}</a>
             </div>
             <div className="survey-controls">
+              <a className="edit-link" onClick={this.editSurvey} >Edit</a>
               <a className="poll-report-link" href={reportingUrl}>Live poll results</a>
               <a href={responseUrl} target="_blank" className="url-share-link">Share</a>
               <small className="survey-url">

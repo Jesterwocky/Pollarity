@@ -4,15 +4,15 @@ const hashHistory = require('react-router').hashHistory;
 
 const NewPollButton = React.createClass({
 
-  openModal (e) {
+  openNewSurveyModal (e) {
     e.preventDefault();
     //instead, probably want to redirect to MySurveys and then open modal
-    $(".modal").show();
+    $(".new-survey-modal").show();
   },
 
   render() {
     return (
-      <div onClick={this.openModal} className="create-survey-button">
+      <div onClick={this.openNewSurveyModal} className="create-survey-button">
         +
       </div>
     );

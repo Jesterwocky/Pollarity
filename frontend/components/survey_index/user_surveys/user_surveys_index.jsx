@@ -7,14 +7,16 @@ const SurveyActions = require('../../../actions/survey_actions.js');
 const NavBarForPollCreator = require('../../nav_bar/nav_bar_for_poll_creator.jsx');
 const UserSurveysIndexItem = require('./user_surveys_index_item.jsx');
 const CreateSurveyModal = require('../../survey_creation/create_survey_modal.jsx');
+const EditSurvey = require('../../survey_edit/edit_survey_modal');
+const EditSurveyModal = require('../../survey_edit/edit_survey_modal');
 
 const UserSurveysIndex = React.createClass({
   getInitialState() {
     let userId = parseInt(this.props.params.userId);
 
     return ({
+      userId: userId,
       surveys: SurveyStore.allForUser(userId),
-      userId: userId
     });
   },
 
@@ -29,18 +31,23 @@ const UserSurveysIndex = React.createClass({
 
   _handleSurveyChange () {
     this.setState({
-      surveys: SurveyStore.allForUser(this.state.userId)
+      surveys: SurveyStore.allForUser(this.state.userId),
     });
   },
 
-  openModal (e) {
+  openNewSurveyModal (e) {
     e.preventDefault();
-    $(".modal").show();
+    $(".new-survey-modal").show();
   },
 
   userSurveyIndexItems () {
     return this.state.surveys.map((survey, i) => {
-      return <UserSurveysIndexItem key={i} survey={survey}/>;
+      return (
+        <UserSurveysIndexItem
+          key={i}
+          survey={survey}
+        />
+      );
     });
   },
 
@@ -53,7 +60,7 @@ const UserSurveysIndex = React.createClass({
         <aside id="user-surveys-left-menu" className="left-menu">
 
           <button
-            onClick={this.openModal}
+            onClick={this.openNewSurveyModal}
             id="create-polls-from-index-button"
             className={buttonClasses}>
             Create
@@ -72,6 +79,8 @@ const UserSurveysIndex = React.createClass({
         <div className={"user-surveys-list group"}>
           {this.userSurveyIndexItems().reverse()}
         </div>
+
+        <EditSurveyModal/>
 
         <CreateSurveyModal/>
       </div>

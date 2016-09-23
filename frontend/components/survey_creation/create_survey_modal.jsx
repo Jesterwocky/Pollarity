@@ -2,15 +2,15 @@ const React = require('react');
 const CreateSurvey  = require('./create_survey.jsx');
 
 const CreateSurveyModal = React.createClass({
-  closeModal(e) {
+  closeNewSurveyModal(e) {
     e.preventDefault();
-    $(".modal").hide();
+    $(".new-survey-modal").hide();
   },
 
   render() {
     return (
-      <div className="modal">
-        <div onClick={this.closeModal} className={"dark-overlay group"}></div>
+      <div className="new-survey-modal">
+        <div onClick={this.closeNewSurveyModal} className={"new-survey-modal-dark-overlay group"}></div>
         <CreateSurvey/>
       </div>
     );

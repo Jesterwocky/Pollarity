@@ -1,14 +1,14 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
-const UploadButton = require('./upload_button.jsx');
+const UploadButton = require('../survey_creation/upload_button.jsx');
 
-const CreateOption = React.createClass({
+const EditOption = React.createClass({
 
   getInitialState() {
     return({
-      option: "",
-      image_url: undefined,
-      thumbnail_url: undefined,
+      option: this.props.initialOption,
+      image_url: this.props.initialImage_url,
+      thumbnail_url: this.props.initialThumbnail_url,
     });
   },
 
@@ -22,6 +22,7 @@ const CreateOption = React.createClass({
     this.props.updateOption(
       this.props.optionNum,
       {
+        id: this.props.id,
         option: e.currentTarget.value,
         image_url: this.state.image_url,
         thumbnail_url: this.state.thumbnail_url
@@ -76,4 +77,4 @@ const CreateOption = React.createClass({
   }
 });
 
-module.exports = CreateOption;
+module.exports = EditOption;

@@ -1,4 +1,4 @@
-.dark-overlay {
+.new-survey-modal-dark-overlay {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -112,6 +112,7 @@ section.survey-title-section {
 .cancel-link {
   color: gray;
   padding: 10px;
+
 }
 
 .build-survey-button {
@@ -186,6 +187,6 @@ section.survey-title-section {
   margin-bottom: 3px;
 }
 
-.modal {
+.new-survey-modal {
   display: none;
 }

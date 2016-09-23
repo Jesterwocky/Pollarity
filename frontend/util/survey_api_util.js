@@ -52,6 +52,19 @@ module.exports = {
     });
   },
 
+  getSurveyToEdit: function(surveyId, success, error) {
+    $.ajax({
+      url: `api/surveys/${surveyId}`,
+      type: "GET",
+      dataType: "json",
+      success: success,
+      error: function(xhr){
+        const errors = xhr.responseJSON;
+        error("editSurvey", errors);
+      }
+    });
+  },
+
   deleteSurvey: function(surveyId, success, error) {
     $.ajax({
       url: `api/surveys/${surveyId}`,
@@ -62,6 +75,21 @@ module.exports = {
       error: function(xhr){
         const errors = xhr.responseJSON;
         error("deleteSurvey", errors);
+      }
+    });
+  },
+
+  updateSurvey: function(surveyData, success, error) {
+    debugger
+    $.ajax({
+      url: `api/surveys/${surveyData.id}`,
+      type: "PATCH",
+      data: surveyData,
+      dataType: "json",
+      success: success,
+      error: function(xhr){
+        const errors = xhr.responseJSON;
+        error("updateSurvey", errors);
       }
     });
   }

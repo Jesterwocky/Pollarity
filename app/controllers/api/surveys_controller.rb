@@ -29,6 +29,16 @@ class Api::SurveysController < ApplicationController
     render json: @surveys.to_json(include: {questions: {include: {options: {include: :votes}}}})
   end
 
+  def update
+    @survey = Survey.find(survey_params[:id])
+
+    if @survey.update(survey_params)
+      render json: @survey.to_json(include: {questions: {include: {options: {include: :votes}}}})
+    else
+      render json: @survey.errors.full_messages, status: 401
+    end
+  end
+
   def destroy
     @survey = Survey.find(params[:id])
 
@@ -41,6 +51,6 @@ class Api::SurveysController < ApplicationController
   end
 
   def survey_params
-    params.permit(:survey_title, :author_id, questions_attributes: [:id, :question, options_attributes: [:id, :option, :image_url, :thumbnail_url]])
+    params.permit(:id, :survey_title, :author_id, questions_attributes: [:id, :question, options_attributes: [:id, :option, :image_url, :thumbnail_url]])
   end
 end

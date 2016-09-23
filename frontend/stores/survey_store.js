@@ -13,7 +13,6 @@ const _resetSurveys = function(surveys) {
   surveys.forEach((survey) => {
     _surveys[survey.id] = survey;
   });
-
 };
 
 const _addSurvey = function(survey) {
@@ -66,7 +65,11 @@ SurveyStore.__onDispatch = function(payload) {
       this.__emitChange();
       break;
     case SurveyConstants.SURVEY_REMOVED:
-      _removeSurvey(payload.surveyId);
+      _removeSurvey(payload.id);
+      this.__emitChange();
+      break;
+    case SurveyConstants.SURVEY_UPDATED:
+      _addSurvey(payload.survey);
       this.__emitChange();
       break;
   }

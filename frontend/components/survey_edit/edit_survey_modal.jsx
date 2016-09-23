@@ -1,20 +1,24 @@
 const React = require('react');
-const CreateSurvey  = require('./create_survey.jsx');
+const EditSurvey  = require('./edit_survey.jsx');
+const SurveyStore = require('../../stores/survey_store.js');
+const EditSurveyStore = require('../../stores/edit_survey_store.js');
 
-const CreateSurveyModal = React.createClass({
-  closeModal(e) {
+// Need survey edit store
+
+const EditSurveyModal = React.createClass({
+  closeEditSurveyModal(e) {
     e.preventDefault();
-    $(".modal").hide();
+    $(".edit-survey-modal").hide();
   },
 
   render() {
     return (
-      <div className="modal">
-        <div onClick={this.closeModal} className={"dark-overlay group"}></div>
-        <CreateSurvey/>
+      <div className="edit-survey-modal">
+        <div onClick={this.closeEditSurveyModal} className={"edit-survey-modal-dark-overlay group"}></div>
+        <EditSurvey/>
       </div>
     );
   }
 });
 
-module.exports = CreateSurveyModal;
+module.exports = EditSurveyModal;
