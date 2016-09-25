@@ -2,7 +2,7 @@ class Api::QuestionsController < ApplicationController
 
   def show
     # probably don't need this
-    @question = Question.find(params(:id))
+    @question = Question.find(params[:id])
 
     if @question
       render json: @question.to_json(include: {options: {include: :votes}})
@@ -13,7 +13,7 @@ class Api::QuestionsController < ApplicationController
   end
 
   def update
-    @question = Question.find(params(:id))
+    @question = Question.find(params[:id])
 
     if @question.update(question_params)
       render json: @question.to_json(include: :options)
@@ -23,10 +23,10 @@ class Api::QuestionsController < ApplicationController
   end
 
   def destroy
-    @question = Question.find(params(:id))
+    @question = Question.find(params[:id])
 
     if @question.delete
-      render json: {}
+      render json: {id: @question.id, surveyId: @question.survey_id}
     else
       render json: @question.errors.full_messages, status: 401
     end

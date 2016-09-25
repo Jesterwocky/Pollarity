@@ -1,5 +1,4 @@
 const SurveyApiUtil = require('../util/survey_api_util.js');
-const LoginConstants = require('../constants/login_constants.js');
 const Dispatcher = require('../dispatcher/dispatcher.js');
 const SurveyConstants = require('../constants/survey_constants.js');
 const ErrorActions = require('../actions/error_actions.js');
@@ -48,9 +47,19 @@ module.exports = {
   deleteSurvey(surveyId) {
     SurveyApiUtil.deleteSurvey(
       surveyId,
-      this.receiveSurvey,
+      this.removeSurvey,
       ErrorActions.setErrors
     );
+  },
+
+  deleteSurveys(surveyIds) {
+    for (let id of surveyIds) {
+      SurveyApiUtil.deleteSurvey(
+        surveyId,
+        this.removeSurvey,
+        ErrorActions.setErrors
+      );
+    }
   },
 
   updateSurvey(surveyData) {
@@ -89,12 +98,19 @@ module.exports = {
     });
   },
 
-  removeSurvey(surveyId) {
+  removeSurvey(surveyData) {
     Dispatcher.dispatch({
       actionType: SurveyConstants.SURVEY_REMOVED,
-      surveyId: surveyId
+      surveyId: surveyData.id
     });
   },
+
+  // removeSurveys(surveyIds) {
+  //   Dispatcher.dispatch({
+  //     actionType: SurveyConstants.SURVEYS_REMOVED,
+  //     surveyIds: surveyIds
+  //   });
+  // },
 
   replaceSurvey(survey) {
     Dispatcher.dispatch({

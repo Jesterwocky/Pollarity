@@ -14,6 +14,10 @@ Rails.application.routes.draw do
       resources :responses, only:[:index]
     end
 
+    resources :questions, only:[:destroy]
+
+    resources :options, only:[:destroy]
+
     resources :responses, except:[:index, :new]
   end
 end

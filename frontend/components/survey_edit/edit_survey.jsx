@@ -4,7 +4,9 @@ const hashHistory    = require('react-router').hashHistory;
 const SurveyStore    = require('../../stores/survey_store.js');
 const EditSurveyStore = require('../../stores/edit_survey_store.js');
 const SurveyActions  = require('../../actions/survey_actions.js');
+const QuestionActions = require('../../actions/question_actions.js');
 const EditQuestion   = require('./edit_question.jsx');
+const CreateQuestion   = require('../survey_creation/create_question.jsx');
 const ErrorStore     = require('../../stores/error_store.js');
 const ErrorDisplay   = require('../../error_display.jsx');
 const SessionStore   = require('../../stores/session_store.js');
@@ -17,6 +19,7 @@ const EditSurvey = React.createClass({
       questionNum: 0,
       questionElements: [],
       questions: {},
+      questionIdsToDelete: [],
       errors: []
     });
   },
@@ -48,20 +51,29 @@ const EditSurvey = React.createClass({
       let questionNum = 0;
 
       for (let question of surveyToEdit.questions) {
-        // questions[questionNum] = {id: question.id, question: question};
+        let hasVotes = false;
+        if (question.options.some(option => option.votes.length > 0)) {
+          hasVotes = true;
+        }
 
-        questions[questionNum] = {};
+        questions[questionNum] = {
+          id: question.id,
+          question: question.question,
+          options_attributes: {},
+          hasVotes: hasVotes
+        };
 
         questionElements.push (
           <EditQuestion
             id={question.id}
-            key={this.state.questionNum}
+            key={questionNum}
             questionNum={questionNum}
             initialQuestionText={question.question}
             options={question.options}
             deleteQuestion={this.deleteQuestion}
             updateQuestion={this.updateQuestion}
-            />
+            hasVotes={hasVotes}
+          />
         );
 
         questionNum += 1;
@@ -72,7 +84,8 @@ const EditSurvey = React.createClass({
         surveyTitle: surveyToEdit.survey_title,
         questions: questions,
         questionElements: questionElements,
-        questionNum: questionNum
+        questionNum: questionNum,
+        questionIdsToDelete: []
       });
     }
 
@@ -83,7 +96,8 @@ const EditSurvey = React.createClass({
         questionNum: 0,
         questionElements: [],
         questions: {},
-        errors: []
+        errors: [],
+        questionIdsToDelete: []
       });
     }
   },
@@ -121,7 +135,7 @@ const EditSurvey = React.createClass({
     let questionElements = this.state.questionElements.slice();
 
     questionElements.push (
-      <EditQuestion
+      <CreateQuestion
         key={this.state.questionNum}
         questionNum={this.state.questionNum}
         initialQuestionText={e.currentTarget.value}
@@ -138,7 +152,7 @@ const EditSurvey = React.createClass({
     });
   },
 
-  deleteQuestion(num) {
+  deleteQuestion(num, id) {
     let questionElements = this.state.questionElements;
 
     questionElements.forEach((el, i) => {
@@ -146,6 +160,12 @@ const EditSurvey = React.createClass({
         questionElements.splice(i, 1);
       }
     });
+
+    // If an existing question is deleted, add the ID to a list
+    // to delete from database
+    if (id !== undefined) {
+      this.state.questionIdsToDelete.push(id);
+    }
 
     this.setState({
       questionElements: questionElements
@@ -160,13 +180,16 @@ const EditSurvey = React.createClass({
   saveSurvey(e) {
     e.preventDefault();
 
-    debugger
     let surveyData = {
       id: this.state.surveyToEdit.id,
       survey_title: this.state.surveyTitle,
       questions_attributes: this.state.questions
     };
+
     SurveyActions.updateSurvey(surveyData);
+    if (this.state.questionIdsToDelete.length > 0) {
+      QuestionActions.deleteQuestions(this.state.questionIdsToDelete);
+    }
   },
 
   render() {

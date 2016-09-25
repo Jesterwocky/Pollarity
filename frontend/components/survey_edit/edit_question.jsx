@@ -65,13 +65,16 @@ const EditQuestion = React.createClass({
   },
 
   componentDidMount() {
+    // removed because this can be done when the questions are created in
+    //edit_survey component (parent)
+
     // This points edit_survey to the options_attributes. Doing this
     // for all questions at the beginning, rather than calling
     // this.props.updateQuestion every time an option is updated
-    this.props.updateQuestion(
-      this.props.questionNum,
-      {id: this.props.id, question: this.props.question, options_attributes: this.state.options_attributes}
-    );
+    // this.props.updateQuestion(
+    //   this.props.questionNum,
+    //   {id: this.props.id, question: this.props.question, options_attributes: this.state.options_attributes}
+    // );
   },
 
   updateQuestion(e) {
@@ -127,7 +130,16 @@ const EditQuestion = React.createClass({
 
   deleteThisQuestion(e) {
     e.preventDefault();
-    this.props.deleteQuestion(this.props.questionNum);
+
+    if (this.props.hasVotes) {
+      if (confirm(`WARNING: participants have already voted on this question. Are you sure you want to delete it?`)) {
+        this.props.deleteQuestion(this.props.questionNum, this.props.id);
+      }
+    }
+
+    else {
+      this.props.deleteQuestion(this.props.questionNum, this.props.id);
+    }
   },
 
   focusOn (input) {

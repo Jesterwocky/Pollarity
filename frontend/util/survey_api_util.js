@@ -80,7 +80,6 @@ module.exports = {
   },
 
   updateSurvey: function(surveyData, success, error) {
-    debugger
     $.ajax({
       url: `api/surveys/${surveyData.id}`,
       type: "PATCH",

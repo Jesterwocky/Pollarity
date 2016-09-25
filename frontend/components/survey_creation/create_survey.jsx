@@ -128,7 +128,6 @@ const CreateSurvey = React.createClass({
   },
 
   render() {
-    console.log(this.state.questions);
     return (
       <div className="create-survey-box group">
 
