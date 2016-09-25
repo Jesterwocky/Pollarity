@@ -9,7 +9,8 @@ class Option < ActiveRecord::Base
 
   has_many :votes,
     class_name: :Response,
-    foreign_key: :selected_option_id
+    foreign_key: :selected_option_id,
+    dependent: :destroy
 
   has_many :voters,
     through: :votes,

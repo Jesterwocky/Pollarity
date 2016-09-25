@@ -1,7 +1,7 @@
 class Api::OptionsController < ApplicationController
 
   def update
-    @option = Option.find(params(:id))
+    @option = Option.find(params[:id])
 
     if @option.update(option_params)
       render json: @option
@@ -11,10 +11,10 @@ class Api::OptionsController < ApplicationController
   end
 
   def destroy
-    @option = Option.find(params(:id))
+    @option = Option.find(params[:id])
 
     if @option.delete
-      render json: {}
+      render json: {id: @option.id, surveyId: @option.survey.id, questionId: @option.question.id}
     else
       render json: @option.errors.full_messages, status: 401
     end

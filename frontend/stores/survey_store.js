@@ -24,20 +24,14 @@ const _addSurvey = function(survey) {
   _surveys[survey.id] = survey;
 };
 
-const _removeSurvey = function(surveyId) {
-  delete _surveys[surveyId];
-};
-
-const _removeSurveys = function(surveyIds) {
-  for (let id of surveyIds) {
-    delete _surveys[id];
-  }
+const _removeSurvey = function(surveyData) {
+  delete _surveys[surveyData.id];
 };
 
 const _removeQuestion = function(questionData) {
   let questionId = questionData.id;
   let surveyId = questionData.surveyId;
-  let questions = _surveys[questionData.surveyId].questions;
+  let questions = _surveys[surveyId].questions;
 
   for (let questionNum of Object.keys(questions)) {
     if (questions[questionNum].id === questionId) {
@@ -47,33 +41,27 @@ const _removeQuestion = function(questionData) {
   }
 };
 
-const _removeOption = function(optionId) {
-  let surveysCopy = Object.assign({}, _surveys);
+const _removeOption = function(optionData) {
+  let optionId = optionData.id;
+  let surveyId = optionData.surveyId;
+  let questionId = optionData.questionId;
+  let questions = _surveys[surveyId].questions;
+
   let found = false;
 
-  for (let surveyId of Object.keys(survey)) {
-    if (found) break;
-    for (let questionId of Object.keys(surveysCopy[surveyId].questions)) {
-      let hasOption = Object.keys(surveysCopy[surveyId].questions[questionId].options).some(id => id === optionId);
-      if (hasOption) {
-        delete surveysCopy[surveyId].questions[questionId].options[optionId];
-        found = true;
-        break;
+  for (let questionNum of Object.keys(questions)) {
+    if (questions[questionNum].id === questionId) {
+      if (found) break;
+      options = questions[questionNum].options;
+      for (let optionNum of Object.keys(options)) {
+        if (options[optionNum].id === optionId) {
+          delete _surveys[surveyId].questions[questionNum].options[optionNum];
+          found = true;
+          break;
+        }
       }
     }
   }
-
-  Object.assign(_surveys, surveysCopy);
-  // for (let survey of surveysCopy) {
-  //   if (found) break;
-  //   for (let question of survey.questions) {
-  //     if (Object.keys(question).some(id => id === optionId)) {
-  //       delete question.options.optionId;
-  //       found = true;
-  //       break;
-  //     }
-  //   }
-  // }
 };
 
 SurveyStore.all = function() {
@@ -119,16 +107,12 @@ SurveyStore.__onDispatch = function(payload) {
       _addSurvey(payload.survey);
       this.__emitChange();
       break;
-    case SurveyConstants.SURVEY_REMOVED:
-      _removeSurvey(payload.id);
-      this.__emitChange();
-      break;
-    case SurveyConstants.SURVEYS_REMOVED:
-      _removeSurveys(payload.surveyIds);
-      this.__emitChange();
-      break;
     case SurveyConstants.SURVEY_UPDATED:
       _addSurvey(payload.survey);
+      this.__emitChange();
+      break;
+    case SurveyConstants.SURVEY_REMOVED:
+      _removeSurvey(payload.surveyData);
       this.__emitChange();
       break;
     case QuestionConstants.QUESTION_REMOVED:

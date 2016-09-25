@@ -43,7 +43,7 @@ class Api::SurveysController < ApplicationController
     @survey = Survey.find(params[:id])
 
     if @survey.delete
-      render json: {}
+      render json: {id: @survey.id}
     else
       render json: @survey.errors.full_messages, status: 401
     end

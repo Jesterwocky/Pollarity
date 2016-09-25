@@ -101,16 +101,9 @@ module.exports = {
   removeSurvey(surveyData) {
     Dispatcher.dispatch({
       actionType: SurveyConstants.SURVEY_REMOVED,
-      surveyId: surveyData.id
+      surveyData: surveyData
     });
   },
-
-  // removeSurveys(surveyIds) {
-  //   Dispatcher.dispatch({
-  //     actionType: SurveyConstants.SURVEYS_REMOVED,
-  //     surveyIds: surveyIds
-  //   });
-  // },
 
   replaceSurvey(survey) {
     Dispatcher.dispatch({

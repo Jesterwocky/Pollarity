@@ -35,7 +35,8 @@ const EditQuestion = React.createClass({
         question: this.props.initialQuestionText,
         answerOptions: answerOptions,
         optionNum: key,
-        options_attributes: options_attributes
+        options_attributes: options_attributes,
+        optionIdsToDelete: []
       });
     }
 
@@ -114,7 +115,7 @@ const EditQuestion = React.createClass({
     this.state.options_attributes[optionNum] = optionData;
   },
 
-  deleteOption(num) {
+  deleteOption(num, id) {
     let answerOptions = this.state.answerOptions;
 
     answerOptions.forEach((el, i) => {
@@ -122,6 +123,10 @@ const EditQuestion = React.createClass({
         answerOptions.splice(i, 1);
       }
     });
+
+    if (id !== undefined) {
+      this.props.setOptionToDelete(id);
+    }
 
     this.setState({
       answerOptions: answerOptions

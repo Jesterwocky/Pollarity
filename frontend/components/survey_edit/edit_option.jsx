@@ -58,7 +58,7 @@ const EditOption = React.createClass({
 
   deleteThisOption(e) {
     e.preventDefault();
-    this.props.deleteOption(this.props.optionNum);
+    this.props.deleteOption(this.props.optionNum, this.props.id);
   },
 
   render() {

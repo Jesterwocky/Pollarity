@@ -5,6 +5,7 @@ const SurveyStore    = require('../../stores/survey_store.js');
 const EditSurveyStore = require('../../stores/edit_survey_store.js');
 const SurveyActions  = require('../../actions/survey_actions.js');
 const QuestionActions = require('../../actions/question_actions.js');
+const OptionActions = require('../../actions/option_actions.js');
 const EditQuestion   = require('./edit_question.jsx');
 const CreateQuestion   = require('../survey_creation/create_question.jsx');
 const ErrorStore     = require('../../stores/error_store.js');
@@ -20,6 +21,7 @@ const EditSurvey = React.createClass({
       questionElements: [],
       questions: {},
       questionIdsToDelete: [],
+      optionIdsToDelete: [],
       errors: []
     });
   },
@@ -72,6 +74,7 @@ const EditSurvey = React.createClass({
             options={question.options}
             deleteQuestion={this.deleteQuestion}
             updateQuestion={this.updateQuestion}
+            setOptionToDelete={this.setOptionToDelete}
             hasVotes={hasVotes}
           />
         );
@@ -153,6 +156,7 @@ const EditSurvey = React.createClass({
   },
 
   deleteQuestion(num, id) {
+    delete this.state.questions[num];
     let questionElements = this.state.questionElements;
 
     questionElements.forEach((el, i) => {
@@ -177,6 +181,10 @@ const EditSurvey = React.createClass({
     SurveyActions.clearSurveyToEdit();
   },
 
+  setOptionToDelete(optionId) {
+    this.state.optionIdsToDelete.push(optionId);
+  },
+
   saveSurvey(e) {
     e.preventDefault();
 
@@ -187,8 +195,13 @@ const EditSurvey = React.createClass({
     };
 
     SurveyActions.updateSurvey(surveyData);
+
     if (this.state.questionIdsToDelete.length > 0) {
       QuestionActions.deleteQuestions(this.state.questionIdsToDelete);
+    }
+
+    if (this.state.optionIdsToDelete.length > 0) {
+      OptionActions.deleteOptions(this.state.optionIdsToDelete);
     }
   },
 

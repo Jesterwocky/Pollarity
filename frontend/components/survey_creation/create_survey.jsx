@@ -89,6 +89,7 @@ const CreateSurvey = React.createClass({
   },
 
   deleteQuestion(num) {
+    delete this.state.questions[num];
     let questionElements = this.state.questionElements;
 
     questionElements.forEach((el, i) => {
