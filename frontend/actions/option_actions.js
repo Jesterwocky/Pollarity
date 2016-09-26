@@ -6,7 +6,6 @@ const ErrorActions = require('../actions/error_actions.js');
 module.exports = {
 
   deleteOption(optionId) {
-    debugger
     OptionApiUtil.deleteOption(
       optionId,
       this.removeOption,

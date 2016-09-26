@@ -110,7 +110,6 @@ const EditQuestion = React.createClass({
   },
 
   updateOption(optionNum, optionData) {
-    debugger
     this.state.options_attributes[optionNum] = optionData;
   },
 

@@ -47,8 +47,7 @@ const EditSurvey = React.createClass({
       $(".edit-survey-modal").show();
 
       let surveyToEdit = EditSurveyStore.getSurveyToEdit();
-
-      let questionElements = [];
+      let newQuestionElements = [];
       let questions = {};
       let questionNum = 0;
 
@@ -65,7 +64,7 @@ const EditSurvey = React.createClass({
           hasVotes: hasVotes
         };
 
-        questionElements.push (
+        newQuestionElements.push (
           <EditQuestion
             id={question.id}
             key={questionNum}
@@ -85,9 +84,9 @@ const EditSurvey = React.createClass({
       this.setState({
         surveyToEdit: surveyToEdit,
         surveyTitle: surveyToEdit.survey_title,
-        questions: questions,
-        questionElements: questionElements,
         questionNum: questionNum,
+        questions: questions,
+        questionElements: newQuestionElements,
         questionIdsToDelete: []
       });
     }

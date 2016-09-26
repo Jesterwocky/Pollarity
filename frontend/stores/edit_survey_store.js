@@ -7,6 +7,7 @@ const EditSurveyStore = new Store(Dispatcher);
 let _surveyToEdit;
 
 const _resetSurvey = function (survey) {
+  _surveyToEdit = {};
   _surveyToEdit = survey;
 };
 
