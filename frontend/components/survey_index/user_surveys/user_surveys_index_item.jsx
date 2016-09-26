@@ -93,6 +93,13 @@ const UserSurveysIndexItem = React.createClass({
     SurveyActions.getSurveyToEdit(this.props.survey.id);
   },
 
+  deleteSurvey (e) {
+    e.preventDefault();
+    if (confirm("Are you sure? All responses to this survey will be deleted.")) {
+      SurveyActions.deleteSurvey(this.props.survey.id);
+    }
+  },
+
   render() {
     let questions    = this.listQuestionsWithData();
     let responseUrl  = `${window.location.origin}/#/${this.props.survey.response_url}`;
@@ -100,14 +107,19 @@ const UserSurveysIndexItem = React.createClass({
 
     return (
       <div className={"user-survey group"}>
-        <div className="user-survey-date">{this.dateInfo()}</div>
+        <div className="above-survey-line group">
+          <div className="user-survey-date">{this.dateInfo()}</div>
+          <div className="edit-and-delete-links">
+            <a onClick={this.editSurvey}>Edit</a>
+            <a onClick={this.deleteSurvey}>Delete</a>
+          </div>
+        </div>
         <div className="user-survey-box">
           <div className="user-survey-title group">
             <div className="basic-survey-info">
-              <a href={reportingUrl}>{this.props.survey.survey_title}</a>
+              <a className="survey-title" href={reportingUrl}>{this.props.survey.survey_title}</a>
             </div>
             <div className="survey-controls">
-              <a className="edit-link" onClick={this.editSurvey} >Edit</a>
               <a className="poll-report-link" href={reportingUrl}>Live poll results</a>
               <a href={responseUrl} target="_blank" className="url-share-link">Share</a>
               <small className="survey-url">
