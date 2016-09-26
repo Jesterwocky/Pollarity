@@ -110,8 +110,12 @@ const UserSurveysIndexItem = React.createClass({
         <div className="above-survey-line group">
           <div className="user-survey-date">{this.dateInfo()}</div>
           <div className="edit-and-delete-links">
-            <a onClick={this.editSurvey}>Edit</a>
-            <a onClick={this.deleteSurvey}>Delete</a>
+            <button onClick={this.editSurvey}>
+              <i className="fa fa-pencil" title="Edit" aria-hidden="true"></i>
+            </button>
+            <button onClick={this.deleteSurvey}>
+              <i className="fa fa-trash" title="Delete" aria-hidden="true"></i>
+            </button>
           </div>
         </div>
         <div className="user-survey-box">

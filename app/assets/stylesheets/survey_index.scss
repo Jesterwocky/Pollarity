@@ -86,23 +86,25 @@
 
   .above-survey-line {
     font-size: 14px;
-    padding-top: 3px;
     padding-left: 2px;
     color: #9cb5ca;
     text-align: left;
-    padding-bottom: 2px;
 
     .user-survey-date {
       float: left;
       display: inline;
+      margin-top: 3px;
     }
 
     .edit-and-delete-links {
       float: right;
       display: inline;
+      margin-right: 3px;
 
-      a {
-        padding-left: 15px;
+      button {
+        margin-left: 10px;
+        font-size: 17px;
+        color: #5D92C0;
       }
     }
   }
