@@ -66,16 +66,13 @@ const EditQuestion = React.createClass({
   },
 
   componentDidMount() {
-    // removed because this can be done when the questions are created in
-    //edit_survey component (parent)
-
     // This points edit_survey to the options_attributes. Doing this
     // for all questions at the beginning, rather than calling
     // this.props.updateQuestion every time an option is updated
-    // this.props.updateQuestion(
-    //   this.props.questionNum,
-    //   {id: this.props.id, question: this.props.question, options_attributes: this.state.options_attributes}
-    // );
+    this.props.updateQuestion(
+      this.props.questionNum,
+      {id: this.props.id, question: this.props.question, options_attributes: this.state.options_attributes}
+    );
   },
 
   updateQuestion(e) {
@@ -96,6 +93,7 @@ const EditQuestion = React.createClass({
 
     let options = this.state.answerOptions.slice();
 
+
     options.push(
       <CreateOption
         key={this.state.optionNum}
@@ -112,6 +110,7 @@ const EditQuestion = React.createClass({
   },
 
   updateOption(optionNum, optionData) {
+    debugger
     this.state.options_attributes[optionNum] = optionData;
   },
 

@@ -2,7 +2,6 @@
 module.exports = {
   deleteOption: function(optionId, success, error) {
     const AUTH_TOKEN = $('meta[name=csrf-token]').attr('content');
-    console.log(`Option API ${AUTH_TOKEN}`);
     let dataToSend = Object.assign({}, { id: optionId }, { authenticity_token: AUTH_TOKEN });
     $.ajax({
       url: `api/options/${optionId}`,
