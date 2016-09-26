@@ -31,7 +31,6 @@ const UserSurveysIndex = React.createClass({
 
   _handleSurveyChange () {
     const AUTH_TOKEN = $('meta[name=csrf-token]').attr('content');
-    console.log(`Option API ${AUTH_TOKEN}`);
     this.setState({
       surveys: SurveyStore.allForUser(this.state.userId),
     });
