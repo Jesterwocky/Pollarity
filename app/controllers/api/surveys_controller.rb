@@ -1,6 +1,6 @@
 class Api::SurveysController < ApplicationController
   def show
-    @survey = Survey.find(params[:id].to_i)
+    @survey = Survey.find(params[:id].to_i).includes(:questions, :options, :responses)
 
     if @survey
       render json: @survey.to_json(include: {questions: {include: {options: {include: :votes}}}})
@@ -21,7 +21,7 @@ class Api::SurveysController < ApplicationController
 
   def index
     @surveys = if params[:user_id]
-      User.find(params[:user_id].to_i).surveys
+      User.find(params[:user_id].to_i).surveys.includes(:questions, :options, :responses)
     else
       Survey.all
     end

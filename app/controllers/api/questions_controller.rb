@@ -2,7 +2,7 @@ class Api::QuestionsController < ApplicationController
 
   def show
     # probably don't need this
-    @question = Question.find(params[:id])
+    @question = Question.find(params[:id]).includes(:options, :responses)
 
     if @question
       render json: @question.to_json(include: {options: {include: :votes}})
