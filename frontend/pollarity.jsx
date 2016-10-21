@@ -13,17 +13,6 @@ const SessionStore = require('./stores/session_store.js');
 const ResponseForm = require('./components/responses/response_form.jsx');
 const SurveyReport = require('./components/reports/survey_report.jsx');
 
-//For testing, but verify before deleting
-// const SessionApiUtil = require('./util/session_api_util.js');
-// window.SessionApiUtil = SessionApiUtil;
-// window.SessionStore = SessionStore;
-// const SurveyApiUtil = require('./util/survey_api_util.js');
-// window.SurveyApiUtil = SurveyApiUtil;
-// const SurveyActions = require('./actions/survey_actions.js');
-// window.SurveyActions = SurveyActions;
-// const SurveyStore = require('./stores/survey_store.js');
-// window.SurveyStore = SurveyStore;
-
 const _ensureLoggedIn = function(nextState, replace) {
   if (!SessionStore.isUserLoggedIn()) {
     replace("/");

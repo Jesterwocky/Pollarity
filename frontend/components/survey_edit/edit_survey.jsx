@@ -44,6 +44,7 @@ const EditSurvey = React.createClass({
 
   _onEditSurveyChange() {
     if (EditSurveyStore.hasSurveyToEdit()) {
+      debugger
       $(".edit-survey-modal").show();
 
       let surveyToEdit = EditSurveyStore.getSurveyToEdit();

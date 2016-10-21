@@ -86,6 +86,7 @@ module.exports = {
   },
 
   receiveSurveyToEdit(survey) {
+    debugger
     Dispatcher.dispatch({
       actionType: SurveyConstants.SURVEY_RECEIVED_FOR_EDIT,
       survey: survey

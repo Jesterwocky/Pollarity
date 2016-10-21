@@ -1,0 +1,165 @@
+body {
+  background: #d9d9d9;
+}
+
+body .paginated-list {
+  width: 50%;
+  min-width: 40em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5em;
+}
+
+.assets-list .asset-row {
+  background: white;
+  height: 5em;
+  box-sizing: border-box;
+  padding: 0.2em;
+  padding-left: 0.8em;
+  margin-bottom: 0.12em;
+}
+
+.assets-list .asset-row .add-button {
+  height: 100%;
+  width: 5.5em;
+  float: right;
+  color: white;
+  background: linear-gradient(160deg, #5be4f1, #21afc7);
+  text-align: center;
+}
+
+.assets-list .asset-row .asset-details {
+  color: #777777;
+  width: 80%;
+  padding: 0.6em;
+  font-weight: 300;
+}
+
+.assets-list .asset-row .asset-details .location-info,
+.assets-list .asset-row .asset-details .asset-type,
+.assets-list .asset-row .asset-details .impression-cost {
+  height: 100%;
+  display: inline-block;
+}
+
+.assets-list .asset-row .asset-details .location-info {
+  margin-right: 1.5em;
+  float: left;
+  font-weight: 700;
+  border: 1px solid red;
+}
+
+.assets-list .asset-row .asset-details .location-info .lat-long {
+  color: #8f8f8f;
+  font-size: 0.5em;
+  padding-bottom: 0.5em;
+  font-weight: 100;
+}
+
+.assets-list .asset-row .asset-details .asset-type {
+  margin-right: 4em;
+  float: left;
+  width: 30%;
+}
+
+.assets-list .asset-row .asset-details .asset-cost {
+  float: right;
+}
+.page-controls {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-controls .button-set {
+  background: white;
+  padding: 0.5em;
+}
+
+.page-controls .button-set button {
+  background: white;
+  height: 2em;
+  width: 1.6em;
+  box-sizing: border-box;
+  color: #21afc7;
+  border: 1px solid #21afc7;
+  text-align: center;
+}
+
+.page-controls .button-set .page-arrow-left {
+  float: left;
+}
+
+.page-controls .button-set .page-arrow-right {
+  float: right;
+}
+
+.page-controls .button-set .page-buttons {
+  margin-left: auto;
+  text-align: center;
+  margin-right: auto;
+}
+
+.page-controls .button-set .page-buttons .numbered-button {
+  margin-right: 0.2em;
+}
+
+.page-controls .button-set .page-buttons .selected-button {
+  background: #21afc7;
+  color: white;
+}
+html {
+  height: 100%;
+}
+
+html,
+body,
+header,
+nav,
+h1,
+a,
+ul,
+li,
+strong,
+main,
+i,
+section,
+img,
+div,
+h2,
+p,
+form,
+fieldset,
+label,
+textarea,
+span,
+article,
+footer,
+time,
+small,
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  font-family: 'Lato', sans-serif;
+  font-size: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}

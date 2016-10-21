@@ -1,6 +1,6 @@
 class Api::SurveysController < ApplicationController
   def show
-    @survey = Survey.find(params[:id].to_i).includes(:questions, :options, :responses)
+    @survey = Survey.includes(:questions, :options, :responses).find(params[:id].to_i)
 
     if @survey
       render json: @survey.to_json(include: {questions: {include: {options: {include: :votes}}}})

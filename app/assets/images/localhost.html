@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:3000/ -->
+<html ng-app="angularModule" class="ng-scope"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    
+    <title></title>
+    <script src="./localhost_files/angular.min.js"></script>
+    <script type="text/javascript" src="./localhost_files/app.min.js"></script>
+    <link rel="stylesheet" href="./localhost_files/styles.css" media="screen" title="no title">
+    <link href="./localhost_files/css" rel="stylesheet">
+  </head>
+  <body><script id="__bs_script__">//<![CDATA[
+    document.write("<script async src='/browser-sync/browser-sync-client.js?v=2.17.3'><\/script>".replace("HOST", location.hostname));
+//]]></script><script async="" src="./localhost_files/browser-sync-client.js"></script>
+
+    <div class="paginated-list ng-scope" ng-controller="assetsController">
+      <div class="assets-list group">
+
+        <!-- ngRepeat: asset in assetsPage --><div class="asset-row group ng-scope" ng-repeat="asset in assetsPage">
+          <div class="asset-details group">
+            <div class="location-info group">
+              <p class="lat-long ng-binding">11.99, 99.11</p>
+              <p class="ng-binding">501 Privet Dr</p>
+            </div>
+
+            <div class="asset-type group">
+              <p class="ng-binding">Billboard 50X40</p>
+            </div>
+
+            <div class="impression-cost group">
+              <p class="ng-binding">$3.56</p>
+              <p>Average Impressions</p>
+            </div>
+          </div>
+
+          <button class="add-button">ADD</button>
+        </div><!-- end ngRepeat: asset in assetsPage --><div class="asset-row group ng-scope" ng-repeat="asset in assetsPage">
+          <div class="asset-details group">
+            <div class="location-info group">
+              <p class="lat-long ng-binding">11.99, 99.11</p>
+              <p class="ng-binding">22 Broadway</p>
+            </div>
+
+            <div class="asset-type group">
+              <p class="ng-binding">Subway Wall 50X40</p>
+            </div>
+
+            <div class="impression-cost group">
+              <p class="ng-binding">$3.56</p>
+              <p>Average Impressions</p>
+            </div>
+          </div>
+
+          <button class="add-button">ADD</button>
+        </div><!-- end ngRepeat: asset in assetsPage -->
+
+      </div>
+
+      <div class="page-controls">
+        <div class="button-set">
+          <button class="page-arrow-left" ng-click="prevPage()">◀</button>
+          <button class="page-arrow-right" ng-click="nextPage()">▶</button>
+
+          <div class="page-buttons group">
+            <!-- ngRepeat: button in buttonList track by $index --><button ng-repeat="button in buttonList track by $index" ng-click="changePage(button, $index)" class="numbered-button ng-binding ng-scope" ng-class="{selected-page : button === currentPage}">
+                1
+            </button><!-- end ngRepeat: button in buttonList track by $index --><button ng-repeat="button in buttonList track by $index" ng-click="changePage(button, $index)" class="numbered-button ng-binding ng-scope" ng-class="{selected-page : button === currentPage}">
+                2
+            </button><!-- end ngRepeat: button in buttonList track by $index --><button ng-repeat="button in buttonList track by $index" ng-click="changePage(button, $index)" class="numbered-button ng-binding ng-scope" ng-class="{selected-page : button === currentPage}">
+                3
+            </button><!-- end ngRepeat: button in buttonList track by $index --><button ng-repeat="button in buttonList track by $index" ng-click="changePage(button, $index)" class="numbered-button ng-binding ng-scope" ng-class="{selected-page : button === currentPage}">
+                4
+            </button><!-- end ngRepeat: button in buttonList track by $index --><button ng-repeat="button in buttonList track by $index" ng-click="changePage(button, $index)" class="numbered-button ng-binding ng-scope" ng-class="{selected-page : button === currentPage}">
+                5
+            </button><!-- end ngRepeat: button in buttonList track by $index --><button ng-repeat="button in buttonList track by $index" ng-click="changePage(button, $index)" class="numbered-button ng-binding ng-scope" ng-class="{selected-page : button === currentPage}">
+                6
+            </button><!-- end ngRepeat: button in buttonList track by $index --><button ng-repeat="button in buttonList track by $index" ng-click="changePage(button, $index)" class="numbered-button ng-binding ng-scope" ng-class="{selected-page : button === currentPage}">
+                7
+            </button><!-- end ngRepeat: button in buttonList track by $index --><button ng-repeat="button in buttonList track by $index" ng-click="changePage(button, $index)" class="numbered-button ng-binding ng-scope" ng-class="{selected-page : button === currentPage}">
+                ...
+            </button><!-- end ngRepeat: button in buttonList track by $index -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  
+
+</body></html>
