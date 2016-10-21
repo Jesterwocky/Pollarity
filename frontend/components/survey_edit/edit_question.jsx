@@ -84,8 +84,23 @@ const EditQuestion = React.createClass({
 
     this.props.updateQuestion(
       this.props.questionNum,
-      {id: this.props.id, question: e.currentTarget.value, options_attributes: this.state.options_attributes}
+      { id: this.props.id, question: e.currentTarget.value, options_attributes: this.state.options_attributes }
     );
+  },
+
+  deleteThisQuestion(e) {
+    e.preventDefault();
+
+    if (this.props.hasVotes) {
+      let deleteConfirmed = confirm(`WARNING: participants have already voted on this question. Are you sure you want to delete it?`);
+      if (deleteConfirmed) {
+        this.props.deleteQuestion(this.props.questionNum, this.props.id);
+      }
+    }
+
+    else {
+      this.props.deleteQuestion(this.props.questionNum, this.props.id);
+    }
   },
 
   addOption(e) {
@@ -122,27 +137,20 @@ const EditQuestion = React.createClass({
       }
     });
 
-    if (id !== undefined) {
-      this.props.setOptionToDelete(id);
+    if (id === undefined) {
+      delete this.props.options_attributes[num];
+    }
+
+    else {
+      this.updateOption(num, {
+        id: id,
+        _destroy: "1"
+      });
     }
 
     this.setState({
       answerOptions: answerOptions
     });
-  },
-
-  deleteThisQuestion(e) {
-    e.preventDefault();
-
-    if (this.props.hasVotes) {
-      if (confirm(`WARNING: participants have already voted on this question. Are you sure you want to delete it?`)) {
-        this.props.deleteQuestion(this.props.questionNum, this.props.id);
-      }
-    }
-
-    else {
-      this.props.deleteQuestion(this.props.questionNum, this.props.id);
-    }
   },
 
   focusOn (input) {

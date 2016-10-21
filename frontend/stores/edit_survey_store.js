@@ -21,6 +21,11 @@ EditSurveyStore.getSurveyToEdit = function (survey) {
   return copySurvey;
 };
 
+EditSurveyStore.editSurveyId = function() {
+  debugger
+  return _surveyToEdit.id;
+};
+
 EditSurveyStore.hasSurveyToEdit = function () {
   return _surveyToEdit === undefined ? false : true;
 };

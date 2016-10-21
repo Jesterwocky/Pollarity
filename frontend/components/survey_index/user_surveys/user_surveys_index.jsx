@@ -2,6 +2,7 @@ const React         = require('react');
 const ReactDOM      = require('react-dom');
 const hashHistory   = require('react-router').hashHistory;
 const SurveyStore   = require('../../../stores/survey_store.js');
+const EditSurveyStore = require("../../../stores/edit_survey_store.js");
 const SurveyActions = require('../../../actions/survey_actions.js');
 // const CreateSurvey  = require('../../survey_creation/create_survey.jsx');
 const NavBarForPollCreator = require('../../nav_bar/nav_bar_for_poll_creator.jsx');
@@ -21,12 +22,13 @@ const UserSurveysIndex = React.createClass({
   },
 
   componentDidMount () {
-    this.listener = SurveyStore.addListener(this._handleSurveyChange);
+    this.surveylistener = SurveyStore.addListener(this._handleSurveyChange);
+    // this.editSurveyListener = EditSurveyStore.addListener(this._handleEditSurveyChange);
     SurveyActions.userSurveys(this.state.userId);
   },
 
   componentWillUnmount() {
-    this.listener.remove();
+    this.surveylistener.remove();
   },
 
   _handleSurveyChange () {
@@ -34,6 +36,16 @@ const UserSurveysIndex = React.createClass({
       surveys: SurveyStore.allForUser(this.state.userId),
     });
   },
+
+  // _handleEditSurveyChange () {
+  //   if (EditSurveyStore.hasSurveyToEdit()) {
+  //     this.surveyToWatch = EditSurveyStore.editSurveyId();
+  //   }
+  //
+  //   else {
+  //
+  //   }
+  // },
 
   openNewSurveyModal (e) {
     e.preventDefault();

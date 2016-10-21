@@ -44,7 +44,6 @@ const EditSurvey = React.createClass({
 
   _onEditSurveyChange() {
     if (EditSurveyStore.hasSurveyToEdit()) {
-      debugger
       $(".edit-survey-modal").show();
 
       let surveyToEdit = EditSurveyStore.getSurveyToEdit();
@@ -132,6 +131,31 @@ const EditSurvey = React.createClass({
     this.state.questions[questionNum] = questionData;
   },
 
+  deleteQuestion(num, id) {
+    let questionElements = this.state.questionElements;
+
+    questionElements.forEach((el, i) => {
+      if (el.props.questionNum === num) {
+        questionElements.splice(i, 1);
+      }
+    });
+
+    if (id === undefined) {
+      delete this.state.questions[num];
+    }
+
+    else {
+      this.updateQuestion(num, {
+        id: id,
+        _destroy: "1"
+      });
+    }
+
+    this.setState({
+      questionElements: questionElements
+    });
+  },
+
   addQuestionBox(e) {
     e.preventDefault();
 
@@ -152,27 +176,6 @@ const EditSurvey = React.createClass({
     this.setState({
       questionNum: this.state.questionNum + 1,
       questionElements: questionElements,
-    });
-  },
-
-  deleteQuestion(num, id) {
-    delete this.state.questions[num];
-    let questionElements = this.state.questionElements;
-
-    questionElements.forEach((el, i) => {
-      if (el.props.questionNum === num) {
-        questionElements.splice(i, 1);
-      }
-    });
-
-    // If an existing question is deleted, add the ID to a list
-    // to delete from database
-    if (id !== undefined) {
-      this.state.questionIdsToDelete.push(id);
-    }
-
-    this.setState({
-      questionElements: questionElements
     });
   },
 

@@ -30,7 +30,7 @@ class Api::SurveysController < ApplicationController
   end
 
   def update
-    @survey = Survey.find(survey_params[:id])
+    @survey = Survey.includes(:questions, :options, :responses).find(params[:id].to_i)
 
     if @survey.update(survey_params)
       render json: @survey.to_json(include: {questions: {include: {options: {include: :votes}}}})
@@ -51,6 +51,24 @@ class Api::SurveysController < ApplicationController
   end
 
   def survey_params
-    params.permit(:id, :survey_title, :author_id, questions_attributes: [:id, :question, options_attributes: [:id, :option, :image_url, :thumbnail_url]])
+    params.permit(
+      :id,
+      :survey_title,
+      :author_id,
+
+      questions_attributes: [
+        :id,
+        :_destroy,
+        :question,
+
+        options_attributes: [
+          :id,
+          :_destroy,
+          :option,
+          :image_url,
+          :thumbnail_url
+        ]
+      ]
+    );
   end
 end
